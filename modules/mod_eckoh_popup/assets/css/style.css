@@ -1,0 +1,182 @@
+/*us popup*/
+/*modal background */
+.bfModal {
+  display: none; /*hidden by default */
+  position: fixed; /*stay in place */
+  z-index: 1; /* sit on top*/
+  padding-top: 100px;
+  left: 0 ;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); /*fallback colour*/
+  background-color: rgba(0,0,0,0.4); /*Black w/ opacity*/
+  font-weight: 600;
+  font-family: Cabin;
+  right: 300%;
+  position: absolute;
+  width: 150%;
+
+
+/*new postioning code*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow-y: hidden;
+
+
+}
+
+/*modal content*/
+.bfModal .bfmodal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  margin-top: 5%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%;
+  text-align: center;
+  border:8px solid #ad1d3f;
+  display: flex !important;
+}
+
+.bfModal .bfmodal-content p {
+  padding-left: 0px;
+}
+
+.bfclose {
+  position: absolute;
+  color: #aaaaaa;
+  top: -5px;
+  right: 10px;
+  font-size: 32px;
+}
+.bfclose:hover,
+.bfclose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.no {
+  display: flex !important;
+}
+.yes {
+  display: none !important;
+}
+.con {
+  text-decoration: underline;
+  color: #ad1d3f;
+  display: block;
+}
+.con a {
+  color: #ad1d3f !important;
+	font-family: "Source Sans Pro" !important; letter-spacing: normal !important;
+	font-weight:400;
+}
+.con a:hover {
+  cursor: pointer !important;
+  color: #444444 !important;
+  text-decoration: none !important;
+}
+.bfmodal-content p {
+  color: black;
+	font-family: "Source Sans Pro" !important; letter-spacing: normal !important;
+  line-height: 20px;
+	font-weight:400;
+}
+.bfmodal-content img {
+  width: 60px;
+  height: 60px;
+}
+.back {
+  color: #ad1d3f;
+}
+.back:hover {
+  color: #444444;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+
+@media only screen and (max-width: 750px) {
+  .bfmodal-content {
+    width:80%;
+  }
+}
+
+/*BELIEVE DISPLAY BLOCK SHOULD BE ON SET ON THE "no" CLASS, LOOKING AT LINE 60 ABOVE*/
+.language-selector #myModal.yes {
+    display: block;
+/*    display:none;*/
+}
+
+
+.language-selector #g-header {
+    padding-top:45px
+}
+.language-selector #g-showcase {
+    
+}
+
+body.contact.language-selector #g-showcase.about-showcase, body.content.language-selector #g-showcase.about-showcase {
+    margin-top:195px;
+}
+
+/*BLOG ARTICLES*/
+
+body.gantry.language-selector main#g-main {
+    padding-top:200px!important
+}
+
+@media (max-width:1150px) {
+    .language-selector .bfModal {
+        top:-45px;
+    }
+    body:not(#careers-investors).language-selector .g-offcanvas-toggle {
+        top:7.5rem;
+    }
+}
+
+@media (max-width:767px) {
+    .language-selector .bfModal {
+        top:-61px;
+    }
+    body:not(#careers-investors).language-selector .g-offcanvas-toggle {
+        top:9.3rem;
+    }
+    .language-selector #g-header {
+        padding-top:78px
+    }
+}
+
+
+@media (max-width:547px) {
+    .language-selector .bfModal {
+        top:-78px;
+    } 
+}
+
+
+/*modal content*/
+.bfModal .bfmodal-content {
+  display: flex !important;
+}
+.bfModal .bfmodal-content p {
+  padding-left: 0px;
+}
+.no {
+  display: flex !important;
+}
+@media (max-width: 910px) {
+  .bfModal .bfmodal-content p {
+    font-size: 0.8rem !important;
+    padding-left: 0px;
+  }
+}

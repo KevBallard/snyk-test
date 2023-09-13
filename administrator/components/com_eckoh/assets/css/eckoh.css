@@ -1,0 +1,44 @@
+.icon-48-hubproducts {
+      background-image: url(../images/l_hubproducts.png);
+      padding-left:60px!important;
+}
+
+.icon-48-hubproduct {
+      background-image: url(../images/l_hubproducts.png);
+      padding-left:60px!important;
+}
+
+.color-box-hubproducts { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-level2pluss {
+      background-image: url(../images/l_level2pluss.png);
+      padding-left:60px!important;
+}
+
+.icon-48-level2plus {
+      background-image: url(../images/l_level2pluss.png);
+      padding-left:60px!important;
+}
+
+.color-box-level2pluss { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-level2or3s {
+      background-image: url(../images/l_level2or3s.png);
+      padding-left:60px!important;
+}
+
+.icon-48-level2or3 {
+      background-image: url(../images/l_level2or3s.png);
+      padding-left:60px!important;
+}
+
+.color-box-level2or3s { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+
+
+.other-filters{
+    padding: 0 14px;
+}

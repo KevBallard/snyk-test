@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Session Popup Module</name>
+	<author>Jamie Twycross</author>
+	<creationDate>August 2019</creationDate>
+	<copyright>Copyright (C) 2005 - 2019 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>jamie.twycross@bluefrontier.co.uk	</authorEmail>
+	<authorUrl>www.bluefrontier.co.uk</authorUrl>
+	<version>1.0.0</version>
+	<description>Module that Displays a Session Popup </description>
+	<files>
+		<filename module="mod_sessionPopup">mod_categories.php</filename>
+		<folder>tmpl</folder>
+	</files>
+</extension>

@@ -1,0 +1,90 @@
+name: 9
+timestamp: 1601289690
+version: 7
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1551355939
+positions:
+  eckoh-module: Eckoh
+  main-top: 'Main Top'
+  main-content: 'Main Content'
+  announcement: 'Module Position'
+  logo: 'Module Position'
+  top: Top
+  navigation: Navigation
+  mobile-links: 'Mobile Links'
+  showcase: Showcase
+  feature-a: 'Feature A'
+  mainbottom-a: 'Mainbottom A'
+  footer-a: 'Footer A'
+  footer-b: 'Footer B'
+  footer-c: 'Footer C'
+  footer-d: 'Footer D'
+  copyright-a: 'Copyright A'
+  copyright-b: 'Copyright B'
+  mobile-menu-container: 'Module Position'
+sections:
+  top: Top
+  mobile-links: Mobile-links
+  showcase: Showcase
+  feature: Feature
+  mainbottom: Mainbottom
+  copyright: Copyright
+  header: Header
+  main: Main
+  footer: Footer
+  offcanvas: Offcanvas
+particles:
+  position:
+    position-position-1922: Eckoh
+    position-position-6877: 'Main Top'
+    position-position-1434: 'Main Content'
+    position-position-1969: 'Module Position'
+    position-position-1365: 'Module Position'
+    position-position-5397: Top
+    position-position-7404: Navigation
+    position-position-4503: 'Mobile Links'
+    position-position-2218: Showcase
+    position-position-9396: 'Feature A'
+    position-position-6931: 'Mainbottom A'
+    position-position-6974: 'Footer A'
+    position-position-8721: 'Footer B'
+    position-position-3264: 'Footer C'
+    position-position-7413: 'Footer D'
+    position-position-6107: 'Copyright A'
+    position-position-2550: 'Copyright B'
+    position-position-2007: 'Module Position'
+  messages:
+    system-messages-8452: 'System Messages'
+  content:
+    system-content-1266: 'Page Content'
+inherit:
+  default:
+    top: top
+    header: header
+    mobile-links: mobile-links
+    showcase: showcase
+    feature: feature
+    position-position-1922: position-position-9185
+    system-messages-8452: system-messages-4590
+    system-content-1266: system-content-5421
+    mainbottom: mainbottom
+    footer: footer
+    copyright: copyright
+    offcanvas: offcanvas
+    position-position-1969: position-position-5167
+    position-position-1365: position-position-8842
+    position-position-5397: position-position-5208
+    position-position-7404: position-position-1963
+    position-position-4503: position-position-4289
+    position-position-2218: position-position-1418
+    position-position-9396: position-position-4197
+    position-position-6931: position-position-8564
+    position-position-6974: position-footer
+    position-position-8721: position-position-7699
+    position-position-3264: position-position-6812
+    position-position-7413: position-position-8076
+    position-position-6107: position-position-5533
+    position-position-2550: position-position-5669
+    position-position-2007: position-position-5845

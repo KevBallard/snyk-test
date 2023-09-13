@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_CREATED_BY" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_CREATED_BY" hidden="true" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_MODIFIED_BY" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_MODIFIED_BY" hidden="true" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_MODIFIED_BY"/>
+    <field name="term" filter="safehtml" type="text" required="true" message="Please enter a term" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_TERM" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_TERM" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_TERM"/>
+    <field name="intro" filter="safehtml" type="textarea" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_INTRO" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_INTRO" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_INTRO"/>
+    <field name="us_intro" filter="safehtml" type="textarea" label="US Intro" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_INTRO" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_INTRO"/>
+    <field name="definition" editor="|" buttons="true" filter="JComponentHelper::filterText" type="editor" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_DEFINITION" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_DEFINITION" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_DEFINITION"/>
+    <field name="us_definition" editor="|" buttons="true" filter="JComponentHelper::filterText" type="editor" label="US Definition" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_DEFINITION" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_DEFINITION"/>
+    <field name="languages" client="site" type="language" multiple="true" default="" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_LANGUAGES" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_LANGUAGES" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_LANGUAGES" />
+    <field name="alias" type="text" class="inputbox" generator="term" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_ALIAS" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_ALIAS" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_ALIAS"/>
+    <field name="metatitle" filter="safehtml" type="text" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_METATITLE" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_METATITLE" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_METATITLE"/>
+    <field name="metakeywords" filter="safehtml" type="textarea" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_METAKEYWORDS" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_METAKEYWORDS" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_METAKEYWORDS"/>
+    <field name="metadescription" filter="safehtml" type="textarea" label="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_METADESCRIPTION" description="COM_SEO_GLOSSARY_FORM_DESC_GLOSSARYTERM_METADESCRIPTION" hint="COM_SEO_GLOSSARY_FORM_LBL_GLOSSARYTERM_METADESCRIPTION"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

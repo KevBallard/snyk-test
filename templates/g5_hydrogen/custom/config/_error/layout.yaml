@@ -1,0 +1,158 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1551355939
+layout:
+  top: {  }
+  /header/:
+    -
+      - position-position-4099
+    -
+      - 'position-position-9488 25'
+      - 'position-position-9943 75'
+    -
+      - position-position-2963
+  mobile-links: {  }
+  /showcase/:
+    -
+      - position-module-9099
+  feature: {  }
+  /main/:
+    -
+      - position-position-8571
+    -
+      - 'position-position-8946 60'
+      - 'system-messages-3124 40'
+    -
+      - position-module-3898
+  mainbottom: {  }
+  footer: {  }
+  copyright: {  }
+  offcanvas: {  }
+structure:
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  header:
+    attributes:
+      boxed: '3'
+      class: ''
+      variations: ''
+  mobile-links:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  showcase:
+    type: section
+    attributes:
+      boxed: '2'
+      class: about-showcase
+  feature:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  main:
+    attributes:
+      boxed: ''
+      class: ''
+  mainbottom:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+content:
+  position-position-4099:
+    title: 'Module Position'
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-5167
+  position-position-9488:
+    title: 'Module Position'
+    attributes:
+      key: error-logo
+    block:
+      id: logo
+  position-position-9943:
+    title: Top
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-5208
+  position-position-2963:
+    title: Navigation
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-1963
+  position-module-9099:
+    title: 'Module Instance'
+    attributes:
+      module_id: '280'
+      key: module-instance
+  position-position-8571:
+    title: Breadcrumbs
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-breadcrumbs
+  position-position-8946:
+    title: Eckoh
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-9185
+  system-messages-3124:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: system-messages-4590
+  position-module-3898:
+    title: 'Module Instance'
+    attributes:
+      module_id: '281'
+      key: module-instance

@@ -1,0 +1,175 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1551355939
+layout:
+  /top/: {  }
+  /header/:
+    -
+      - position-position-5167
+    -
+      - 'position-position-8842 25'
+      - 'position-position-5208 75'
+    -
+      - position-position-1963
+  /mobile-links/:
+    -
+      - position-position-4289
+  /showcase/:
+    -
+      - position-position-1418
+  /feature/:
+    -
+      - position-position-4197
+  /main/:
+    -
+      - position-breadcrumbs
+    -
+      - 'position-position-9185 60'
+      - 'system-messages-4590 40'
+    -
+      - system-content-5421
+  /mainbottom/:
+    -
+      - position-position-8564
+  /footer/:
+    -
+      - 'position-footer 25'
+      - 'position-position-7699 20'
+      - 'position-position-6812 35'
+      - 'position-position-8076 20'
+  /copyright/:
+    -
+      - 'position-position-5533 70'
+      - 'position-position-5669 30'
+  offcanvas:
+    -
+      - position-position-5845
+structure:
+  top:
+    type: section
+    attributes:
+      boxed: '3'
+      class: ''
+  header:
+    attributes:
+      boxed: '3'
+      class: ''
+  mobile-links:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  showcase:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  feature:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  main:
+    attributes:
+      boxed: ''
+  mainbottom:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  footer:
+    attributes:
+      boxed: ''
+  copyright:
+    type: section
+    attributes:
+      boxed: ''
+  offcanvas:
+    attributes:
+      position: g-offcanvas-right
+      class: ''
+      extra: {  }
+      swipe: '0'
+      css3animation: '1'
+content:
+  position-position-5167:
+    title: 'Module Position'
+    attributes:
+      key: announcement
+    block:
+      id: announcement
+  position-position-8842:
+    title: 'Module Position'
+    attributes:
+      key: logo
+    block:
+      id: logo
+  position-position-5208:
+    title: Top
+    attributes:
+      key: top
+    block:
+      class: top
+  position-position-1963:
+    title: Navigation
+    attributes:
+      key: navigation
+    block:
+      id: navigation
+  position-position-4289:
+    title: 'Mobile Links'
+    attributes:
+      key: mobile-links
+  position-position-1418:
+    title: Showcase
+    attributes:
+      key: showcase
+  position-position-4197:
+    title: 'Feature A'
+    attributes:
+      key: feature-a
+  position-breadcrumbs:
+    attributes:
+      key: breadcrumbs
+  position-position-9185:
+    title: Eckoh
+    attributes:
+      key: eckoh-module
+    block:
+      class: eckoh
+  position-position-8564:
+    title: 'Mainbottom A'
+    attributes:
+      key: mainbottom-a
+  position-footer:
+    title: 'Footer A'
+    attributes:
+      key: footer-a
+  position-position-7699:
+    title: 'Footer B'
+    attributes:
+      key: footer-b
+  position-position-6812:
+    title: 'Footer C'
+    attributes:
+      key: footer-c
+  position-position-8076:
+    title: 'Footer D'
+    attributes:
+      key: footer-d
+    block:
+      id: footer-address
+  position-position-5533:
+    title: 'Copyright A'
+    attributes:
+      key: copyright-a
+  position-position-5669:
+    title: 'Copyright B'
+    attributes:
+      key: copyright-b
+  position-position-5845:
+    title: 'Module Position'
+    attributes:
+      key: mobile-menu-container

@@ -1,0 +1,595 @@
+/***************************
+****************************
+
+NAME: _typography.scss
+SITE: Made up company
+DESCRIPTION: All text styles (includes buttons)
+-------------------------------------
+
+AUTHOR: Charlotte Osborne
+DATE CREATED: 20/06/17
+LAST MODIFIED DATE: Rebecca Allenby
+LAST MODIFIED BY: 23/12/2021
+
+****************************
+***************************/
+
+//blog buttons 
+
+.blog-button {
+    background-color:$red;
+    color:white;
+    border-radius: 5px;
+    padding:10px 20px;
+    display: inline-block;
+    &:hover {
+        color:white;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+// CSS goes here
+
+h1, h2, h4 {
+	font-weight: 600;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 4.2rem;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 3.4rem;
+    &:after {
+    	content: "";
+    	display: inline-block;
+    	height: 10px;
+    	width: 10px;
+    	border-radius: 20px;
+    	margin-left: 10px;
+    	background-color: $red;
+    }
+}
+
+h3 {
+	font-weight: 700;
+}
+
+.g-home {
+	h3 {
+		font-size:1.8rem;
+		&:after {
+			content: "";
+			display: inline-block;
+			height: 7px;
+			width: 7px;
+			border-radius: 20px;
+			margin-left: 10px;
+			background-color: $red;
+		}
+	}
+}
+
+p, li {
+	font-size: 1rem;
+	line-height: 1.7;
+}
+
+a {
+	color: $red;
+}
+
+a.button {
+	padding:0;
+	box-shadow:none;
+	border-radius: 0;
+	position: relative;
+	&:before {
+			content:'';
+			background-color:$red;
+			width:25px;
+			height:25px;
+			border-radius:25px;
+			position: absolute;
+			bottom:-13px;
+			margin-left:10px;
+			left:-22px;
+			transition:1s;
+		}
+		&:hover {
+			&:before {
+				left: 100%;
+    		transform: translateX(-100%);
+			}
+		}
+	span {
+		border-radius: 0;
+		font-size:1.3rem;
+		line-height:1.3rem;
+		font-weight:300;
+		padding:16px 30px 19px 30px;
+		position: relative;
+		transition:0.5s;
+		display: block;
+		border:1px solid white;
+	}
+}
+
+a.button.dark {
+	color: #fff !important;
+}
+
+a.button.hollow {
+	span {
+		color: $darkergrey !important;
+		border-color: $darkergrey;
+	}
+	
+	border-color: $darkergrey;
+}
+
+a.arrow {
+	position: relative;
+	padding-left: 2.5rem;
+    text-decoration: underline;
+    text-underline-position: under;
+    display: inline-block;
+	&:before {
+		content: url("../../images/icons/icon-circle-arrow-red.png");
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+a.tel {
+	color:inherit;
+}
+
+hr {
+	border-bottom: 2px dotted $lightgrey;
+}
+
+
+span.button {
+	position: relative;
+	font-size:1.3rem;
+	line-height:1.3rem;
+	font-weight:300;
+	padding: 11px 30px 15px 30px;
+	transition:0.5s;
+	border:1px solid white;
+	border-radius: 0;
+	&:before {
+		content:'';
+		background-color:$red;
+		width:25px;
+		height:25px;
+		border-radius:25px;
+		position: absolute;
+		bottom:-13px;
+		margin-left:10px;
+		left:-22px;
+		transition:1s;
+	}
+
+	&:hover {
+		&:before {
+		left: 100%;
+		transform: translateX(-100%);
+		}
+	}
+
+}
+
+
+// COLOURED TEXT
+
+
+// .red {color: $red;}
+.grey {color: $darkgrey;}
+.blue-text {color: $blue;}
+.green-text {color: $deepgreen;}
+.orange-text {color: $orange;}
+.purple-text {color: $purple;}
+
+
+
+// ZOO BLOG
+body#careers-investors.com_zoo.no-layout{
+#yoo-zoo.blog-default{
+        .item {
+			h1.pos-title,h2.pos-title {
+    			font-weight: 900;
+                font-size: 3.5rem;
+                line-height: 3.7rem;
+                margin-bottom: 10px;
+                &:after {
+			    	display: none;
+			    }
+                a{color: $darkergrey;}
+    		}
+		}
+	}
+}
+#yoo-zoo {
+	* {
+		font-family: $font1 !important; 
+		letter-spacing: normal !important;
+	}
+	
+	.items,
+	.item {
+	    	h1.pos-title,h2.pos-title {
+    			font-weight: 600;
+    			margin-top:0;
+    			&:after {
+			    	display: none;
+			    }
+    			a{color: $darkergrey;}
+    		}
+	    .element-image {
+			img {
+//				width:100%;
+			}
+		}
+		p.pos-meta {
+			font-style: normal;
+			font-size: 1.1rem;
+			line-height: 20px;
+			color: $darkergrey;
+			font-weight: 600;
+			margin: 0;
+		}
+
+		h2.pos-subtitle,p.pos-subtitle {
+			color: $darkergrey;
+			text-transform: none;
+			font-size: 1.4rem;
+			line-height: 1.8rem;
+			margin-top: 2rem;
+		}
+
+		p.pos-links span a {
+			line-height: 20px;
+			&:before {
+				content: "";
+				background: url(../../images/icons/icon-circle-arrow-red.png) no-repeat;
+				background-size: contain;
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px; 
+			}
+			&:after {display: none;}
+		}
+
+		h2 {
+		    font-size: 2rem;
+		    line-height: 2.4rem;
+		}
+
+		hr {
+			border-bottom: 2px dotted $lightgrey;
+			background: none;
+		}
+
+	}
+
+	.items {
+		div.teaser-item {margin-bottom: 2rem; padding-left:30px; padding-right:30px;}
+		div.teaser-item-bg {padding: 0; background: none;}
+	}
+}
+
+
+// ZOOO BLOGS
+
+@media screen and (max-width: 767px) {
+	#yoo-zoo .width50 {
+		width: 100%;
+	}
+}
+
+
+
+//CONTACT 
+
+body.contact,body.content {
+	div:not(.footer-menu) {	
+		h3 {
+			margin-top:0;
+			font-size:2.2rem;
+//			font-weight:900;
+			line-height:2.4rem;
+			margin-bottom:1rem;
+			span.red {
+				font-size:0.8rem;
+			}
+		}
+	}
+	#g-showcase {
+		h1 {
+			text-transform: uppercase;
+			font-weight:900;
+			font-size:2rem;
+			line-height:2rem;
+			margin-bottom:0;
+		}
+		h2 {
+			width:100%;
+			color:$red;
+			font-size: 3.5rem;
+    	line-height: 3.8rem;
+			font-weight:700;
+			margin-top:0;
+			width:600px;
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+body.contact {
+	div:not(.footer-menu) {	
+		h3 {
+			width:900px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	}
+}
+
+//PRODUCTS
+
+body.view-hubproduct.g-default,body.view-level2plus.g-default, body.view-level2or3.g-default {
+	main#g-main {
+		.g-container {
+			.g-content {
+				h1 {
+					font-weight: 900;
+					font-size: 2rem;
+					line-height: 2rem;
+					margin-bottom: 0;
+					color:black;
+					text-transform: uppercase;
+					margin-top:0;
+				}
+				h2 {
+					color: #ad1d40;
+					font-weight: 900;
+					margin-top: 5px;
+					font-size: 4rem;
+    			line-height: 4.2rem;
+					&:after {
+						display: none;
+					}
+				}
+				h3 {
+					display:block;
+					width:100%;
+					margin-top:0;
+					margin-bottom:5px;
+				}
+			}
+		}
+		.feature .g-container {
+			h2 {
+				font-size: 3rem!important;
+    		line-height: 3.4rem!important;
+				font-weight: 600;
+				color:black;
+				&:after {
+					display:inline-block;
+				}
+			}
+		}
+	}
+}
+
+//SITE MAP
+
+a.hub {
+	font-weight:700;
+	font-size:1.6rem;
+}
+
+a.level3 {
+	margin-left:20px;
+}
+
+body#careers-investors {
+	.blog-default {
+		.btn-large.btn,.investors-button,.button-black {
+			border:2px solid black;
+			background-color:transparent;
+			text-transform: uppercase;
+			border-radius: 0;
+			background-image:none;
+			text-shadow: none;
+			box-shadow:none;
+			padding: 11px 19px;
+			font-size: 17.5px;
+			color:black;
+			transition:0.5s;
+			&:hover {
+				background-color:black;
+				text-decoration: none;
+				color:white;
+			}
+		}
+	}
+}
+
+
+// Increase H1 size on homepage - requested by client - BA - 03/03/2020
+body.g-home {
+	#g-showcase .custom h1 {
+		@media only screen 
+		and (min-width: 1280px) {
+			width: 47% !important;
+		}
+	}
+}
+
+
+// RESPONSIVE STYLES FOR ABOVE GO HERE
+/* import breakpoints */
+@import "dependencies";
+
+
+/* Values below are the default breakpoints
+but these values are user definable in style settings in the template
+so that is why the code below uses mixins to get the actual values from the template */
+
+/* LARGE DESKTOP
+/* 75rem / 1200px and above*/
+@include breakpoint(large-desktop-range) {
+
+}
+
+/* DESKTOP & LARGE TABLET
+/* 60rem to 74.938rem / 960px to 1199px */
+@include breakpoint(desktop-range) {
+	h1 {
+		font-size:3.5rem;
+		line-height:3.7rem;
+	}
+}
+
+/* TABLET */
+/* 48rem to 59.938rem / 768px to 959px */
+@include breakpoint(tablet-range) {
+
+	body.view-hubproduct.g-default,body.view-level2plus.g-default, body.view-level2or3.g-default {
+		main#g-main {
+			.g-container {
+				.g-content {
+					h1 {
+						font-size: 2rem;
+						line-height: 2rem;
+					}
+					h2 {
+						font-size: 3.4rem;
+						line-height: 3.4rem;
+					}
+				}
+			}
+			.feature .g-container {
+				h2 {
+					font-size: 3rem!important;
+					line-height: 3.4rem!important;
+				}
+			}
+		}
+	}
+	h1 {
+		font-size:3.4rem;
+		line-height:3.4rem;
+	}
+	body.contact,body.content {
+		#g-showcase {
+			h1 {
+				font-size:1.8rem;
+				line-height:1.8rem;
+			}
+			h2 {
+				font-size:3rem;
+				line-height:3.2rem;
+				margin-bottom:10px;
+			}
+		}
+	}  
+	#yoo-zoo .items div.teaser-item {
+		padding-left:15px;
+		padding-right:15px;
+	}
+	
+	body.contact div:not(.footer-menu) h3 {
+		width:100%;
+	}
+	a.tel {
+		pointer-events: inherit;
+		color:$red;
+	}
+}
+
+//MOBILE ONLY
+@include breakpoint(mobile-only) {
+	
+	h2 {
+		font-size:2.1rem;
+		line-height:2.4rem;
+	}
+	
+	body.view-hubproduct.g-default,body.view-level2plus.g-default, body.view-level2or3.g-default {
+		main#g-main {
+			.g-container {
+				.g-content {
+					h1 {
+						font-size: 1.8rem;
+						line-height: 2rem;
+					}
+					h2 {
+						font-size: 2.6rem;
+						line-height: 2.8rem;
+						margin-bottom:10px;
+					}
+				}
+			}
+			.feature .g-container {
+				h2 {
+					font-size: 3rem!important;
+					line-height: 3.4rem!important;
+				}
+			}
+		}
+	}
+	h1 {
+		font-size:2.6rem;
+		line-height:2.8rem;
+	}
+	body.contact,body.content {
+		#g-showcase {
+			h1 {
+				font-size:1.8rem;
+				line-height:1.8rem;
+			}
+			h2 {
+				font-size:2.7rem;
+				line-height:2.9rem;
+				margin-bottom:0px;
+				width:100%;
+			}
+		}
+	}
+	#yoo-zoo .items div.teaser-item {
+		padding-left:0;
+		padding-right:0;
+	}
+	
+	body.contact div:not(.footer-menu) h3 {
+		width:100%;
+	}
+	a.tel {
+		pointer-events: inherit;
+		color:$red;
+	}
+}
+
+/* LARGE MOBILE */
+/* 30rem to 47.938rem / 480px to 767px */
+@include breakpoint(large-mobile-range) {
+
+}
+
+/* SMALL MOBILE */
+/* 30rem / 480px and below */
+@include breakpoint(small-mobile-range) {
+
+}

@@ -1,0 +1,122 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1551355939
+layout:
+  top: {  }
+  header: {  }
+  mobile-links: {  }
+  showcase: {  }
+  feature: {  }
+  /main/:
+    -
+      - 'position-position-1922 60'
+      - 'system-messages-8452 40'
+    -
+      - position-position-6877
+    -
+      - system-content-1266
+    -
+      - position-position-1434
+  mainbottom: {  }
+  footer: {  }
+  copyright: {  }
+  offcanvas: {  }
+structure:
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  header:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  mobile-links:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  showcase:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  feature:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  main:
+    attributes:
+      boxed: ''
+  mainbottom:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+content:
+  position-position-1922:
+    title: Eckoh
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-9185
+  system-messages-8452:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: system-messages-4590
+  position-position-6877:
+    title: 'Main Top'
+    attributes:
+      key: main-top
+  system-content-1266:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: system-content-5421
+  position-position-1434:
+    title: 'Main Content'
+    attributes:
+      key: main-content

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_CREATED_BY" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_CREATED_BY" hidden="true" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_MODIFIED_BY" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_MODIFIED_BY" hidden="true" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_MODIFIED_BY"/>
+    <field name="productname" filter="safehtml" type="text" required="true" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_PRODUCTNAME" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_PRODUCTNAME" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_PRODUCTNAME"/>
+    <field name="visibleproductname" filter="safehtml" type="text" required="true" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_VISIBLEPRODUCTNAME" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_VISIBLEPRODUCTNAME" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_VISIBLEPRODUCTNAME"/>
+    <field name="subtitle" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_SUBTITLE" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_SUBTITLE" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_SUBTITLE"/>
+    <field name="language" type="language" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_LANGUAGE" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_LANGUAGE" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_LANGUAGE"/>
+    <field name="imageorvideo" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_IMAGEORVIDEO" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_IMAGEORVIDEO" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_IMAGEORVIDEO"/>
+    <field name="introparagraph" cols="25" rows="25" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" required="true" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_INTROPARAGRAPH" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_INTROPARAGRAPH" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_INTROPARAGRAPH"/>
+    <field name="topfeatureboxes" multiple="true" formsource="administrator/components/com_eckoh/models/forms/subform_hub-top-feature.xml" layout="joomla.form.field.subform.repeatable" type="subform" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_TOPFEATUREBOXES" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_TOPFEATUREBOXES" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_TOPFEATUREBOXES"/>
+    <field name="featurearea" cols="25" rows="25" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_FEATUREAREA" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_FEATUREAREA" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_FEATUREAREA"/>
+    <field name="featureimage" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_FEATUREIMAGE" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_FEATUREIMAGE" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_FEATUREIMAGE"/>
+    <field 
+      name="middlefeatureboxes" 
+      multiple="true" 
+      formsource="administrator/components/com_eckoh/models/forms/subform_hub-middle-feature.xml" 
+      layout="joomla.form.field.subform.repeatable" 
+      type="subform" 
+      label="COM_ECKOH_FORM_LBL_HUBPRODUCT_MIDDLEFEATUREBOXES" 
+      description="COM_ECKOH_FORM_DESC_HUBPRODUCT_MIDDLEFEATUREBOXES" 
+      hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_MIDDLEFEATUREBOXES"/>
+    <field name="calltoactiontext" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_CALLTOACTIONTEXT" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_CALLTOACTIONTEXT" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_CALLTOACTIONTEXT"/>
+    <field name="calltoactionbutton" type="text" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_CALLTOACTIONBUTTON" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_CALLTOACTIONBUTTON" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_CALLTOACTIONBUTTON"/>
+    <field name="calltoactionbuttontext" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_HUBPRODUCT_CALLTOACTIONBUTTONTEXT" description="COM_ECKOH_FORM_DESC_HUBPRODUCT_CALLTOACTIONBUTTONTEXT" hint="COM_ECKOH_FORM_LBL_HUBPRODUCT_CALLTOACTIONBUTTONTEXT"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

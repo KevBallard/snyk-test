@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3" type="plugin" group="system">
+	<name>Eckoh Country Meta Data</name>
+	<author>Kevin Ballard</author>
+	<creationDate>February 2019</creationDate>
+	<copyright>Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>kevin.ballard@bluefrontier.co.uk</authorEmail>
+	<authorUrl>www.bluefrontier.co.uk</authorUrl>
+	<version>1.0</version>
+	<description><![CDATA[<p>This plugin is to assist the core Joomla functionality in adding hreflang tags to the pages</p>]]></description>
+	<files>
+		<filename plugin="country_meta">country_meta.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+        <fields name="params">
+                
+        </fields>
+	</config>
+</extension>

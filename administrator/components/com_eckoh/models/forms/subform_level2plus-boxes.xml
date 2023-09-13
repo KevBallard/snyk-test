@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form><fieldset><field name="featureboxtitle" filter="safehtml" type="text" label="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOXES_FEATUREBOXTITLE" description="COM_ECKOH_SUBFORM_DESC_LEVEL2PLUS-BOXES_FEATUREBOXTITLE" hint="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOXES_FEATUREBOXTITLE"/><field name="featureboxurl" type="url" relative="true" label="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOXES_FEATUREBOXURL" description="COM_ECKOH_SUBFORM_DESC_LEVEL2PLUS-BOXES_FEATUREBOXURL" hint="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOXES_FEATUREBOXURL"/><field name="fatureboximage" directory="products/feature" type="media" label="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOXES_FATUREBOXIMAGE" description="COM_ECKOH_SUBFORM_DESC_LEVEL2PLUS-BOXES_FATUREBOXIMAGE" hint="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOXES_FATUREBOXIMAGE"/><field 
+		name="featureboxclass" 
+		filter="safehtml" 
+		type="text" 
+		required="false" 
+		label="Custom Class" 
+		description="Enter a class to wrap this box in, useful for triggering events or styling individual boxes" 
+		hint=""/></fieldset></form>

@@ -1,0 +1,18 @@
+favicon: ''
+touchicon: ''
+css: {  }
+javascript:
+  -
+    location: 'gantry-assets://custom/js/custom.js'
+    inline: ''
+    in_footer: '0'
+    extra: {  }
+    priority: ''
+    name: custom.js
+  -
+    location: 'gantry-assets://custom/js/yt-magic.js'
+    inline: ''
+    in_footer: '0'
+    extra: {  }
+    priority: '0'
+    name: 'youtube magic'

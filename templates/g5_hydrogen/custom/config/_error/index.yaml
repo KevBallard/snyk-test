@@ -1,0 +1,83 @@
+name: _error
+timestamp: 1601289690
+version: 7
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1551355939
+positions:
+  announcement: 'Module Position'
+  error-logo: 'Module Position'
+  top: Top
+  navigation: Navigation
+  breadcrumbs: Breadcrumbs
+  eckoh-module: Eckoh
+  mobile-links: 'Mobile Links'
+  feature-a: 'Feature A'
+  mainbottom-a: 'Mainbottom A'
+  footer-a: 'Footer A'
+  footer-b: 'Footer B'
+  footer-c: 'Footer C'
+  footer-d: 'Footer D'
+  copyright-a: 'Copyright A'
+  copyright-b: 'Copyright B'
+  mobile-menu-container: 'Module Position'
+sections:
+  top: Top
+  mobile-links: Mobile-links
+  showcase: Showcase
+  feature: Feature
+  mainbottom: Mainbottom
+  copyright: Copyright
+  header: Header
+  main: Main
+  footer: Footer
+  offcanvas: Offcanvas
+particles:
+  position:
+    position-position-4099: 'Module Position'
+    position-position-9488: 'Module Position'
+    position-position-9943: Top
+    position-position-2963: Navigation
+    position-position-8571: Breadcrumbs
+    position-position-8946: Eckoh
+    position-position-5402: 'Mobile Links'
+    position-position-7143: 'Feature A'
+    position-position-4731: 'Mainbottom A'
+    position-position-2579: 'Footer A'
+    position-position-3449: 'Footer B'
+    position-position-4440: 'Footer C'
+    position-position-3483: 'Footer D'
+    position-position-7181: 'Copyright A'
+    position-position-2081: 'Copyright B'
+    position-position-2331: 'Module Position'
+  module:
+    position-module-9099: 'Module Instance'
+    position-module-3898: 'Module Instance'
+  messages:
+    system-messages-3124: 'System Messages'
+inherit:
+  default:
+    top: top
+    position-position-4099: position-position-5167
+    position-position-9943: position-position-5208
+    position-position-2963: position-position-1963
+    mobile-links: mobile-links
+    feature: feature
+    position-position-8571: position-breadcrumbs
+    position-position-8946: position-position-9185
+    system-messages-3124: system-messages-4590
+    mainbottom: mainbottom
+    footer: footer
+    copyright: copyright
+    offcanvas: offcanvas
+    position-position-5402: position-position-4289
+    position-position-7143: position-position-4197
+    position-position-4731: position-position-8564
+    position-position-2579: position-footer
+    position-position-3449: position-position-7699
+    position-position-4440: position-position-6812
+    position-position-3483: position-position-8076
+    position-position-7181: position-position-5533
+    position-position-2081: position-position-5669
+    position-position-2331: position-position-5845

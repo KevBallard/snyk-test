@@ -1,0 +1,177 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: careers
+  timestamp: 1547140939
+layout:
+  /top-link/:
+    -
+      - position-position-2025
+  top: {  }
+  /header/:
+    -
+      - position-position-2440
+    -
+      - 'position-position-4451 15'
+      - 'position-position-5930 85'
+    -
+      - position-position-5716
+  showcase: {  }
+  /feature/: {  }
+  /main/:
+    -
+      - 'position-position-3683 60'
+      - 'system-messages-5226 40'
+    -
+      - system-content-1120
+  /mainbottom/:
+    -
+      - position-position-9688
+  footer: {  }
+  copyright: {  }
+  offcanvas:
+    -
+      - menu-2220
+    -
+      - menu-3931
+    -
+      - menu-4455
+    -
+      - mobile-menu-5585
+structure:
+  top-link:
+    type: section
+    attributes:
+      boxed: ''
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  header:
+    attributes:
+      boxed: '3'
+      class: ''
+  showcase:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  feature:
+    type: section
+    attributes:
+      boxed: ''
+    inherit:
+      outline: default
+      include:
+        - children
+  main:
+    attributes:
+      boxed: ''
+      class: ''
+  mainbottom:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    attributes:
+      position: g-offcanvas-right
+      class: ''
+      extra: {  }
+      swipe: '0'
+      css3animation: '1'
+content:
+  position-position-2025:
+    title: 'Module Position'
+    attributes:
+      key: back
+    block:
+      variations: 'nomarginall nopaddingall'
+  position-position-2440:
+    title: 'Module Position'
+    attributes:
+      key: announcement
+    block:
+      id: announcement
+  position-position-4451:
+    title: 'Module Position'
+    attributes:
+      key: logo
+    block:
+      id: logo
+  position-position-5930:
+    title: Navigation
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-1963
+  position-position-5716:
+    title: Breadcrumbs
+    attributes:
+      key: breadcrumbs
+    block:
+      class: breadcrumb
+  position-position-3683:
+    title: Eckoh
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-9185
+  system-messages-5226:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: system-messages-4590
+  system-content-1120:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: system-content-5421
+  position-position-9688:
+    title: 'Mainbottom A'
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-8564
+  menu-2220:
+    attributes:
+      menu: investorsmenu
+      startLevel: '2'
+      mobileTarget: '1'
+  menu-3931:
+    attributes:
+      menu: careersmenu
+      startLevel: '2'
+  menu-4455:
+    attributes:
+      menu: us-careers
+      startLevel: '2'

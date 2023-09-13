@@ -1,0 +1,828 @@
+/***************************
+****************************
+
+NAME: _2020-menu.scss
+SITE: Eckoh
+DESCRIPTION: Updated navigation for new layout 
+-------------------------------------
+
+AUTHOR: Rachel Oliver
+DATE CREATED: 03/09/20
+LAST MODIFIED DATE: Rebecca Allenby
+LAST MODIFIED BY: 23/12/2021
+
+****************************
+***************************/
+
+
+body:not(#careers-investors) {
+    #g-header {
+        top:0!important;
+        
+        @media (max-width:1150px) {
+            box-shadow: 0px 0px 9px 0px #e2e2e2;
+            display:flex;
+            flex-wrap: wrap;
+        }
+        .g-grid {
+            padding-left: 0;
+            padding-right: 0;
+            max-width:77rem;
+            margin: auto;
+            padding-top:15px;
+            @media (max-width:1279px) {
+                max-width:56.5rem;
+            }
+            @media (max-width:1150px) {
+                position: relative;
+                padding-top:51px;
+                max-width:100%;
+                width:100%;
+                order:2;
+                #logo {
+                    max-width:100%;
+                    padding-top: 15px;
+                    width:100%;
+                    flex:0 100%;
+//                    margin-bottom: 5px;
+                    margin-bottom: 20px;
+                }
+            }
+            
+        }
+        .g-grid:nth-of-type(2) {
+            width:100%;
+            max-width:100%;
+            padding-top:0;
+            @media (max-width:1150px) {
+                order:1;
+                padding:0;
+            }
+        }
+        #navigation {
+            border-top:1px solid #e2e2e2;
+            border-bottom:1px solid #e2e2e2;
+            justify-content: center;
+            display: block;
+            @media (max-width:1150px) {
+                border:0;
+                display: block;
+            }
+            .g-content {
+                width:77rem;
+                margin:auto;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                padding-right:150px;
+                @media (max-width:1194px) and (min-width:1194px) {
+                    position: inherit;
+                }
+                @media (max-width:1279px) {
+                    max-width:56.5rem;
+                    padding-right:80px;
+                }
+                @media (max-width:1150px) {
+                    position: inherit;
+                }
+                .platform-content {
+                    min-width:100%;
+                }
+                .eckoh-search {
+                    position: absolute;
+                    right:0;
+                    z-index: 1000;
+                    @media (max-width:1194px) and (min-width:1194px) {
+                        top:0px;
+                    }
+                    @media (max-width:1150px) {
+                        top:0px;
+                    }
+                    @media (max-width:767px) {
+                        top:3px;
+                    }
+                    @media (max-width:450px) {
+                        right:0px
+                    }
+                    
+                        right:20px;
+                        top:8px;
+                        @media (max-width:1649px) {
+                            top:5px;
+                        }
+                        @media (max-width:767px) {
+                            top:2px;
+                        }
+                        .search-button {
+                            padding: 5px 11px 9px 8px;
+                            width: 42px;
+                            height: 42px;
+                            font-size:1.3rem;
+                            @media (max-width:1366px) and (min-width:1366px) {
+                                background-color:#f4f5f5;
+                                color:$red;
+                            }
+                            @media (max-width:1194px) and (min-width:1194px) {
+                                background-color:#f4f5f5;
+                                color:$red;
+                            }
+                            @media (max-width:1150px) {
+                                background-color:#f4f5f5;
+                                color:$red;
+                            }
+                        }
+                        .customeckoh-search {
+                            padding:5px 50px 7px 20px;
+                            @media (max-width:1194px) and (min-width:1194px) {
+                                background-color:#f4f5f5;
+                                input#searchterm-top {
+                                    border-bottom:1px solid $red;
+                                    color:black;
+                                }
+                                input[type="submit"].searchbutton {
+                                    color:$red;
+                                    background-image:url('../images/magnifying-glass-red.svg');
+                                }
+                            }
+                            @media (max-width:1150px) {
+                                background-color:#f4f5f5;
+                                input#searchterm-top {
+                                    border-bottom:1px solid $red;
+                                    color:black;
+                                }
+                                input[type="submit"].searchbutton {
+                                    color:$red;
+                                    background-image:url('../images/magnifying-glass-red.svg');
+                                }
+                            }
+                            @media (max-width:450px) {
+                                input#searchterm-top {
+                                    max-width:245px;
+                                }
+                            }
+                            @media (max-width:360px) {
+                                input#searchterm-top {
+                                    max-width:210px;
+                                }
+                            }
+                        }
+                    
+                }
+                
+            }
+            ._menu {
+                @media (max-width:1150px){display:none};
+                > ul {
+                    justify-content: space-between;
+                    > li {
+                        max-width:100%!important;
+                        &:hover {
+                            background-color:#F4F5F5;
+                        }
+                        a {
+                            @media (max-width:1279px) {
+                                padding-right: 1.2rem;
+                                padding-left: 0.6rem;
+                                &:after {
+                                    right: 7px;
+                                }
+                            }
+                        }
+                    }
+                    > li.parent {
+                        &:hover {
+                            a {
+                                &:after {
+                                   border-color:$red;
+                                } 
+                            }
+                            
+                        }
+                        > ul.nav-child {
+                            flex-wrap: wrap;
+                            border-bottom:2px solid $red;
+                            padding-top:30px;
+                            min-width:360px;
+                            width:auto;
+                            column-rule: none;
+                            display: flex;
+                            background-color:#F4F5F5;
+                            @media (max-width: 1279px) {
+                                padding-top:10px;
+                                padding-bottom: 15px;
+                            }
+                            span.nav-header  {
+                                color:black;
+                                font-weight: 500;
+                                margin-bottom: 5px;
+                                @media (max-width: 1279px) {
+                                    font-size:0.9rem;
+                                    margin-bottom: 0;
+                                }
+                            }
+                            > li {
+                                flex:0 100%;
+                                font-size: 1rem;
+                                font-weight: 400;
+                                padding-left:0;
+                                padding:5px 0;
+                                &.mobile-only {
+                                    position: relative;
+                                    top:auto;
+                                    left: auto;
+                                }
+                                &.parent {
+                                    > ul {
+                                        display: none;
+                                    }
+                                }
+                                &:nth-child(3) {
+                                    padding-left: 0;
+                                    padding-right:0;
+                                }
+                                &:nth-child(2) {
+                                    border-right:0;
+                                    padding-right:0;
+                                }
+                                a {
+                                    margin:0;
+                                    font-weight: 400;
+                                    @media (max-width: 1279px) {
+                                        padding-left:0;
+                                        padding-right:0;
+                                    }
+                                    img {
+                                        margin-right:10px;
+                                        max-width:24px;
+                                        @media (max-width: 1279px) {
+                                            max-width:20px;
+                                        }
+                                    }
+                                    span.image-title {
+                                        vertical-align: bottom;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @media (max-width:1279px) {
+                        a {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            } 
+        } 
+        .top {
+            @media (max-width:1194px) and (min-width:1194px) {
+                position: absolute;
+                width:100%;
+                top:0;
+                left:0;
+                background-color:#F4F5F5;
+                padding-right:50px;
+            }
+            @media (max-width:1150px) {
+                position: absolute;
+                width:100%;
+                top:0;
+                left:0;
+                background-color:#F4F5F5;
+                padding-right:50px;
+            }
+            .g-content {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-right: 0;
+                padding-right: 0;
+                @media (max-width:1194px) and (min-width:1194px) {
+                    margin-top:0;
+                    margin-bottom: 0;
+                    padding-top:10px;
+                    padding-bottom: 10px;
+                    justify-content: none;
+                    padding-left: 0;
+                    margin-left: 0;
+                }
+                @media (max-width:1150px) {
+                    margin-top:0;
+                    margin-bottom: 0;
+                    padding-top:10px;
+                    padding-bottom: 10px;
+                    justify-content: none;
+                    padding-left: 0;
+                    margin-left: 0;
+                }
+                .platform-content {
+                    margin:0 0 0 30px;
+                    @media (max-width:767px) {
+                        margin: 0 0 0 15px;
+                    }
+                    @media (max-width:450px) {
+                        &:nth-child(2) {
+                            margin-left:0;
+                        }
+                    }
+                }
+                .customtop-tel {
+                    margin-top:0;
+                    p {
+                        font-size: 1.2rem;
+                        @media (max-width:767px) {
+                          font-size: 1.1rem;
+                        }
+                    }
+                    a {
+                        @media (max-width:767px) {
+                            color:$red;
+                        }
+                    }
+                }
+                .mod-languages {
+                    margin-top:0;
+                    li a {
+                      font-size: 1.2rem;
+                      @media (max-width:767px) {
+                        font-size: 1.1rem;
+                      }
+                    }
+                }
+                a {
+                    color:black;
+                }
+                .custom.contact-button {
+                    @media (max-width:1194px) and (min-width:1194px) {
+                        display: none;
+                    }
+                    @media (max-width:1150px) {
+                        display: none;
+                    }
+                    p {
+                        margin:0;
+                    }
+                    a {
+                        font-weight:600;
+                        border:2px solid black;
+                        padding:8px 14px;
+                        font-size: 1.1rem;
+                        vertical-align: text-bottom;
+                        &:hover {
+                            color:$red;
+                            border:2px solid $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #g-offcanvas {
+        background-image:none;
+        .nav {
+            margin-top:0;
+            li {
+                padding-bottom: 25px;
+                padding-right:10px;
+                font-size: 1.05rem;
+                font-weight: 500;
+                img {
+                    display: none;
+                }
+            }
+            .parent {
+                ul {
+                    margin-top:10px;
+                    margin-left:10px;
+                    li {
+                      font-size: 0.95rem;
+                      font-weight: 400;
+                      padding-bottom: 15px;
+                    }
+                }
+            }
+            span.open {
+              top: -4px;
+            }
+        }
+    }
+    .g-offcanvas-toggle {
+        
+        top:7rem;
+        @media (max-width:1194px) and (min-width:1194px) {
+            top:4.7rem;
+            display: block;
+        }
+        @media (max-width:1150px) {
+            top:4.7rem;
+            display: block;
+        }
+        @media (max-width:767px) {
+            top:4.5rem;
+        }
+    }
+    .nav-header {
+        color:black;
+        font-size: 1rem;
+        font-weight: 500;
+        padding-left:0;
+        padding-right:0;
+        text-transform: none;
+        margin-bottom: -5px;
+        @media (max-width: 1150px) {
+          margin-top: 15px;
+        }
+    }
+}
+
+@media (max-width:1194px) and (min-width:1194px) {
+    #g-header #logo {
+        padding-left: 1.5rem;
+    }  
+    body.g-home #g-showcase .custom {
+        height:auto;
+    }
+    body.g-home.home-2020 #g-showcase-bottom {
+        margin-top:0;
+    }
+}
+
+@media (max-width:1150px) {
+    #g-header #logo {
+        padding-left: 1.5rem;
+    }   
+}
+
+body#careers-investors {
+    #g-header {
+        box-shadow:none;
+        padding-top:16px;
+        .g-grid {
+            padding:0 20px;
+        }
+    }
+    .g-offcanvas-toggle {
+        top:0.5rem;
+    }
+}
+@media (max-width:1120px) {
+    body.investors .eckoh-search, body.careers .eckoh-search, body.g-careers .eckoh-search {
+     top:5px;
+    }  
+}
+
+
+
+//RO FIX POPUP - 17/12/20
+a#go-to-uk {
+    text-decoration: underline;
+}
+a#stay-on-us {
+    text-decoration: underline;
+}
+
+//FIX USA RESPONSIVE NAVIGATION
+body:not(#careers-investors).language-selector.no-modal .g-offcanvas-toggle {
+    @media screen and (max-width: 1150px) {
+    }
+    @media screen and (max-width: 767px) {
+        top: 4.5rem !important;
+    }
+}
+
+body#landing.com_zoo.no-layout.task-item #g-main {
+  padding-top: 193px!important;
+}
+
+body#landing.com_zoo.no-layout.task-item.g-about.us-case #g-main {
+  padding-top: 148px!important;
+}
+
+body#careers-investors.language-selector.no-modal {
+  #g-top-link {
+    height:auto;
+    padding-top: 45px;
+    .bfModal {
+      a {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  #g-header {
+    padding-top: 60px!important;
+  }
+  .eckoh-search .search-button {
+    z-index: 10000;
+  }
+}
+
+body#careers-investors.gantry.landing.language-selector:not(.no-modal) {
+  #g-header {
+    padding-top:16px!important;
+  }
+}
+
+body.investors#careers-investors.language-selector.no-modal,body.careers#careers-investors.language-selector.no-modal,body.g-careers#careers-investors.language-selector.no-modal {
+  .eckoh-search {
+    top:40px;
+  }
+} 
+
+body.gantry.news-template:not(.view-frontpage)#landing:not(.no-modal) #g-main {
+  padding-top: 150px!important;
+}
+
+
+//CASE STUDIES  
+body.gantry.us-case.language-selector#landing, body.gantry.content.language-selector#landing, body.contact.language-selector {
+  #g-showcase {
+    margin-top: 93px;
+    &.about-showcase {
+      margin-top: 93px;
+    }
+  }
+}
+
+body.gantry.us-case.language-selector.no-modal#landing .blog-default .pos-top .text-wrapper {
+  padding-top: 225px;
+}
+
+@media screen and (max-width:1199px) {
+  body.gantry.language-selector main#g-main {
+    padding-top: 0px!important;
+  }
+}
+
+@media screen and (max-width:1599px) {
+  body.gantry.news-template.language-selector.no-modal main#g-main {
+    padding-top: 193px !important;
+  }
+  body.gantry.us-case.language-selector.no-modal#landing .blog-default .pos-top .text-wrapper {
+    padding-top: 225px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  body#careers-investors.language-selector.no-modal {
+    .bfModal {
+      top:0;
+    }
+    .g-offcanvas-toggle {
+      top: 3rem;
+    }
+  }
+  body.investors#careers-investors.language-selector.no-modal,body.careers#careers-investors.language-selector.no-modal,body.g-careers#careers-investors.language-selector.no-modal {
+    .eckoh-search {
+      top:45px;
+    }
+  }
+  body.g-careers#careers-investors.language-selector.no-modal {
+    .eckoh-search {
+      top:88px;
+    }
+  }
+  body:not(#careers-investors).language-selector .g-offcanvas-toggle {
+    top:4.8rem;
+  }
+  body:not(#careers-investors).language-selector.no-modal .g-offcanvas-toggle {
+    top: 7.5rem;
+  }
+  body:not(#careers-investors).language-selector.news.no-modal .g-offcanvas-toggle, body:not(#careers-investors).gantry.us-case.language-selector.no-modal .g-offcanvas-toggle {
+    top:7.5rem;
+  }
+  body.gantry.news-template.language-selector.no-modal main#g-main {
+    padding-top: 0px !important;
+  } 
+  
+  //CASE STUDIES
+
+  body.gantry.us-case.language-selector#landing, body.gantry.content.language-selector#landing, body.contact.language-selector {
+    #g-showcase {
+      margin-top: 0px;
+      &.about-showcase {
+        margin-top: 0px;
+      }
+    }
+  }
+  
+  //NEWS
+  
+  body.gantry.news-template:not(.view-frontpage)#landing:not(.no-modal) #g-main {
+    padding-top: 0!important;
+  }
+  
+  body#landing.com_zoo.no-layout.task-item #g-main {
+  padding-top: 0px!important;
+}
+  
+  
+  body.gantry.us-case.language-selector.no-modal#landing .blog-default .pos-top .text-wrapper {
+    padding-top: 60px;
+  }
+  
+  body#landing.com_zoo.no-layout.task-item.g-about.language-selector.us-case #g-main {
+    padding-top: 0!important;
+  }
+}
+
+@media (max-width:1120px) {
+  body#careers-investors.gantry.landing.language-selector:not(.no-modal) #g-header {
+    padding-top: 25px!important;
+  }
+  
+  body#careers-investors.gantry.language-selector .eckoh-search {
+    top: 50px;
+    .search-button {
+      position: absolute;
+      top:-4px;
+    }
+  } 
+}
+
+@media (max-width:1000px) {
+  body.news-template #yoo-zoo .pos-top {
+    padding-top: 0;
+  }
+  
+}
+
+@media (max-width:767px) {
+  body:not(#careers-investors).language-selector.no-modal {
+    
+    #g-header {
+      padding-top: 61px!important;
+    }
+    .g-offcanvas-toggle {
+      top: 8rem !important;
+    }
+  }
+  
+  body#careers-investors {
+    .g-offcanvas-toggle {
+      top: 1rem;
+    }
+    #g-header {
+      top:30px;
+      #logo {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding-left: 0;
+      }
+    } 
+  }
+  
+  body.investors .eckoh-search, body.careers .eckoh-search, body.g-careers .eckoh-search {
+    top:13px;
+  }
+  
+  body#careers-investors.language-selector {
+    #g-header {
+      top:30px;
+      #logo {
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+    } 
+  }
+
+  body#careers-investors.language-selector.no-modal {
+    .bfModal {
+      .bfmodal-content {
+        p {
+          width: 100%;
+          text-align: center;
+          max-width: 100%;
+        }
+      }
+    }
+    #g-top-link {
+      padding-top: 70px;
+    }
+    #g-header {
+      padding-top:100px!important;
+      padding-bottom: 0px;
+    }
+    .g-offcanvas-toggle {
+      top: 5.7rem!important;
+    }
+  }
+  
+  body.investors#careers-investors.language-selector.no-modal,body.careers#careers-investors.language-selector.no-modal,body.g-careers#careers-investors.language-selector.no-modal {
+    .eckoh-search {
+      top:88px;
+    }
+  }
+  body.g-careers#careers-investors.language-selector.no-modal {
+    .eckoh-search {
+      top:118px;
+    }
+  }
+  
+  body:not(#careers-investors).language-selector .g-offcanvas-toggle {
+    top:4.3rem;
+  }
+  
+  body.gantry.us-case.language-selector.no-modal#landing .blog-default .pos-top .text-wrapper {
+    padding-top: 0;
+  }
+  
+  body#careers-investors.gantry.landing.language-selector:not(.no-modal) #g-header {
+    padding-top: 16px!important;
+  }
+
+  body#careers-investors.gantry.language-selector .eckoh-search {
+    top:43px;
+  }
+  
+}
+
+@media (max-width:547px) {
+  
+  body:not(#careers-investors).language-selector.no-modal {
+    
+    #g-header {
+      padding-top: 78px!important;
+    }
+    .g-offcanvas-toggle {
+      top: 9.3rem !important;
+    }
+  }
+  
+  body#careers-investors.language-selector.no-modal {
+    .bfModal {
+      .bfmodal-content {
+        p {
+          width: 100%;
+          text-align: center;
+          max-width: 100%;
+        }
+      }
+    }
+    #g-top-link {
+      padding-top: 87px;
+    }
+    #g-header {
+      padding-top:100px!important;
+    }
+    .g-offcanvas-toggle {
+      top: 6.4rem!important;
+    }
+  }
+  
+  body.investors#careers-investors.language-selector.no-modal,body.careers#careers-investors.language-selector.no-modal,body.g-careers#careers-investors.language-selector.no-modal {
+    .eckoh-search {
+      top:98px;
+    }
+  }
+  body.g-careers#careers-investors.language-selector.no-modal {
+    .eckoh-search {
+      top:127px;
+    }
+  }
+  
+  body#landing.com_zoo.no-layout.task-item #g-main {
+    padding-top: 15px!important;
+  }
+  body#landing.com_zoo.no-layout.no-modal.task-item #g-main {
+    padding-top: 0!important;
+  }
+}
+
+@media (max-width:1194px) and (min-width:1194px) {
+    .language-selector #g-header {
+        padding-top: 45px !important;
+    }
+    .language-selector.no-modal #g-header {
+        padding-top: 95px !important;
+    }
+    .language-selector.no-modal #g-header .top {
+        padding-top: 45px !important;
+    }
+    .language-selector.no-modal .g-offcanvas-toggle {
+        top:7.4rem !important;
+    }
+    .language-selector.no-modal #g-header #navigation .g-content .eckoh-parent .eckoh-search {
+        top:50px !important;
+    }
+
+
+    //NEWS
+    body.news-template.com_zoo.view-frontpage#landing.language-selector.no-modal #g-showcase, body.news-template.com_zoo.task-category#landing.language-selector.no-modal #g-showcase {
+        margin-top:0!important;
+    }
+    
+
+    //CAREERS
+    body#careers-investors.language-selector.no-modal #g-showcase {
+        margin-top: 20px;
+    }
+    
+    body.gantry.us-case.language-selector.no-modal#landing #g-showcase.about-showcase {
+        margin-top: 0;
+    }
+    
+    body#landing.com_zoo.no-layout.task-item.g-about.us-case.language-selector.no-modal #g-main, body#landing.com_zoo.no-layout.task-item.g-about.us-case #g-main {
+        padding-top: 0!important;
+    }
+}

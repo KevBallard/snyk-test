@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="search">
+    <name>plg_search_seo_glossary</name>
+    <author>Kevin Ballard</author>
+    <creationDate>2020-12-21</creationDate>
+    <copyright>2020 Blue Frontier IT Ltd</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>kevin@bluefrontier.co.uk</authorEmail>
+    <authorUrl>https://bluefrontier.co.uk</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>PLG_SEARCH_COM_SEO_GLOSSARY_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="seo_glossary">seo_glossary.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages folder="languages">
+        
+			<language tag="en-GB">en-GB/en-GB.plg_search_seo_glossary.ini</language>
+			<language tag="en-GB">en-GB/en-GB.plg_search_seo_glossary.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+
+            <fieldset name="basic">
+                <field name="search_limit" type="text" default="50" size="5"
+                       description="PLG_SEARCH_COM_SEO_GLOSSARY_FIELD_SEARCHLIMIT_DESC"
+                       label="PLG_SEARCH_COM_SEO_GLOSSARY_FIELD_SEARCHLIMIT_LABEL" />
+            </fieldset>
+
+        </fields>
+    </config>
+</extension>

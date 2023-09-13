@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CREATED_BY" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_CREATED_BY" hidden="true" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MODIFIED_BY" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_MODIFIED_BY" hidden="true" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MODIFIED_BY"/>
+    <field name="productname" filter="safehtml" type="text" required="true" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_PRODUCTNAME" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_PRODUCTNAME" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_PRODUCTNAME"/>
+    <field name="visibleproductname" filter="safehtml" type="text" required="true" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_VISIBLEPRODUCTNAME" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_VISIBLEPRODUCTNAME" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_VISIBLEPRODUCTNAME"/>
+    <field name="subtitle" filter="safehtml" type="text" required="true" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_SUBTITLE" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_SUBTITLE" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_SUBTITLE"/>
+    <field name="language" client="administrator" type="language" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_LANGUAGE" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_LANGUAGE" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_LANGUAGE"/>
+    <field name="formtitle" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_FORMTITLE" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_FORMTITLE" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_FORMTITLE"/>
+    <field name="formvideo" filter="raw" type="textarea" label="Product Video" description="Enter YouTube embed iframe for this product" hint="" />
+    <field name="formcode" type="moduleposition" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_FORMCODE" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_FORMCODE" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_FORMCODE"/>
+    <field name="introparagraph" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" required="true" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_INTROPARAGRAPH" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_INTROPARAGRAPH" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_INTROPARAGRAPH"/>
+    <field name="textboxes" multiple="true" formsource="administrator/components/com_eckohpages/models/forms/subform_textblocks.xml" layout="joomla.form.field.subform.repeatable" type="subform" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_TEXTBOXES" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_TEXTBOXES" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_TEXTBOXES"/>
+    <field name="iconheading" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_ICONHEADING" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_ICONHEADING" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_ICONHEADING"/>
+    <field name="iconcolumns" type="combo" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_ICONCOLUMNS" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_ICONCOLUMNS" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_ICONCOLUMNS">
+      <option value="2">COM_ECKOHPAGES_PRODUCTS_ICONCOLUMNS_OPTION_2</option>
+      <option value="3">COM_ECKOHPAGES_PRODUCTS_ICONCOLUMNS_OPTION_3</option>
+    </field>
+    <field name="iconboxes" multiple="true" formsource="administrator/components/com_eckohpages/models/forms/subform_iconblocks.xml" layout="joomla.form.field.subform.repeatable" type="subform" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_ICONBOXES" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_ICONBOXES" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_ICONBOXES"/>
+    <field name="middlectatext" filter="safehtml" type="textarea" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTATEXT" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_MIDDLECTATEXT" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTATEXT"/>
+    <field name="middlectaheader" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTAHEADER" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_MIDDLECTAHEADER" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTAHEADER"/>
+    <field name="middlectalink" validate="url" type="url" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTALINK" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_MIDDLECTALINK" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTALINK"/>
+    <field name="middlectabuttontext" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTABUTTONTEXT" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_MIDDLECTABUTTONTEXT" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTABUTTONTEXT"/>
+    <field name="middlectabackgroundcolour" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTABACKGROUNDCOLOUR" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_MIDDLECTABACKGROUNDCOLOUR" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_MIDDLECTABACKGROUNDCOLOUR"/>
+    <field name="casestudytitle" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYTITLE" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_CASESTUDYTITLE" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYTITLE"/>
+    <field name="casestudyquote" filter="safehtml" type="textarea" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYQUOTE" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_CASESTUDYQUOTE" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYQUOTE"/>
+    <field name="casestudycite" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYCITE" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_CASESTUDYCITE" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYCITE"/>
+    <field name="casestudyreadmoretext" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYREADMORETEXT" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_CASESTUDYREADMORETEXT" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYREADMORETEXT"/>
+    <field name="casestudyreadmore" validate="url" type="url" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYREADMORE" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_CASESTUDYREADMORE" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_CASESTUDYREADMORE"/>
+    <field name="bottomctaheader" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMCTAHEADER" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_BOTTOMCTAHEADER" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMCTAHEADER"/>
+    <field name="bottomctatext" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMCTATEXT" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_BOTTOMCTATEXT" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMCTATEXT"/>
+    <field name="bottomctabuttonlink" validate="url" type="url" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMCTABUTTONLINK" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_BOTTOMCTABUTTONLINK" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMCTABUTTONLINK"/>
+    <field name="bottomctabuttontext" filter="safehtml" type="text" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMCTABUTTONTEXT" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_BOTTOMCTABUTTONTEXT" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMCTABUTTONTEXT"/>
+    <field name="bottomboxes" max="3" multiple="true" formsource="administrator/components/com_eckohpages/models/forms/subform_bottomblocks.xml" layout="joomla.form.field.subform.repeatable" type="subform" label="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMBOXES" description="COM_ECKOHPAGES_FORM_DESC_PRODUCT_BOTTOMBOXES" hint="COM_ECKOHPAGES_FORM_LBL_PRODUCT_BOTTOMBOXES"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

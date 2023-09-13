@@ -1,0 +1,30 @@
+version: 2
+
+preset:
+  image: gantry-admin://images/layouts/default.png
+
+layout:
+  /top/:
+
+  /header/:
+    - [logo 30, position-header 70]
+
+  /mobile-links/:
+  /showcase/:
+  /feature/:
+  /main/:
+    - position-breadcrumbs
+    - system-messages
+    - system-content
+
+  /mainbottom/:
+  /fullwidth/:
+  /extension/:
+  /footer/:
+    - position-footer
+    - [copyright 40, spacer 30, branding 30]
+    
+  /copyright/:
+
+  offcanvas:
+    - mobile-menu

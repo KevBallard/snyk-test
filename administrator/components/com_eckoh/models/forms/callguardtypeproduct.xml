@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CREATED_BY" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_CREATED_BY" hidden="true" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_MODIFIED_BY" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_MODIFIED_BY" hidden="true" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_MODIFIED_BY"/>
+    <field name="productname" filter="safehtml" type="text" required="true" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_PRODUCTNAME" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_PRODUCTNAME" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_PRODUCTNAME"/>
+    <field name="visibleproductname" filter="safehtml" type="text" required="true" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_VISIBLEPRODUCTNAME" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_VISIBLEPRODUCTNAME" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_VISIBLEPRODUCTNAME"/>
+    <field name="subtitle" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_SUBTITLE" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_SUBTITLE" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_SUBTITLE"/>
+    <field name="language" type="language" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_LANGUAGE" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_LANGUAGE" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_LANGUAGE"/>
+    <field name="imageorvideo" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_IMAGEORVIDEO" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_IMAGEORVIDEO" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_IMAGEORVIDEO"/>
+    <field name="introparagraph" cols="25" rows="25" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" required="true" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_INTROPARAGRAPH" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_INTROPARAGRAPH" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_INTROPARAGRAPH"/>
+    <field name="featurearea" cols="25" rows="25" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_FEATUREAREA" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_FEATUREAREA" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_FEATUREAREA"/>
+    <field name="featureimage" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_FEATUREIMAGE" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_FEATUREIMAGE" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_FEATUREIMAGE"/>
+    <field name="minicalltoactionboxtext" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBOXTEXT" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBOXTEXT" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBOXTEXT"/>
+    <field name="minicalltoactionbutton" validate="url" type="url" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBUTTON" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBUTTON" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBUTTON"/>
+    <field name="minicalltoactionbuttontext" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBUTTONTEXT" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBUTTONTEXT" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_MINICALLTOACTIONBUTTONTEXT"/>
+    <field name="casestudyimage" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CASESTUDYIMAGE" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_CASESTUDYIMAGE" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CASESTUDYIMAGE"/>
+    <field name="casestudytext" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CASESTUDYTEXT" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_CASESTUDYTEXT" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CASESTUDYTEXT"/>
+    <field name="casestudylogo" directory="" type="media" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CASESTUDYLOGO" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_CASESTUDYLOGO" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CASESTUDYLOGO"/>
+    <field name="Feature area 2" cols="25" rows="25" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_FEATURE AREA 2" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_FEATURE AREA 2" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_FEATURE AREA 2"/>
+    <field name="Feature image 2" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_FEATURE IMAGE 2" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_FEATURE IMAGE 2" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_FEATURE IMAGE 2"/>
+    <field name="calltoactiontext" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CALLTOACTIONTEXT" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_CALLTOACTIONTEXT" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CALLTOACTIONTEXT"/>
+    <field name="calltoactionbuttontext" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CALLTOACTIONBUTTONTEXT" description="COM_ECKOH_FORM_DESC_CALLGUARDTYPEPRODUCT_CALLTOACTIONBUTTONTEXT" hint="COM_ECKOH_FORM_LBL_CALLGUARDTYPEPRODUCT_CALLTOACTIONBUTTONTEXT"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

@@ -1,0 +1,47 @@
+preset: preset1
+base:
+  background: 'rgba(255, 255, 255, 0)'
+  text-color: '#000000'
+  body-font: 'family=Source+Sans+Pro:300,600,700,900,400'
+  heading-font: 'family=Source+Sans+Pro:300,600,700,900,400'
+accent:
+  color-1: 'rgba(67, 154, 134, 0)'
+  color-2: 'rgba(143, 77, 174, 0)'
+header:
+  background: '#ffffff'
+  text-color: '#000000'
+navigation:
+  background: '#ffffff'
+  text-color: '#000000'
+  overlay: 'rgba(0, 0, 0, 0.4)'
+showcase:
+  background: '#ffffff'
+  image: ''
+  text-color: '#000000'
+feature:
+  background: '#ffffff'
+  text-color: '#000000'
+subfeature:
+  background: '#ffffff'
+  text-color: '#000000'
+main:
+  background: '#ffffff'
+  text-color: '#000000'
+footer:
+  background: '#ffffff'
+  text-color: '#000000'
+offcanvas:
+  background: '#ffffff'
+  text-color: '#000000'
+  width: 17rem
+  toggle-color: '#000000'
+  toggle-visibility: '1'
+breakpoints:
+  large-desktop-container: 80rem
+  desktop-container: 60rem
+  tablet-container: 48rem
+  large-mobile-container: 30rem
+  mobile-menu-breakpoint: 70rem
+menu:
+  col-width: 180px
+  animation: g-fade

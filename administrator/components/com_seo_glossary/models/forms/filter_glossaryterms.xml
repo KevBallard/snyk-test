@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" description="COM_SEO_GLOSSARY_SEARCH_FILTER_SUBMIT"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="state"
+               type="status"
+               label="COM_SEO_GLOSSARY_FILTER_STATE"
+               description="COM_SEO_GLOSSARY_FILTER_STATE_DESC"
+               onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+
+        
+
+    </fields>
+
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="COM_SEO_GLOSSARY_LIST_FULL_ORDERING"
+               description="COM_SEO_GLOSSARY_LIST_FULL_ORDERING_DESC"
+               onchange="this.form.submit();"
+               default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.`id` ASC">COM_SEO_GLOSSARY_ID_ASC</option><option value="a.`id` DESC">COM_SEO_GLOSSARY_ID_DESC</option><option value="a.`ordering` ASC">COM_SEO_GLOSSARY_ORDERING_ASC</option><option value="a.`ordering` DESC">COM_SEO_GLOSSARY_ORDERING_DESC</option><option value="a.`state` ASC">COM_SEO_GLOSSARY_STATE_ASC</option><option value="a.`state` DESC">COM_SEO_GLOSSARY_STATE_DESC</option><option value="a.`term` ASC">COM_SEO_GLOSSARY_TERM_ASC</option><option value="a.`term` DESC">COM_SEO_GLOSSARY_TERM_DESC</option><option value="a.`intro` ASC">COM_SEO_GLOSSARY_INTRO_ASC</option><option value="a.`intro` DESC">COM_SEO_GLOSSARY_INTRO_DESC</option><option value="a.`languages` ASC">COM_SEO_GLOSSARY_LANGUAGES_ASC</option><option value="a.`languages` DESC">COM_SEO_GLOSSARY_LANGUAGES_DESC</option><option value="a.`alias` ASC">COM_SEO_GLOSSARY_ALIAS_ASC</option><option value="a.`alias` DESC">COM_SEO_GLOSSARY_ALIAS_DESC</option>
+
+        </field>
+
+       <field name="limit"
+               type="limitbox"
+               label="COM_SEO_GLOSSARY_LIST_LIMIT"
+               description="COM_SEO_GLOSSARY_LIST_LIMIT_DESC"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+
+    </fields>
+
+</form>

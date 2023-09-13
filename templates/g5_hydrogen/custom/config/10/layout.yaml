@@ -1,0 +1,204 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/home.png'
+  name: home
+  timestamp: 1551356003
+layout:
+  top: {  }
+  header: {  }
+  mobile-links: {  }
+  showcase: {  }
+  /showcase-bottom/:
+    -
+      - position-position-7923
+  /feature/:
+    -
+      - 'position-position-2390 16.7'
+      - 'position-position-9495 16.7'
+      - 'position-position-4694 16.7'
+      - 'position-position-5050 16.7'
+      - 'position-position-6078 16.7'
+      - 'position-position-3499 16.7'
+  /main/:
+    -
+      - system-messages-4872
+  /mainbottom/:
+    -
+      - position-position-2510
+    -
+      - position-position-1197
+  /subfeature/:
+    -
+      - 'position-position-9129 50'
+      - 'position-position-4438 50'
+    -
+      - 'position-position-4678 50'
+      - 'position-position-7456 50'
+  /extension/:
+    -
+      - 'position-position-4750 50'
+      - 'position-position-8023 50'
+    -
+      - 'position-position-5238 50'
+      - 'position-position-8435 50'
+    -
+      - 'position-position-8244 50'
+      - 'position-position-6462 50'
+  footer: {  }
+  copyright: {  }
+  offcanvas: {  }
+structure:
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  header:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  mobile-links:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  showcase:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  showcase-bottom:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  feature:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  main:
+    attributes:
+      boxed: ''
+  mainbottom:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  subfeature:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  extension:
+    type: section
+    attributes:
+      boxed: ''
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+content:
+  position-position-7923:
+    title: 'Showcase Bottom'
+    attributes:
+      key: showcase-bottom
+  position-position-2390:
+    title: 'Feature A'
+    attributes:
+      key: feature-a
+  position-position-9495:
+    title: 'Feature B'
+    attributes:
+      key: feature-b
+  position-position-4694:
+    title: 'Feature C'
+    attributes:
+      key: feature-c
+  position-position-5050:
+    title: 'Feature D'
+    attributes:
+      key: feature-d
+  position-position-6078:
+    title: 'Feature E'
+    attributes:
+      key: feature-e
+  position-position-3499:
+    title: 'Feature F'
+    attributes:
+      key: feature-f
+  position-position-2510:
+    title: 'Mainbottom Title'
+    attributes:
+      key: mainbottom-title
+    block:
+      id: mainbottom-title
+  position-position-1197:
+    title: Mainbottom
+    attributes:
+      key: mainbottom
+  position-position-9129:
+    title: 'Subfeature A'
+    attributes:
+      key: subfeature-a
+  position-position-4438:
+    title: 'Subfeature B'
+    attributes:
+      key: subfeature-b
+  position-position-4678:
+    title: 'Subfeature C'
+    attributes:
+      key: subfeature-c
+  position-position-7456:
+    title: 'Subfeature D'
+    attributes:
+      key: subfeature-d
+  position-position-4750:
+    title: 'Extension A'
+    attributes:
+      key: extension-a
+  position-position-8023:
+    title: 'Extension B'
+    attributes:
+      key: extension-b
+  position-position-5238:
+    title: 'Extension C'
+    attributes:
+      key: extension-c
+  position-position-8435:
+    title: 'Extension D'
+    attributes:
+      key: extension-d
+  position-position-8244:
+    title: 'Extension E'
+    attributes:
+      key: extension-e
+  position-position-6462:
+    title: 'Extension F'
+    attributes:
+      key: extension-f
+    block:
+      class: latest-blog

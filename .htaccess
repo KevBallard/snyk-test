@@ -1,0 +1,808 @@
+##
+# @package    Joomla
+# @copyright  Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.
+# @license    GNU General Public License version 2 or later; see LICENSE.txt
+##
+
+##
+# READ THIS COMPLETELY IF YOU CHOOSE TO USE THIS FILE!
+#
+# The line 'Options +FollowSymLinks' may cause problems with some server configurations.
+# It is required for the use of Apache mod_rewrite, but it may have already been set by 
+# your server administrator in a way that disallows changing it in this .htaccess file.
+# If using it causes your site to produce an error, comment it out (add # to the
+# beginning of the line), reload your site in your browser and test your sef urls. If
+# they work, then it has been set by your server administrator and you do not need to
+# set it here.
+##
+
+## No directory listings
+<IfModule autoindex>
+  IndexIgnore *
+</IfModule>
+
+## Remove Trailing Slash
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ $1 [R=301,L]
+</IfModule>
+
+## Suppress mime type detection in browsers for unknown types
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+## Can be commented out if causes errors, see notes above.
+Options +FollowSymlinks
+Options -Indexes
+
+## Mod_rewrite in use.
+
+RewriteEngine On
+
+## Begin - Rewrite rules to block out some common exploits.
+# If you experience problems on your site then comment out the operations listed
+# below by adding a # to the beginning of the line.
+# This attempts to block the most common type of exploit `attempts` on Joomla!
+#
+# Block any script trying to base64_encode data within the URL.
+# Block any script that includes a <script> tag in URL.
+# Block any script trying to set a PHP GLOBALS variable via URL.
+# Block any script trying to modify a _REQUEST variable via URL.
+# Return 403 Forbidden header and show the content of the root home page
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule .* index.php [F]
+#
+## End - Rewrite rules to block out some common exploits.
+
+## Begin - Custom redirects
+#
+# If you need to redirect some pages, or set a canonical non-www to
+# www redirect (or vice versa), place that code here. Ensure those
+# redirects use the correct RewriteRule syntax and the [R=301,L] flags.
+#
+# Eckoh SEO Redirects and fixes - 2020-09-15
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Broken URLs with external value - specific redirects
+RewriteRule ^key/ASWD56425CSA$ / [R=301,L]
+RewriteRule ^files/cms/270_Annual\ Report\ 2013\ BW\.pdf$ /investors/financial-reports/annual-reports [R=301,L]
+RewriteRule ^default\.htm$ / [R=301,L]
+RewriteRule ^eckoh_news/latest/eckoh_wins_new_contracts_with_trinity_mirror_for_interactive_services\.html$ /resources/news [R=301,L]
+RewriteRule ^download_file/765/334/$ /resources [R=301,L]
+RewriteRule ^whyeckoh/our_people\.aspx$ /about-us/management-team [R=301,L]
+RewriteRule ^sitemap\.xml$ /us/component/osmap/?view=xml&id=1&format=xml [R=301,L]
+RewriteRule ^en-us/$ /us/ [R=301,L]
+RewriteRule ^Consumer_Division/index\.shtml$ /customer-engagement-solutions/ivr-speech-solutions/natural-language-speech-recognition [R=301,L]
+RewriteRule ^news/2010/ideal-shopping-direct-extends-contract-with-eckoh-until-2013/$ /resources/news/item/ideal-shopping-enter-new-contract-for-omni-channel-experience [R=301,L]
+RewriteRule ^news/$ /resources/news [R=301,L]
+RewriteRule ^contact-centre/self-service-ivr/$ /customer-engagement-solutions/ivr-speech-solutions/ivr-self-service [R=301,L]
+RewriteRule ^files/cms/404_Prelims\ FY14\ FINAL\ \(2\)\.pdf$ /investors/financial-reports/annual-reports [R=301,L]
+RewriteRule ^eckoh_news/latest/response_to_the_icstis_adjudication_on_the_richard_and_judy_show\.html$ /resources/news [R=301,L]
+RewriteRule ^Mobile_Wholesale/index\.shtml$ / [R=301,L]
+RewriteRule ^en-us/pci-dss/pci-dss-and-call-centers/$ /us/secure-payment-services/pci-compliance/contact-center-pci-compliance [R=301,L]
+RewriteRule ^secure-payments/pci-dss-call-recording/$ /contact-centre-services/call-recording [R=301,L]
+RewriteRule ^en-us/$ /us/ [R=301,L]
+RewriteRule ^secure-payments/pci-dss-call-recording/$ /contact-centre-services/call-recording [R=301,L]
+RewriteRule ^news/latest-news/eckoh-expands-contract-with-utilita-group-21-march-2011/$ /about-us/case-studies [R=301,L]
+RewriteRule ^/secure-payment-services/contact-centre-payments/securing-web-chat-payments$ /secure-payment-services/contact-centre-payments/securing-web-chat-payments [R=301,L]
+RewriteRule ^callguard$ /secure-payment-services/contact-centre-payments/agent-assisted-payments [R=301,L]
+RewriteRule ^careers/current-roles/item/2nd-line-support-engineer$ /careers [R=301,L]
+RewriteRule ^careers/current-roles/item/accounts-payable-clerk$ /careers [R=301,L]
+RewriteRule ^careers/current-roles/item/business-development-manager$ /careers [R=301,L]
+RewriteRule ^careers/current-roles/item/head-of-software-development$ /careers [R=301,L]
+RewriteRule ^careers/current-roles/item/project-manager$ /careers [R=301,L]
+RewriteRule ^careers/current-roles/item/software-engineer-ivr$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/business-development-executive$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/customer-service-advisors$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/graduate-systems-administrator$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/ivr-developer$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/noc-systems-technician$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/remote-uk-web-application-developer$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/senior-full-stack-developer$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/senior-ivr-developer$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/snr-project-manager$ /careers [R=301,L]
+RewriteRule ^careers/opportunities/web-application-developer$ /careers [R=301,L]
+RewriteRule ^clients/avis-budget-group$ /about-us/clients [R=301,L]
+RewriteRule ^clients/cable-one$ /about-us/clients [R=301,L]
+RewriteRule ^clients/carnival$ /about-us/clients [R=301,L]
+RewriteRule ^clients/ds-waters$ /about-us/clients [R=301,L]
+RewriteRule ^clients/entergy$ /about-us/clients [R=301,L]
+RewriteRule ^clients/foxwoods$ /about-us/clients [R=301,L]
+RewriteRule ^clients/japan-airlines$ /about-us/clients [R=301,L]
+RewriteRule ^clients/next$ /about-us/clients [R=301,L]
+RewriteRule ^clients/progress-energy$ /about-us/clients [R=301,L]
+RewriteRule ^clients/t$ /about-us/clients [R=301,L]
+RewriteRule ^clients/telstra$ /about-us/clients [R=301,L]
+RewriteRule ^clients/t-mobile$ /about-us/clients [R=301,L]
+RewriteRule ^clients/tyco$ /about-us/clients [R=301,L]
+RewriteRule ^clients/unitedhealth-group$ /about-us/clients [R=301,L]
+RewriteRule ^clients/verizon$ /about-us/clients [R=301,L]
+RewriteRule ^clients/vertrue$ /about-us/clients [R=301,L]
+RewriteRule ^clients/xerox$ /about-us/clients [R=301,L]
+RewriteRule ^concrete/images$ / [R=301,L]
+RewriteRule ^customer-engagement/live-help/chatbots$ /customer-engagement-solutions/omnichannel/chatbots [R=301,L]
+RewriteRule ^download_file/100/370$ / [R=301,L]
+RewriteRule ^download_file/807/792$ / [R=301,L]
+RewriteRule ^download_file/818$ / [R=301,L]
+RewriteRule ^download_file/840$ / [R=301,L]
+RewriteRule ^index\.php/tools/required$ / [R=301,L]
+RewriteRule ^investors/announcements/item/acquisition-of-product-support-solutions,-inc-\(â€œpssâ€\)-to-accelerate-us-growth-and-support-international-expansion$ /investors [R=301,L]
+RewriteRule ^investors/announcements/item/directors\'-dealings$ /investors [R=301,L]
+RewriteRule ^investors/announcements/item/director-share-dealings--24-december-2014 /investors [R=301,L]
+RewriteRule ^investors/announcements/item/eckoh-secures-10-year-contract-worth-a-minimum-of-Â£11-million$ /investors [R=301,L]
+RewriteRule ^investors/announcements/item/exercise-of-options---9-july-2015$ /investors [R=301,L]
+RewriteRule ^investors/announcements/item/notification-of-major-interest-in-shares---14-august-2013$ /investors [R=301,L]
+RewriteRule ^investors/announcements/item/notification-of-major-interest-in-shares---23-january-2014$ /investors [R=301,L]
+RewriteRule ^investors/financial-reports/annual-reports/408-eckoh-fy20-annual-report-final$ /investors/financial-reports/annual-reports [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/genesys$ /about-us/partners [R=301,L]
+RewriteRule ^PbBa\.$ / [R=301,L]
+RewriteRule ^pci-compliance/agent-assisted-payments/Chat-pay$ /secure-payment-services/contact-centre-payments/securing-web-chat-payments [R=301,L]
+RewriteRule ^product-guides-us/contact-center-solutions/273-aspect-support-guide-us/file$ /us/contact-center-services/third-party-support/aspect [R=301,L]
+RewriteRule ^resources/agent-desktop-ebook$ /resources/eguides-and-white-papers/agent-desktop [R=301,L]
+RewriteRule ^resources/blog/10-years-pci-dss-what-has-it-really-achieved$ /resources/blog/item/10-years-of-pci-dss-what-has-it-really-achieved [R=301,L]
+RewriteRule ^resources/blog/agent-desktops-have-your-cake$ /resources/blog/item/agent-desktops-how-to-have-your-cake-and-eat-it [R=301,L]
+RewriteRule ^resources/blog/agent-desktops-seven-ways-get-best-roi$ /resources/blog/item/agent-desktops-seven-ways-to-get-the-best-roi [R=301,L]
+RewriteRule ^resources/blog/agent-desktops-what-vendors-forgot-tell-you$ /resources/blog/item/agent-desktops-what-vendors-forgot-to-tell-you [R=301,L]
+RewriteRule ^resources/blog/aspect-92-and-aspect-93-end-life-options$ /us/contact-center-services/third-party-support/aspect [R=301,L]
+RewriteRule ^resources/blog/bcbs-companies-lead-way-medical-data-breach-battle$ /resources/blog/item/bcbs-companies-lead-way-in-medical-data-breach-battle-2 [R=301,L]
+RewriteRule ^resources/blog/break-free-contact-centre-support-trap$ /resources/blog/item/break-free-from-the-contact-centre-support-trap [R=301,L]
+RewriteRule ^resources/blog/call-compliance-do-you-share-dark-secret-dr-who$ /secure-payment-services/pci-compliance/call-centre-pci-compliance [R=301,L]
+RewriteRule ^resources/blog/combatting-fraud-contact-centre-top-tips$ /resources/blog/item/combatting-fraud-in-the-contact-centre-top-tips [R=301,L]
+RewriteRule ^resources/blog/contact-center-support-dont-get-caught-rain$ /us/contact-center-services [R=301,L]
+RewriteRule ^resources/blog/contact-centre-panto-villain$ /resources/blog/item/is-your-contact-centre-the-panto-villain [R=301,L]
+RewriteRule ^resources/blog/contact-centre-shape-of-industry-2018$ /resources/news/item/vote-for-eckoh-as-an-industry-champion [R=301,L]
+RewriteRule ^resources/blog/contact-centres-predictions-2018$ /us/resources/blog/item/contact-centers-five-predictions-for-2018 [R=301,L]
+RewriteRule ^resources/blog/crossing-fingers-prevent-cnp-fraud$ /resources/blog/item/will-crossing-my-fingers-prevent-cnp-fraud [R=301,L]
+RewriteRule ^resources/blog/c-t-i-we-all-hate-acronym-why$ /resources/news [R=301,L]
+RewriteRule ^resources/blog/customer-experience-holding-back$ /resources/blog/item/customer-experience-whats-holding-us-back [R=301,L]
+RewriteRule ^resources/blog/customer-power-calling-shots$ /resources/blog/item/customer-power-whos-calling-the-shots-now [R=301,L]
+RewriteRule ^resources/blog/customer-self-service-can-still-reduce-costs$ /resources/blog/item/challenge-2-your-self-service-doesn-t-have-all-the-answers-3 [R=301,L]
+RewriteRule ^resources/blog/customer-service-and-changing-voice-does-ivr-work-you$ /resources/blog/item/turn-your-ivr-into-your-best-asset [R=301,L]
+RewriteRule ^resources/blog/customers-what-do-they-look$ /resources/blog/item/customers-what-do-they-look-like [R=301,L]
+RewriteRule ^resources/blog/cx-problems$ /resources/blog/item/cx-problems-its-not-you-its-them [R=301,L]
+RewriteRule ^resources/blog/dont-let-technology-vendors-hold-you-ransom$ /resources/blog/item/don-t-let-technology-vendors-hold-you-to-ransom [R=301,L]
+RewriteRule ^resources/blog/dont-let-windows-2003-eos-force-mps-upgrade$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/eckoh-tackles-pain-switching-contact-center-vendors$ /us/resources/blog/item/tackling-the-pain-of-switching-contact-center-vendors [R=301,L]
+RewriteRule ^resources/blog/encrypt-pan-call-recordings$ /resources/blog/item/its-easy-we-encrypt-the-pan-in-our-call-recordings-really [R=301,L]
+RewriteRule ^resources/blog/flexxbridge-cloud-integrate-information-sources-single-soa-based-format$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/great-cx-without-disruption$ /resources/blog/item/good-news-great-cx-without-the-disruption [R=301,L]
+RewriteRule ^resources/blog/if-everyone-dislikes-ivr-why-it-still-around$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/item/chatbots-is-it-love-at-first-click$ /resources/blog/item/chatbots-nows-the-time-to-take-them-seriously [R=301,L]
+RewriteRule ^resources/blog/item/graham-pollard$ /investors/announcements/item/acquisition-of-klick2contact-eu-ltd [R=301,L]
+RewriteRule ^resources/blog/ivr-reportingaaaarrrrgghhhh$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/making-friends-chatbots$ /resources/blog/item/making-friends-with-chatbots [R=301,L]
+RewriteRule ^resources/blog/multi-channel-communication$ /resources/blog/item/multi-channel-or-multi-flannel [R=301,L]
+RewriteRule ^resources/blog/nortel-peripro-do-you-still-have-apps$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/pci-compliance-standards-qsa-advice$ /resources/blog/item/why-pci-dss-advice-from-a-qsa-is-increasingly-vital-2 [R=301,L]
+RewriteRule ^resources/blog/pci-dss-compliant-maybe-still-at-risk$ /resources/blog/item/were-pci-dss-compliant-maybe-but-are-you-still-at-risk [R=301,L]
+RewriteRule ^resources/blog/pci-dss-cost-of-doing-nothing$ /resources/blog/item/pci-dss-whats-the-cost-of-doing-nothing-2 [R=301,L]
+RewriteRule ^resources/blog/pci-dss-thrills-perils-costs$ /resources/blog/item/pci-dss-the-thrills-perils-and-costs-of-diy-compliance [R=301,L]
+RewriteRule ^resources/blog/pci-dss-whats-cost-doing-nothing$ /resources/blog/item/pci-dss-whats-the-cost-of-doing-nothing-2 [R=301,L]
+RewriteRule ^resources/blog/record-fines-compliance-failure$ /resources/blog/item/pci-dss-whats-the-cost-of-diy-compliance-vs-de-scoping [R=301,L]
+RewriteRule ^resources/blog/reduce-agent-churn-save-money-and-customers$ /resources/blog/item/how-to-combat-customer-rage-on-social-media [R=301,L]
+RewriteRule ^resources/blog/remote-agents-bringing-them-cold$ /resources/blog/item/challenge-5-help-when-purchasers-wobble-at-the-checkout [R=301,L]
+RewriteRule ^resources/blog/self-service-so-whats-your-emotional-response$ /resources/blog/item/self-service-whats-your-emotional-response [R=301,L]
+RewriteRule ^resources/blog/seven-reasons-why-cs-and-sp-are-vital?platform=hootsuite$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/sip-services-using-voip$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/steering-clear-vendor-agenda$ /us/resources/blog/item/steering-clear-of-the-vendor-agenda [R=301,L]
+RewriteRule ^resources/blog/target-breach-highlights-the-importance-of-pci-dss-compliance$ /application/files/6014/7566/7865/The_Inner_Circle_Guide_to_PCI_DSS_Compliance_in_the_Contact_Centre_-_UK_version.pdf [R=301,L]
+RewriteRule ^resources/blog/teach-old-dog-new-tricks-yes-sir$ /resources/blog/item/teach-an-old-dog-new-tricks-yes-sir [R=301,L]
+RewriteRule ^resources/blog/top-10-facts-pci-compliance$ /resources/blog/item/top-10-facts-about-pci-compliance-that-you-need-to-know [R=301,L]
+RewriteRule ^resources/blog/topic/58/legal-disclaimer$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/topic/59/customer%20experience$ /resources/blog [R=301,L]
+RewriteRule ^resources/blog/travel-agents-how-book-your-pci-dss-journey-easy-way$ /resources/blog/item/travel-agents-how-to-book-your-pci-dss-journey-the-easy-way [R=301,L]
+RewriteRule ^resources/blog/travel-agents-out-in-cold$ /resources/blog/item/travel-agents-why-card-payment-rules-could-leave-you-out-in-the-cold [R=301,L]
+RewriteRule ^resources/blog/unified-agent-desktops-five-revealing-questions-ask$ /us/resources/blog/item/unified-agent-desktops-five-revealing-questions-to-ask-2 [R=301,L]
+RewriteRule ^resources/blog/we-dont-ask-cv2-during-phone-payments-really$ /resources/blog/item/we-dont-ask-for-cv2-during-phone-payments-really [R=301,L]
+RewriteRule ^resources/blog/what-if-your-contact-center-was-car-1$ /resources/blog/category/contact-centre-solutions [R=301,L]
+RewriteRule ^resources/blog/why-what-you-say-matters$ /resources/blog/item/why-what-you-say-matters-in-contact-centres [R=301,L]
+RewriteRule ^resources/brochures/$ /resources [R=301,L]
+RewriteRule ^resources/case-studies/bromford-housing-group$ /about-us/case-studies [R=301,L]
+RewriteRule ^resources/case-studies/carnival-cruises$ /about-us/case-studies [R=301,L]
+RewriteRule ^resources/case-studies/carnival-cruises/$ /about-us/case-studies [R=301,L]
+RewriteRule ^resources/case-studies/parcelforce-worldwide$ /about-us/case-studies [R=301,L]
+RewriteRule ^resources/case-studies/thames-water$ /about-us/case-studies [R=301,L]
+RewriteRule ^resources/pci-dss-definitive-ebook$ /resources [R=301,L]
+RewriteRule ^resources/qsa-ebook$ /resources [R=301,L]
+RewriteRule ^rss/news$ /resources/news [R=301,L]
+RewriteRule ^search$ /bfsearch [R=301,L]
+RewriteRule ^secure-payments/ivr-automation/$ /customer-engagement-solutions/ivr-speech-solutions [R=301,L]
+RewriteRule ^tel\:01442458300$ /contact [R=301,L]
+RewriteRule ^tel\:02074963000$ /contact [R=301,L]
+RewriteRule ^tel\:02075238000$ /contact [R=301,L]
+RewriteRule ^US$ /us/bfsearch [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/callguard-delivered-on-site-and-via-cloud-meets-growing-business-needs-for-compliance-and-uninterrupted-customer-engagement-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/choice-of-agent-assisted-or-self-service-secure-payments-for-leading-unified-comms-provider-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/decommissioning-contact-centre-hardware-to-help-upgrade-londons-black-cab-services-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/eckohs-secure-payment-solution-helps-allpay-and-their-housing-association-clients-take-secure-payments-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/extending-the-life-of-contact-centre-technology-to-take-control-and-ensure-business-as-usual-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/overcoming-two-obstacles-with-just-one-payment-solution-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/protecting-customers-from-fraud-and-enabling-a-seamless-customer-service-experience-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/securing-telephone-payments-with-innovative-audio-tokenisation-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/taking-the-pressure-off-ideals-contact-centre-operation-with-customer-self-service-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/using-callguard-to-demonstrate-that-customer-payments-are-as-secure-as-their-propane-gas-deliveries-2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/application/files/1315/0281/1983/CNP_ebook_v4\.1_-_US_version\.pdf$ /us/resources [R=301,L]
+RewriteRule ^us/application/files/4514/8881/1782/allpay_Case_Study_US\.pdf$ /us/resources [R=301,L]
+RewriteRule ^us/application/files/5015/3233/3792/Support-Sales_Trap_Jan18_-_US\.pdf$ /us/resources [R=301,L]
+RewriteRule ^us/application/files/6815/4540/1609/Hosted_Call_Recording_2018_-_US\.pdf$ /us/resources [R=301,L]
+RewriteRule ^us/application/files/9914/9183/7741/nVoice_Datasheet\.pdf$ /us/resources [R=301,L]
+RewriteRule ^us/careers/opportunities/business-development-executive$ /us/careers [R=301,L]
+RewriteRule ^us/careers/opportunities/customer-account-manager$ /us/careers [R=301,L]
+RewriteRule ^us/careers/opportunities/graduate-systems-administrator$ /us/careers [R=301,L]
+RewriteRule ^us/careers/opportunities/ivr-developer$ /us/careers [R=301,L]
+RewriteRule ^us/careers/opportunities/remote-uk-web-application-developer$ /us/careers [R=301,L]
+RewriteRule ^us/careers/opportunities/senior-full-stack-developer$ /us/careers [R=301,L]
+RewriteRule ^us/clients/aib$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/avis-budget-group$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/cable-one$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/carnival$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/comic-relief$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/ds-waters$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/entergy$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/foxwoods$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/japan-airlines$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/mckesson$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/progress-energy$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/red-driving-school$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/t$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/telstra$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/t-mobile$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/tyco$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/unitedhealth-group$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/verizon$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/vertrue$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/clients/xerox$ /us/about-us/customers [R=301,L]
+RewriteRule ^us/concrete/images$ /us [R=301,L]
+RewriteRule ^us/contact-center-services/third-party-support/ribbon$ /us/contact-center-services/ribbon [R=301,L]
+RewriteRule ^us/contact-centres-resiliency$ /us/contact-centers-resiliency [R=301,L]
+RewriteRule ^us/download_file/100/370$ /us/resources [R=301,L]
+RewriteRule ^us/download_file/101/370$ /us/resources [R=301,L]
+RewriteRule ^us/download_file/282/470$ /us/resources [R=301,L]
+RewriteRule ^us/download_file/324/470$ /us/resources [R=301,L]
+RewriteRule ^us/download_file/force/298/810$ /us/resources [R=301,L]
+RewriteRule ^us/download_file/view/614/900$ /us/resources [R=301,L]
+RewriteRule ^us/index\.php/tools/required$ /us [R=301,L]
+RewriteRule ^us/investors/financial-reports/annual-reports/408-eckoh-fy20-annual-report-final$ /investors [R=301,L]
+RewriteRule ^us/investors/financial-reports/share-information/406-eckoh-final-results-16-june-2020$ /investors [R=301,L]
+RewriteRule ^us/operational-solutions/productivity/knowledge-base-internal$ /customer-engagement-solutions/omnichannel/knowledge-base [R=301,L]
+RewriteRule ^us/pic-compliance$ /us/secure-payment-services/pci-compliance/contact-center-pci-compliance [R=301,L]
+RewriteRule ^us/product-guides/40-pci-dss-definitive-guide-uk/file$ /us/resources/product-guides [R=301,L]
+RewriteRule ^us/product-guides-us/secure-payments-1/268-callguard-on-demand-2019$ /us/resources/product-guides [R=301,L]
+RewriteRule ^us/resources/blog/10-years-pci-dss-what-has-it-really-achieved$ /us/resources/blog/item/10-years-of-pci-dss-what-has-it-really-achieved-2 [R=301,L]
+RewriteRule ^us/resources/blog/agent-desktops-seven-ways-get-best-roi$ /us/resources/blog/item/agent-desktops-seven-ways-to-get-the-best-roi [R=301,L]
+RewriteRule ^us/resources/blog/back-future-shopping-catalogues$ /us/resources/blog/item/back-to-the-future-with-shopping-catalogues [R=301,L]
+RewriteRule ^us/resources/blog/best-practices-modern-ivr-system$ /us/resources/blog/item/best-practices-for-a-modern-ivr-system [R=301,L]
+RewriteRule ^us/resources/blog/chatbots-it-love-first-click$ /us/resources/blog/item/chatbots-nows-the-time-to-take-them-seriously-2 [R=301,L]
+RewriteRule ^us/resources/blog/contact-center-support-dont-get-caught-rain$ /us/resources/blog [R=301,L]
+RewriteRule ^us/resources/blog/contact-centre-coping-with-snow$ /us/resources/blog/item/hows-your-contact-centre-coping-with-the-snow [R=301,L]
+RewriteRule ^us/resources/blog/c-t-i-we-all-hate-acronym-why$ /us/resources/blog [R=301,L]
+RewriteRule ^us/resources/blog/customer-experience-holding-back$ /us/resources/blog/item/customer-experience-whats-holding-us-back [R=301,L]
+RewriteRule ^us/resources/blog/customer-omni-channel-retail$ /us/resources/news/item/ideal-shopping-enter-new-contract-for-omni-channel-experience [R=301,L]
+RewriteRule ^us/resources/blog/customer-power-calling-shots$ /us/resources/blog/item/customer-power-who-s-calling-the-shots-now [R=301,L]
+RewriteRule ^us/resources/blog/customer-power-threat-or-opportunity-1$ /us/resources/blog [R=301,L]
+RewriteRule ^us/resources/blog/customer-self-service-can-still-reduce-costs$ /us/resources/blog/item/self-service-why-weve-hit-the-sweet-spot-right-now [R=301,L]
+RewriteRule ^us/resources/blog/customers-what-do-they-look$ /us/resources/blog/item/customers-what-do-they-look-like-2 [R=301,L]
+RewriteRule ^us/resources/blog/de-scoping-your-contact-centre-pci-dss-compliance$ /us/resources/blog/item/de-scoping-your-contact-center-for-pci-dss-compliance [R=301,L]
+RewriteRule ^us/resources/blog/encrypt-pan-call-recordings$ /us/resources/blog/item/it-s-easy-we-encrypt-the-pan-in-our-call-recordings-really [R=301,L]
+RewriteRule ^us/resources/blog/gdpr-secure-payments-what-if-we-brexit-leave-eu$ /us/resources/blog/item/gdpr-and-secure-payments-what-if-we-brexit [R=301,L]
+RewriteRule ^us/resources/blog/how-de-risk-your-home-agents$ /us/resources/blog/item/how-to-de-risk-your-at-home-agents [R=301,L]
+RewriteRule ^us/resources/blog/how-thrive-travel-hospitality-boom$ /us/resources/blog/item/how-to-thrive-in-travel-hospitality-boom [R=301,L]
+RewriteRule ^us/resources/blog/infographic-why-good-call-routing-design-matters$ /us/resources/blog [R=301,L]
+RewriteRule ^us/resources/blog/item/stop-sending-our-customers-away-2$ /us/resources/blog/item/stop-sending-our-customers-away [R=301,L]
+RewriteRule ^us/resources/blog/item/the-contact-centre-of-the-future-part-1-customers$ /us/resources/blog/item/contact-centre-of-the-future-part-1-customers [R=301,L]
+RewriteRule ^us/resources/blog/item/travel-and-hospitality-boom-keeping-ahead-of-fraudsters$ /us/resources/blog/item/travel-and-hospitality-boom-keeping-ahead-of-fraudsters-us [R=301,L]
+RewriteRule ^us/resources/blog/ivr-because-your-call-important-us$ /us/resources/blog/item/challenge-3-despite-self-service-your-customers-still-call [R=301,L]
+RewriteRule ^us/resources/blog/ivr-key-self-service-tool-contact-centres$ /us/resources/blog/item/turn-your-ivr-into-your-best-asset [R=301,L]
+RewriteRule ^us/resources/blog/live-chat-what-else-delivers-nearly-x20-payback$ /us/resources/blog/item/web-chat-what-else-delivers-nearly-x20-payback [R=301,L]
+RewriteRule ^us/resources/blog/multi-channel-customer-service$ /us/resources/blog/item/multi-channel-or-multi-flannel [R=301,L]
+RewriteRule ^us/resources/blog/omni-channel-customer-service-world$ /us/resources/news/item/ideal-shopping-enter-new-contract-for-omni-channel-experience [R=301,L]
+RewriteRule ^us/resources/blog/pci-dss-compliant-maybe-still-at-risk$ /us/resources/blog/item/we-re-pci-dss-compliant-maybe-but-are-you-still-at-risk [R=301,L]
+RewriteRule ^us/resources/blog/pci-dss-thrills-perils-costs$ /us/resources/blog/item/pci-dss-the-thrills-perils-and-costs-of-diy-compliance-2 [R=301,L]
+RewriteRule ^us/resources/blog/pci-dss-whats-cost-diy-compliance-vs-de-scoping$ /us/resources/blog/item/pci-dss-what-s-the-cost-of-diy-compliance-vs-de-scoping [R=301,L]
+RewriteRule ^us/resources/blog/pci-dss-whats-cost-doing-nothing$ /us/resources/blog/item/pci-dss-what-s-the-cost-of-doing-nothing [R=301,L]
+RewriteRule ^us/resources/blog/record-fines-compliance-failure$ /us/secure-payment-services/pci-compliance/pci-dss-explained [R=301,L]
+RewriteRule ^us/resources/blog/self-service-so-whats-it-me$ /us/resources/blog/item/self-service-so-whats-in-it-for-me [R=301,L]
+RewriteRule ^us/resources/blog/self-service-why-weve-hit-sweet-spot-right-now$ /us/resources/blog/item/self-service-why-weve-hit-the-sweet-spot-right-now [R=301,L]
+RewriteRule ^us/resources/blog/sip-services-using-voip$ /us/resources/blog [R=301,L]
+RewriteRule ^us/resources/blog/teach-old-dog-new-tricks-yes-sir$ /us/resources/blog/item/teach-an-old-dog-new-tricks-yes-sir [R=301,L]
+RewriteRule ^us/resources/blog/top-10-facts-pci-compliance$ /us/resources/blog/item/top-10-facts-about-pci-compliance-that-you-need-to-know [R=301,L]
+RewriteRule ^us/resources/blog/topic/57/pci%20compliance$ /us/secure-payment-services/pci-compliance/pci-dss-explained [R=301,L]
+RewriteRule ^us/resources/blog/travel-agents-how-book-your-pci-dss-journey-easy-way$ /us/resources/blog/item/travel-agents-how-to-book-your-pci-dss-journey-the-easy-way [R=301,L]
+RewriteRule ^us/resources/blog/travel-agents-out-in-cold$ /us/resources/blog/item/travel-agents-why-new-card-payment-rules-could-leave-you-out-in-the-cold [R=301,L]
+RewriteRule ^us/resources/blog/unified-agent-desktops-why-its-critical-you-aim-high$ /us/resources/blog/item/unified-agent-desktops-why-it-s-critical-you-aim-high [R=301,L]
+RewriteRule ^us/resources/blog/visual-ivr-improves-contact-center-customer-experience$ /us/resources/news/item/eckoh-s-visual-ivr-solution-wins-gsa-award-for-strategic-partner [R=301,L]
+RewriteRule ^us/resources/blog/what-does-your-call-abandon-rate-really-mean$ /us/resources/blog [R=301,L]
+RewriteRule ^us/resources/blog/whats-number-tokenisation$ /us/resources/blog/item/whats-in-a-number-tokenisation [R=301,L]
+RewriteRule ^us/resources/blog/why-live-chat-agents-are-super-heroes$ /us/resources/blog/item/why-web-chat-agents-are-super-heroes [R=301,L]
+RewriteRule ^us/resources/case-studies/bromford-housing-group$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/case-studies/carnival-cruises$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/case-studies/parcelforce-worldwide$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/case-studies/power-ni$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/case-studies/thames-water$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/news/item/cameron-ross-2$ /us/about-us/leadership-team [R=301,L]
+RewriteRule ^us/resources/news/item/todd-funk-2$ /us/about-us/leadership-team [R=301,L]
+RewriteRule ^us/resources/news/item/tony-porter-4$ /us/about-us/leadership-team [R=301,L]
+RewriteRule ^us/resources/pci-dss-definitive-ebook$ /us/resources/blog/item/the-pci-compliance-checklist-for-contact-centers [R=301,L]
+RewriteRule ^us/resources/qsa-ebook$ /us/resources/blog/item/top-10-facts-about-pci-compliance-that-you-need-to-know [R=301,L]
+RewriteRule ^us/rss/news$ /us/resources/news [R=301,L]
+RewriteRule ^us/secure-payment-services/contact-centre-payments/securing-web-chat-payments$ /us/secure-payment-services/contact-center-payments/securing-live-chat-payments [R=301,L]
+# Redirect identified during staging site testing #
+RewriteRule ^product-guides-us/product-guides-us-secure-payments/documents-to-shareholders/379-half-year-trading-update-29-10-19$ /investors [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel/web-chat$ /customer-engagement/chat [R=301,L]
+RewriteRule ^product-guides-us/product-guides-us-secure-payments/documents-to-shareholders/379-half-year-trading-update-29-10-19$ /investors [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel/email-management-system$ /customer-engagement/omnichannel/email-management-system [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel/co-browsing/level2or3$ /customer-engagement/omnichannel/co-browsing [R=301,L]
+RewriteRule ^contact-centre-services/third-party-support$ /customer-engagement [R=301,L]
+RewriteRule ^customer-engagement-solutions/ivr-speech-solutions$ /customer-self-service [R=301,L]
+RewriteRule ^secure-payment-services/contact-centre-payments/securing-web-chat-payments$ /secure-payment-services/securing-web-chat-payments [R=301,L]
+RewriteRule ^customer-engagement-solutions/ivr-speech-solutions/identification-verification$ /customer-engagement/ivr-speech-solutions/identification-verification [R=301,L]
+RewriteRule ^contact-centre-services/third-party-support/aspect$ / [R=301,L]
+RewriteRule ^contact-centre-services/third-party-support/avaya / [R=301,L]
+RewriteRule ^contact-centre-services/third-party-support/decommissioning / [R=301,L]
+RewriteRule ^secure-payment-services/contact-center-payments/remote-contact-center-payments / [R=301,L]
+RewriteRule ^contact-centre-services/third-party-support/ribbon / [R=301,L]
+RewriteRule ^customer-engagement-solutions$ /customer-engagement [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel/chatbots$ /customer-self-service/chatbots [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel/messaging$ /customer-engagement/messaging [R=301,L]
+RewriteRule ^customer-engagement-solutions/ivr-speech-solutions/ivr-self-service$ /customer-self-service [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel$ /customer-engagement/omnichannel [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel/co-browsing$ /customer-engagement/omnichannel/co-browsing [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel/knowledge-base$ /customer-engagement/omnichannel/knowledge-base [R=301,L]
+RewriteRule ^customer-engagement-solutions/omnichannel/social-agent$ /customer-engagement/social-listening [R=301,L]
+RewriteRule ^customer-engagement-solutions/ivr-speech-solutions/natural-language-speech-recognition$ /customer-self-service/speech-recognition-ivr [R=301,L]
+RewriteRule ^customer-engagement-solutions/ivr-speech-solutions/visual-ivr$ /customer-self-service/visual-ivr [R=301,L]
+RewriteRule ^us/contact-center-services/agent-desktop$ /us/customer-engagement/coral-agent-desktop [R=301,L]
+RewriteRule ^us/contact-center-services/chatbot$ /us/customer-engagement/chatbots [R=301,L]
+RewriteRule ^us/contact-center-services/web-chat$ /us/customer-engagement/chat [R=301,L]
+RewriteRule ^us/contact-center-services/ribbon$ /us/customer-engagement/contact-center-support/ribbon-support [R=301,L]
+RewriteRule ^us/contact-center-services/third-party-support$ / [R=301,L]
+RewriteRule ^us/contact-center-services/third-party-support/avaya$ / [R=301,L]
+RewriteRule ^us/contact-center-services/third-party-support/aspect$ /us/customer-engagement/contact-center-support/aspect-support [R=301,L]
+RewriteRule ^us/contact-center-services/third-party-support/decommissioning$ / [R=301,L]
+RewriteRule ^secure-payment-services/contact-center-payments/remote-contact-center-payments$ /customer-engagement/homeworking-agents [R=301,L]
+RewriteRule ^us/customer-engagement-us/(.*) /us/customer-engagement/$1 [R=301,L]
+# Redirects migrated from previous htaccess file
+RewriteRule ^why-eckoh/strategic-alliance$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/west$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/verizon$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/twenty-first-century-communications$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/transversal$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/teleperformance$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/sybase$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/servebase$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/sap$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/pci-security-standards-council$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/orac$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/nuance$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/microsoft-sql-server$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/maintel$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/ingenico-payment-services$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/holly$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/equinix$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/epic-test-partner-page$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/emc$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/dell$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/cybersource$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/contact-company$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/centurylink$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/capita$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/bt$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/barclaycard$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/avaya$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/audiocodes$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners/4net-technologies$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/partners$ /about-us/partners [R=301,L]
+RewriteRule ^why-eckoh/leadership-team$ /about-us/management-team [R=301,L]
+RewriteRule ^why-eckoh/board-directors$ /about-us/management-team [R=301,L]
+RewriteRule ^why-eckoh/awards$ /about-us/awards [R=301,L]
+RewriteRule ^why-eckoh/approach$ /about-us/why-eckoh [R=301,L]
+RewriteRule ^why-eckoh$ /about-us/why-eckoh [R=301,L]
+RewriteRule ^us/why-eckoh/partners/west$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/verizon$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/twenty-first-century-communications$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/transversal$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/teleperformance$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/sybase$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/servebase$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/sap$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/pci-security-standards-council$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/orac$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/nuance$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/microsoft-sql-server$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/ingenico-payment-services$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/holly$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/equinix$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/epic-test-partner-page$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/emc$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/dell$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/cybersource$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/centurylink$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/bt$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/azzurri$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/avaya$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners/audiocodes$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/partners$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/why-eckoh/leadership-team$ /us/about-us/leadership-team [R=301,L]
+RewriteRule ^us/why-eckoh/awards$ /us/about-us/awards [R=301,L]
+RewriteRule ^us/why-eckoh/approach$ /us/about-us/why-eckoh [R=301,L]
+RewriteRule ^us/why-eckoh$ /us/about-us/why-eckoh [R=301,L]
+RewriteRule ^us/resources/white-papers-and-books$ /us/resources/eguides-and-white-papers [R=301,L]
+RewriteRule ^us/resources/secure-payments-ebook$ /us/secure-payment-services [R=301,L]
+RewriteRule ^us/resources/news-press/capita-partnership-secures-contract-leading-uk-mobile-operator$ /us/resources/news/item/flourishing-capita-partnership-secures-contract-with-leading-uk-mobile-operator [R=301,L]
+RewriteRule ^us/resources/case-studies/hillarys$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/case-studies/hayes-garden-centre$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/case-studies/ecotricity$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/case-studies$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/resources/agent-desktop-ebook$ /us/resources [R=301,L]
+RewriteRule ^us/referral-partners$ /us/about-us/partners [R=301,L]
+RewriteRule ^us/privacy-policy$ /company-policies/privacy-policy [R=301,L]
+RewriteRule ^us/pci-compliance/web-payments$ /us/secure-payment-services/contact-center-payments/securing-live-chat-payments [R=301,L]
+RewriteRule ^us/pci-compliance/web-and-mobile-payments/smart-meter-payments$ /us/secure-payment-services/contact-center-payments/securing-live-chat-payments [R=301,L]
+RewriteRule ^us/pci-compliance/web-and-mobile-payments$ /us/secure-payment-services [R=301,L]
+RewriteRule ^us/pci-compliance/pci-dss-call-recording$ /us/secure-payment-services/pci-compliance/contact-center-pci-compliance [R=301,L]
+RewriteRule ^us/pci-compliance/pci-contact-centre$ /us/secure-payment-services/pci-compliance/contact-center-pci-compliance [R=301,L]
+RewriteRule ^us/pci-compliance/IVR-payments$ /us/secure-payment-services [R=301,L]
+RewriteRule ^us/pci-compliance/help-with-pci-dss$ /us/secure-payment-services/pci-compliance/pci-dss-explained [R=301,L]
+RewriteRule ^us/pci-compliance/gdpr$ /us/secure-payment-services/pci-compliance/gdpr-explained [R=301,L]
+RewriteRule ^us/pci-compliance/agent-assisted-payments/live-chat-pay$ /us/secure-payment-services/contact-center-payments/securing-live-chat-payments [R=301,L]
+RewriteRule ^us/pci-compliance/agent-assisted-payments/dtmf-masking$ /us/secure-payment-services/pci-compliance/contact-center-pci-compliance/dtmf-masking [R=301,L]
+RewriteRule ^us/pci-compliance/agent-assisted-payments/ChatGuard$ /us/contact-center-services/web-chat [R=301,L]
+RewriteRule ^us/pci-compliance/agent-assisted-payments/audio-tokenization$ /us/secure-payment-services/pci-compliance/contact-center-pci-compliance/audio-tokenization [R=301,L]
+RewriteRule ^us/pci-compliance/agent-assisted-payments/audio-tokenisation$ /us/secure-payment-services/pci-compliance/contact-center-pci-compliance/audio-tokenization [R=301,L]
+RewriteRule ^us/pci-compliance/agent-assisted-payments/alternative-payments$ /us/secure-payment-services [R=301,L]
+RewriteRule ^us/pci-compliance/agent-assisted-payments$ /us/secure-payment-services/contact-center-payments/securing-agent-payments [R=301,L]
+RewriteRule ^us/pci-compliance$ /us/secure-payment-services [R=301,L]
+RewriteRule ^us/operational-solutions/transition/transition-tools/flexxview$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/transition/transition-tools/flexxmrcp$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/transition/transition-tools/flexxgate$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/transition/transition-tools/flexx-bridge$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/transition/transition-tools$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/transition/innovation$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/transition$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/voicegenie$ /us/contact-center-services/third-party-support [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/verint$ /us/contact-center-services/third-party-support [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/tier$ /us/contact-center-services/third-party-support [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/nuance$ /us/contact-center-services/third-party-support [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/nortel$ /us/contact-center-services/third-party-support [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/nice$ /us/contact-center-services/third-party-support [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/decommissioning$ /us/contact-center-services/third-party-support/decommissioning [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/convergys$ /us/contact-center-services/third-party-support [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/avaya/avaya-mps-support$ /us/contact-center-services/third-party-support/avaya [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/avaya/avaya-ir-support$ /us/contact-center-services/third-party-support/avaya [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/avaya$ /us/contact-center-services/third-party-support/avaya [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support/aspect$ /us/contact-center-services/third-party-support/aspect [R=301,L]
+RewriteRule ^us/operational-solutions/third-party-support$ /us/contact-center-services/third-party-support [R=301,L]
+RewriteRule ^us/operational-solutions/productivity/workflow$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/productivity/social-media-monitoring$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/productivity/intelligent-call-routing$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/productivity/email-management$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/productivity/call-recording-extraction$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/productivity/call-recording-compliance-assurance$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/productivity$ /us/contact-center-services [R=301,L]
+RewriteRule ^us/operational-solutions/agent-desktop$ /us/secure-payment-services/contact-center-payments/securing-agent-payments [R=301,L]
+RewriteRule ^us/legal-disclaimer$ /company-policies/legal-disclaimer [R=301,L]
+RewriteRule ^us/clients/whitbread$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/vue-cinemas$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/utilita$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/transport-london$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/thames-water$ /us/about-us/case-studies/item/enhancing-payment-security-for-the-uks-largest-water-company-2 [R=301,L]
+RewriteRule ^us/clients/tenpin$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/td-waterhouse$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/target-group$ /us/about-us/case-studies/item/securing-telephone-payments-with-innovative-audio-tokenisation-2 [R=301,L]
+RewriteRule ^us/clients/screwfix$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/rural-payments-agency$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/rentokil-initial$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/red-driving-school$ /us/about-us/case-studies/item/increasing-sales-and-customer-support-with-web-chat-call-back-and-co-browsing-2 [R=301,L]
+RewriteRule ^us/clients/rci-financial-services$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/parcelforce$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/o2$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/ideal-shopping-direct$ /us/about-us/case-studies/item/taking-the-pressure-off-ideals-contact-centre-operation-with-customer-self-service-2 [R=301,L]
+RewriteRule ^us/clients/hillarys$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/garden-centre-group$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/electrolux$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/department-health$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/cooperative-response-center$ /us/about-us/case-studies/item/securing-customer-payments-by-preventing-sensitive-data-being-stored-or-accessed-2 [R=301,L]
+RewriteRule ^us/clients/cima$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/clients/carnival-uk$ /us/about-us/case-studies/item/securing-customer-payments-for-global-cruise-passengers-2 [R=301,L]
+RewriteRule ^us/clients/bromford-housing-group$ /us/about-us/case-studies/item/overcoming-two-obstacles-with-just-one-payment-solution-2 [R=301,L]
+RewriteRule ^us/clients/bmw$ /us/about-us/case-studies/item/bmw-give-a-boost-to-end-user-customers-with-truly-genius-online-support-2 [R=301,L]
+RewriteRule ^us/clients/allpay$ /us/about-us/case-studies/item/eckohs-secure-payment-solution-helps-allpay-and-their-housing-association-clients-take-secure-payments-2 [R=301,L]
+RewriteRule ^us/clients$ /us/about-us/case-studies [R=301,L]
+RewriteRule ^us/careers/opportunities$ /us/careers/current-roles [R=301,L]
+RewriteRule ^us/careers/learning-development$ /us/careers/reasons-to-work-for-eckoh [R=301,L]
+RewriteRule ^us/careers/eckoh-team$ /us/careers/hear-from-the-eckoh-team [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/flexibility-and-cost-savings-through-third-party-contact-centre-support$ /us/about-us/case-studies/ [R=301,L]
+RewriteRule ^us/about-us/case-studies/item/coral-agent-desktop-brings-disparate-systems-together-to-better-connect-agents-and-customers-while-delivering-real-tangible-benefits-to-the-bottom-line$ /us/about-us/case-studies/ [R=301,L]
+RewriteRule ^secure-payments/ecommerce-payments/$ /secure-payment-services [R=301,L]
+RewriteRule ^secure-payments/$ /secure-payment-services [R=301,L]
+RewriteRule ^resources/white-papers-and-books$ /resources/eguides-and-white-papers [R=301,L]
+RewriteRule ^resources/secure-payments-ebook$ /us/secure-payment-services [R=301,L]
+RewriteRule ^resources/news-press/capita-partnership-secures-contract-leading-uk-mobile-operator$ /resources/news/item/flourishing-capita-partnership-secures-contract-with-leading-uk-mobile-operator [R=301,L]
+RewriteRule ^resources/case-studies/vue$ /about-us/case-studies [R=301,L]
+RewriteRule ^resources/case-studies/ideal-world$ /about-us/case-studies/item/taking-the-pressure-off-ideals-contact-centre-operation-with-customer-self-service [R=301,L]
+RewriteRule ^resources/case-studies/hillarys$ /about-us/case-studies/item/protecting-customers-from-fraud-and-enabling-a-seamless-customer-service-experience [R=301,L]
+RewriteRule ^resources/case-studies/hayes-garden-centre$ /about-us/case-studies/item/increasing-online-sales-by-13-by-using-instant-call-back-to-improve-cx [R=301,L]
+RewriteRule ^resources/case-studies/ecotricity$ /about-us/case-studies [R=301,L]
+RewriteRule ^resources/case-studies$ /about-us/case-studies [R=301,L]
+RewriteRule ^referral-partners$ /about-us/partners [R=301,L]
+RewriteRule ^privacy-policy$ /company-policies/privacy-policy [R=301,L]
+RewriteRule ^pci-compliance/web-and-mobile-payments/smart-meter-payments$ /secure-payment-services/contact-centre-payments/automated-payment-system [R=301,L]
+RewriteRule ^pci-compliance/web-and-mobile-payments/$ /secure-payment-services/contact-centre-payments/automated-payment-system [R=301,L]
+RewriteRule ^pci-compliance/web-and-mobile-payments$ /secure-payment-services/contact-centre-payments/automated-payment-system [R=301,L]
+RewriteRule ^pci-compliance/us/agent-assisted-payments/alternative-payments$ /us/secure-payment-services [R=301,L]
+RewriteRule ^pci-compliance/pci-dss-call-recording$ /contact-centre-services/call-recording [R=301,L]
+RewriteRule ^pci-compliance/pci-contact-centre$ /secure-payment-services/pci-compliance/call-centre-pci-compliance [R=301,L]
+RewriteRule ^pci-compliance/IVR-payments$ /customer-engagement-solutions/ivr-speech-solutions/ivr-self-service [R=301,L]
+RewriteRule ^pci-compliance/help-with-pci-dss$ /secure-payment-services/pci-compliance/pci-dss-explained [R=301,L]
+RewriteRule ^pci-compliance/gdpr$ /secure-payment-services/pci-compliance/gdpr-explained [R=301,L]
+RewriteRule ^pci-compliance/agent-assisted-payments/live-chat-pay$ /secure-payment-services/contact-centre-payments/securing-web-chat-payments [R=301,L]
+RewriteRule ^pci-compliance/agent-assisted-payments/dtmf-masking$ /secure-payment-services/pci-compliance/call-centre-pci-compliance/dtmf-masking [R=301,L]
+RewriteRule ^pci-compliance/agent-assisted-payments/audio-tokenization$ /secure-payment-services/pci-compliance/call-centre-pci-compliance/audio-tokenisation [R=301,L]
+RewriteRule ^pci-compliance/agent-assisted-payments/audio-tokenisation$ /secure-payment-services/pci-compliance/call-centre-pci-compliance/audio-tokenisation [R=301,L]
+RewriteRule ^pci-compliance/agent-assisted-payments/alternative-payments$ /secure-payment-services [R=301,L]
+RewriteRule ^pci-compliance/agent-assisted-payments$ /secure-payment-services/contact-centre-payments/agent-assisted-payments [R=301,L]
+RewriteRule ^pci-compliance/$ /secure-payment-services [R=301,L]
+RewriteRule ^pci-compliance$ /secure-payment-services [R=301,L]
+RewriteRule ^operational-solutions/transition/transition-tools/flexxview$ /contact-centre-services/digital-transformation [R=301,L]
+RewriteRule ^operational-solutions/transition/transition-tools/flexxmrcp$ /contact-centre-services/digital-transformation [R=301,L]
+RewriteRule ^operational-solutions/transition/transition-tools/flexxgate$ /contact-centre-services/digital-transformation [R=301,L]
+RewriteRule ^operational-solutions/transition/transition-tools/flexx-bridge$ /contact-centre-services/digital-transformation [R=301,L]
+RewriteRule ^operational-solutions/transition/transition-tools$ /contact-centre-services/digital-transformation [R=301,L]
+RewriteRule ^operational-solutions/transition/innovation$ /contact-centre-services/digital-transformation [R=301,L]
+RewriteRule ^operational-solutions/transition$ /contact-centre-services/digital-transformation [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/voicegenie$ /contact-centre-services/third-party-support [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/verint$ /contact-centre-services/third-party-support [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/tier$ /contact-centre-services/third-party-support [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/nuance$ /contact-centre-services/third-party-support [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/nortel$ /contact-centre-services/third-party-support [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/nice$ /contact-centre-services/third-party-support [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/convergys$ /contact-centre-services/third-party-support [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/decommissioning$ /contact-centre-services/third-party-support/decommissioning [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/avaya/avaya-mps-support$ /contact-centre-services/third-party-support/avaya [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/avaya/avaya-ir-support$ /contact-centre-services/third-party-support/avaya [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/avaya$ /contact-centre-services/third-party-support/avaya [R=301,L]
+RewriteRule ^operational-solutions/third-party-support/aspect$ /contact-centre-services/third-party-support/aspect [R=301,L]
+RewriteRule ^operational-solutions/third-party-support$ /contact-centre-services/third-party-support [R=301,L]
+RewriteRule ^operational-solutions/productivity/workflow$ /contact-centre-services [R=301,L]
+RewriteRule ^operational-solutions/productivity/social-media-monitoring$ /customer-engagement-solutions/omnichannel/social-agent [R=301,L]
+RewriteRule ^operational-solutions/productivity/listening$ /customer-engagement-solutions/omnichannel/social-agent [R=301,L]
+RewriteRule ^operational-solutions/productivity/knowledge-base-internal$ /customer-engagement-solutions/omnichannel/knowledge-base [R=301,L]
+RewriteRule ^operational-solutions/productivity/intelligent-call-routing$ /contact-centre-services/phone-number-management [R=301,L]
+RewriteRule ^operational-solutions/productivity/email-management$ /customer-engagement-solutions/omnichannel/email-management-system [R=301,L]
+RewriteRule ^operational-solutions/productivity$ /contact-centre-services [R=301,L]
+RewriteRule ^operational-solutions/agent-desktop$ /contact-centre-services/agent-desktop [R=301,L]
+RewriteRule ^operational-solutions$ /contact-centre-services [R=301,L]
+RewriteRule ^legal-disclaimer$ /company-policies/legal-disclaimer [R=301,L]
+RewriteRule ^clients/whitbread$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/vue-cinemas$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/utilita$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/transport-london$ /about-us/case-studies/item/giving-londons-travelling-public-and-easy-effective-and-secure-telephone-payment-service [R=301,L]
+RewriteRule ^clients/thames-water$ /about-us/case-studies/item/enhancing-payment-security-for-the-uks-largest-water-company [R=301,L]
+RewriteRule ^clients/tenpin$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/td-waterhouse$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/target-group$ /about-us/case-studies/item/securing-telephone-payments-with-innovative-audio-tokenisation [R=301,L]
+RewriteRule ^clients/south-east-water$ /about-us/case-studies/item/automated-self-service-payments-generate-20-more-customer-payments-than-anticipated [R=301,L]
+RewriteRule ^clients/screwfix$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/rural-payments-agency$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/rentokil-initial$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/red-driving-school$ /about-us/case-studies/item/increasing-sales-and-customer-support-with-web-chat-call-back-and-co-browsing [R=301,L]
+RewriteRule ^clients/rci-financial-services$ /about-us/case-studies/item/securing-payments-achieving-pci-dss-compliance-and-driving-customer-experience-for-renault-nissan-customers [R=301,L]
+RewriteRule ^clients/power-ni$ /about-us/case-studies/item/mobile-apps-give-power-to-ni-customers-with-over-50-thousand-downloads [R=301,L]
+RewriteRule ^clients/parcelforce$ /about-us/case-studies/item/automated-parcel-tracking-and-redelivery-service-24x7-on-a-no-queue-basis [R=301,L]
+RewriteRule ^clients/o2$ /about-us/case-studies/item/customer-self-service-improves-o2s-customer-engagement-efficiency [R=301,L]
+RewriteRule ^clients/northumbrian-water$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/national-rail-enquiries$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/ministry-justice$ /about-us/case-studies/item/eckohpay-cuts-the-cost-of-collecting-fines-by-95-improving-departmental-efficiency [R=301,L]
+RewriteRule ^clients/ipsos-mori$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/ideal-shopping-direct$ /about-us/case-studies/item/taking-the-pressure-off-ideals-contact-centre-operation-with-customer-self-service [R=301,L]
+RewriteRule ^clients/hillarys$ /about-us/case-studies/item/protecting-customers-from-fraud-and-enabling-a-seamless-customer-service-experience [R=301,L]
+RewriteRule ^clients/hayes-garden-world$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/hampshire-county-council$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/garden-centre-group$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/electrolux$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/dwr-cymruwelsh-water$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/department-health$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/cooperative-response-center$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/comic-relief$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/cima$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients/carnival-uk$ /about-us/case-studies/item/securing-customer-payments-for-global-cruise-passengers [R=301,L]
+RewriteRule ^clients/bmw$ /about-us/case-studies/item/bmw-give-a-boost-to-end-user-customers-with-truly-genius-online-support [R=301,L]
+RewriteRule ^clients/bromford-housing-group$ /about-us/case-studies/item/overcoming-two-obstacles-with-just-one-payment-solution [R=301,L]
+RewriteRule ^clients/allpay$ /about-us/case-studies/item/eckohs-secure-payment-solution-helps-allpay-and-their-housing-association-clients-take-secure-payments [R=301,L]
+RewriteRule ^clients/addison-lee$ /about-us/case-studies [R=301,L]
+RewriteRule ^clients$ /about-us/case-studies [R=301,L]
+RewriteRule ^careers/opportunities$ /careers/current-roles [R=301,L]
+RewriteRule ^careers/learning-development$ /careers/reasons-to-work-for-eckoh [R=301,L]
+RewriteRule ^careers/eckoh-team$ /careers/hear-from-the-eckoh-team [R=301,L]
+RewriteRule ^about-us/case-studies/item/securing-customer-payments-by-preventing-sensitive-data-being-stored-or-accessed$ /about-us/case-studies/ [R=301,L]
+RewriteRule ^about-us/case-studies/item/flexibility-and-cost-savings-through-third-party-contact-centre-support$ /about-us/case-studies/ [R=301,L]
+# Broken URLs with query strings
+RewriteCond %{QUERY_STRING} Itemid=74&func=select&id=6&option=com_remository
+RewriteRule ^index\.php$ /investors/financial-reports/annual-reports [R=301,L]
+RewriteCond %{QUERY_STRING} Itemid=57&id=1127&option=com_content&view=article
+RewriteRule ^index\.php /customer-engagement-solutions/ivr-speech-solutions/ivr-self-service [R=301,L]
+RewriteCond %{QUERY_STRING} catid=100%3Aboard-of-directors&directory=71&id=683%3Anik-philpot-chief-executive-officer&option=com_content&view=article
+RewriteRule ^index\.php$ /about-us/management-team [R=301,L]
+RewriteCond %{QUERY_STRING} Itemid=28&id=31&option=com_content&view=section 
+RewriteRule ^index\.php$ /investors/financial-reports/annual-reports [R=301,L]
+# Broken URLs with unfriendly URL pattern
+RewriteRule ^component/zoo/item/(.*) /resources/news/item/$1 [R=301,L]
+RewriteRule ^us/component/zoo/item/(.*) /us/resources/news/item/$1 [R=301,L]
+# Blog URls with missing "item" 
+RewriteCond %{REQUEST_URI} !resources/blog/item
+RewriteCond %{REQUEST_URI} !resources/blog/feed
+RewriteCond %{REQUEST_URI} !resources/blog/category
+RewriteCond %{REQUEST_URI} !resources/blog/[0-9]+
+RewriteRule ^resources/blog/(.+) /resources/blog/item/$1 [R=301,L]
+RewriteCond %{REQUEST_URI} !us/resources/blog/item
+RewriteCond %{REQUEST_URI} !us/resources/blog/[0-9]+
+RewriteCond %{REQUEST_URI} !us/resources/blog/feed
+RewriteCond %{REQUEST_URI} !us/resources/blog/category
+RewriteRule ^us/resources/blog/(.+) /us/resources/blog/item/$1 [R=301,L]
+# Remove feed URLs
+RewriteCond %{REQUEST_URI} !resources/([^/]+)/feed/atom
+RewriteCond %{REQUEST_URI} !investors/announcements/feed
+RewriteCond %{REQUEST_URI} !careers/current-roles/feed
+RewriteCond %{REQUEST_URI} !about-us/case-studies/feed
+RewriteRule ^.*feed/atom/.* /$1$2 [R=301,L]
+RewriteCond %{REQUEST_URI} !resources/([^/]+)/feed/rss
+RewriteCond %{REQUEST_URI} !investors/announcements/feed
+RewriteCond %{REQUEST_URI} !careers/current-roles/feed
+RewriteCond %{REQUEST_URI} !about-us/case-studies/feed
+RewriteRule ^.*feed/rss/.* /$1$2 [R=301,L]
+# Unwanted query strings
+RewriteCond %{REQUEST_URI} !resources/([^/]+)/feed/rss
+RewriteCond %{REQUEST_URI} !investors/announcements/feed
+RewriteCond %{QUERY_STRING} format=rss
+RewriteRule (.*) /$1? [R=301,L]
+# Old broken rule from previous htaccess, corrected:
+RewriteRule ^us/resources/news-press/(.*) /us/resources/news/$1 [R=301,L]
+RewriteRule ^resources/news-press/(.*) /resources/news/$1 [R=301,L]
+# Moved product category
+RewriteRule ^customer-engagement-solutions/(.*)$ /customer-engagement/$1 [R=301,NC,L]
+# Redirect old hostnames
+# Old USA
+RewriteCond %{HTTP_HOST} eckoh\.us$
+RewriteRule (.*) https://www.eckoh.com/us/$1 [R=301,L]
+# Misc. hosts
+RewriteCond %{HTTP_HOST} (^investors\.eckoh\.com$|psshelp\.com$|veritape\.com$|veritape\.net$|^blog\.eckoh\.com$|^insights\.eckoh\.com$)
+RewriteRule (.*) https://www.eckoh.com/$1 [R=301,L]
+</IfModule>
+## End - Custom redirects
+
+##
+# Uncomment the following line if your webserver's URL
+# is not directly related to physical file paths.
+# Update Your Joomla! Directory (just / for root).
+##
+
+# RewriteBase /
+
+## Begin - Joomla! core SEF Section.
+#
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#
+# If the requested path and file is not /index.php and the request
+# has not already been internally rewritten to the index.php script
+# and the requested path and file doesn't directly match a physical file
+# and the requested path and file doesn't directly match a physical folder
+# internally rewrite the request to the index.php script
+RewriteCond %{REQUEST_URI} !^/index\.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]
+#
+## End - Joomla! core SEF Section.
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+RewriteCond %{HTTP_HOST} ^insights\.eckoh\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.insights\.eckoh\.com$
+RewriteRule ^(.*)$ "https\:\/\/www\.eckoh\.com\/$1" [R=301,L]
+
+
+## BEGIN EXPIRES CACHING - JCH OPTIMIZE ##
+<IfModule mod_expires.c>
+	ExpiresActive on
+
+	# Perhaps better to whitelist expires rules? Perhaps.
+	ExpiresDefault "access plus 1 year"
+
+	# cache.appcache needs re-requests in FF 3.6 (thanks Remy ~Introducing HTML5)
+	ExpiresByType text/cache-manifest "access plus 0 seconds"
+
+	# Your document html
+	ExpiresByType text/html "access plus 0 seconds"
+
+	# Data
+	ExpiresByType text/xml "access plus 0 seconds"
+	ExpiresByType application/xml "access plus 0 seconds"
+	ExpiresByType application/json "access plus 0 seconds"
+
+	# Feed
+	ExpiresByType application/rss+xml "access plus 1 hour"
+	ExpiresByType application/atom+xml "access plus 1 hour"
+
+	# Favicon (cannot be renamed)
+	ExpiresByType image/x-icon "access plus 1 week"
+
+	# Media: images, video, audio
+	ExpiresByType image/gif "access plus 1 year"
+	ExpiresByType image/png "access plus 1 year"
+	ExpiresByType image/jpg "access plus 1 year"
+	ExpiresByType image/jpeg "access plus 1 year"
+	ExpiresByType image/webp "access plus 1 year"
+	ExpiresByType audio/ogg "access plus 1 year"
+	ExpiresByType video/ogg "access plus 1 year"
+	ExpiresByType video/mp4 "access plus 1 year"
+	ExpiresByType video/webm "access plus 1 year"
+
+	# HTC files (css3pie)
+	ExpiresByType text/x-component "access plus 1 year"
+
+	# Webfonts
+	ExpiresByType application/font-ttf "access plus 1 year"
+	ExpiresByType font/* "access plus 1 year"
+	ExpiresByType application/font-woff "access plus 1 year"
+	ExpiresByType application/font-woff2 "access plus 1 year"
+	ExpiresByType image/svg+xml "access plus 1 year"
+	ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+
+	# CSS and JavaScript
+	ExpiresByType text/css "access plus 1 year"
+	ExpiresByType type/javascript "access plus 1 year"
+	ExpiresByType application/javascript "access plus 1 year"
+
+	<IfModule mod_headers.c>
+		Header append Cache-Control "public"
+		<FilesMatch ".(js|css|xml|gz|html)$">
+			Header append Vary: Accept-Encoding
+		</FilesMatch>
+	</IfModule>
+
+</IfModule>
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html
+	AddOutputFilterByType DEFLATE text/css
+	AddOutputFilterByType DEFLATE text/javascript
+	AddOutputFilterByType DEFLATE text/xml
+	AddOutputFilterByType DEFLATE text/plain
+	AddOutputFilterByType DEFLATE image/x-icon
+	AddOutputFilterByType DEFLATE image/svg+xml
+	AddOutputFilterByType DEFLATE application/rss+xml
+	AddOutputFilterByType DEFLATE application/javascript
+	AddOutputFilterByType DEFLATE application/x-javascript
+	AddOutputFilterByType DEFLATE application/xml
+	AddOutputFilterByType DEFLATE application/xhtml+xml
+	AddOutputFilterByType DEFLATE application/font
+	AddOutputFilterByType DEFLATE application/font-truetype
+	AddOutputFilterByType DEFLATE application/font-ttf
+	AddOutputFilterByType DEFLATE application/font-otf
+	AddOutputFilterByType DEFLATE application/font-opentype
+	AddOutputFilterByType DEFLATE application/font-woff
+	AddOutputFilterByType DEFLATE application/font-woff2
+	AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+	AddOutputFilterByType DEFLATE font/ttf
+	AddOutputFilterByType DEFLATE font/otf
+	AddOutputFilterByType DEFLATE font/opentype
+	AddOutputFilterByType DEFLATE font/woff
+	AddOutputFilterByType DEFLATE font/woff2
+
+</IfModule>
+## END EXPIRES CACHING - JCH OPTIMIZE
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php71” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php71 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

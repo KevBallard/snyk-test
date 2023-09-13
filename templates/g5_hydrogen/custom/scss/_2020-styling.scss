@@ -1,0 +1,1798 @@
+/***************************
+****************************
+
+NAME: _2020-styling.scss
+SITE: Eckoh
+DESCRIPTION: Styling for 2020 mass changes as part of Eckoh phase 2 work
+-------------------------------------
+
+AUTHOR: Becky Allenby | becky.allenby@bluefrontier.co.uk
+DATE CREATED: 24/08/20
+LAST MODIFIED DATE: Rebecca Allenby
+LAST MODIFIED BY: 23/12/2021
+
+****************************
+***************************/
+*{font-family: $font1;}
+body{font-family:$font1;font-weight:400}h1,h2,h3,h4,h5{font-family:$font1;font-weight:500}
+
+//RO BLOG HEADER IMAGES 
+#system-message{margin:30px 0 0 0}
+.controls{
+	.btn-primary{
+		background-color: $red !important;
+	}
+}
+body.news-template #yoo-zoo .pos-top {
+    @media (max-width:1000px) {
+        padding-top:200px;
+    }
+    @media (max-width: 47.99rem) {
+        padding-top:0;
+    }
+    .element-image {
+        background-size:cover;
+        background-position: center;
+        height:100%;
+        width:30%!important;
+        right:0;
+        left:auto!important;
+        img {
+            display: none;
+        }
+        @media (max-width:1000px) {
+            height:200px;
+            width:100%!important;
+            top:0;
+        }
+    }
+    .text-wrapper {
+        .element-itemname {
+            @media (max-width:1520px) {
+                padding-right:25%!important;
+            }
+            @media (max-width:1000px) {
+                padding-right:0%!important;
+            }
+        }
+    }
+}  
+
+@media (max-width:1599px) {
+    body.gantry.news-template main#g-main {
+        padding-top:146px !important; 
+    }
+}
+
+// @media (max-width:1366px) and (min-width:1366px){
+//     body.gantry.news-template main#g-main {
+//         padding-top:0px !important; 
+//     }
+// }
+@media (max-width:1194px) and (min-width:1194px){
+    body.gantry.news-template main#g-main {
+        padding-top:0px !important; 
+    }
+}
+
+@media (max-width:1150px) {
+    body.gantry.news-template main#g-main {
+        padding-top:0px !important; 
+    }
+}
+
+
+//RO BLOG HEADER IMAGES - END
+
+
+
+
+//RO LANGUAGE 
+
+div.mod-languages ul.lang-inline li {
+    a {
+        text-decoration: underline;
+    }
+    &.lang-active {
+        a {
+            text-decoration: none; 
+            pointer-events: none;
+        }
+    }
+}
+
+//RO COOKIE HEADER RESTYLING 
+
+.jb.cookie {
+    strong {
+        color:white;
+    }
+}
+
+//RO LANGUAGE POP UP RESTYLING
+
+.bfModal {
+    position: absolute;
+//    top: auto;
+    top:0;
+    padding-top: 0;
+    margin-top: 0;
+    right: auto;
+    left: 0;
+    background-color: #252525;
+    height: auto;
+    .bfmodal-content {
+        padding-top: 0;
+        padding-bottom: 0;
+        top: 0;
+        position: relative;
+        width: 100%;
+        border: 0;
+        margin-top:0;
+        background-image:none;
+        background-color: #252525;
+        max-width:77rem;
+        display: flex;
+        justify-content: space-between;
+        .bfclose {
+            display: none;
+        }
+        img {
+            display: none;
+        }
+        p {
+            color:white;
+            font-weight: 400;
+            margin:0;
+            font-size:1.2rem;
+            @media (max-width:1150px) {
+                font-size:1rem;
+            }
+            @media (max-width:900px) {
+                font-size:0.9rem;
+                padding: 10px 10px;
+            }
+            @media (max-width:767px) {
+                line-height: 1.1rem;
+            }
+            @media (max-width:767px) {
+                max-width:500px;
+                margin-left: auto;
+                margin-right:auto;
+            }
+        }
+        > div {
+            @media (max-width:767px) {
+                margin-left: auto;
+                margin-right:auto;
+                width:100%;
+            }
+        }
+        > div > span.con {
+            width:auto;
+            display: inline;
+            color:#252525;
+            a {
+                color:white!important;
+                margin:0 10px;
+                font-size:1.1rem;
+                @media (max-width:1150px) {
+                    font-size:1rem;
+                }
+                @media (max-width:900px) {
+                font-size:0.9rem;
+                    margin: 0px 5px;
+                    vertical-align: text-bottom;
+                }
+            }
+        }
+    }
+}
+
+
+//RO MOBILE MENU TEMP STYLING
+
+#g-mobile-links {
+    ul.nav {
+        padding-left: 0;
+        
+        li:nth-child(2) {
+            border-left:1px solid #d0d0ce;
+            border-right:1px solid #d0d0ce;
+        }
+        li {
+//            flex:0 33.3%;
+            flex:1;
+            a {
+                justify-content: center;
+                width:100%;
+                text-align: center;
+            }
+            img {
+                display: none;
+            }
+        }
+    } 
+}
+
+#g-offcanvas a {
+    color:$red!important;
+}
+
+ul.nav {
+    span.open {
+        display: none;
+        // @media (max-width:1366px) and (min-width:1366px){
+        //     display: block; 
+        // }
+        @media (max-width:1194px) and (min-width:1194px){
+            display: block; 
+        }
+        @media (max-width:1150px) {
+            display: block; 
+        }
+    }
+}
+
+.mobile-menu-container {
+    .parent {
+        position: relative;
+        span.open {
+            position: absolute;
+            right:0;
+            top:0;
+            width:25%;
+            height:30px;
+            &:after {
+                position: absolute;
+                content: "";
+                width: 8px;
+                height: 8px;
+                transform: rotate(-45deg);
+                border-left: 2px solid #ad1d40;
+                border-bottom: 2px solid #ad1d40;
+                right: 0;
+                top: 10px;
+                transition: 0.25s ease-in 0.25s;
+            }
+//            font-size:3rem;
+            
+        }
+        > a {
+//            pointer-events: none;
+        }
+        ul {
+            display: none;
+        }
+    }
+}
+
+
+//NEW UK HOME PAGE LAYOUT
+@media only screen 
+and (min-width: 960px) {
+	body.g-home.home-2020.webp {
+		#g-showcase {
+			background-image: url(/images/home/homepage-circle-2021.png);
+		}
+		#g-mainbottom {
+			background-image: url(/images/home/background-elipse.webp);
+		}
+		#g-subfeature {
+			background-image: url(/images/home/background-elipse.webp);
+		}
+	}
+}
+
+body.g-home.home-2020 {
+	//Page Content Container
+	#g-page-surround {
+		background: rgba(255, 255, 255, 1);
+	}
+	//Navigation 
+	#g-header {
+		background: rgba(255, 255, 255, 1);
+	}
+	//Showcase
+	#g-showcase {
+		height: auto;
+		display: flex;
+		align-items: center;
+		position: relative;
+		background-image: url(/images/home/homepage-circle-2021.png);
+		background-size: 800px;
+		background-repeat: no-repeat;
+		background-position: 95% -5%;
+		@media only screen and (max-width: 767px) {
+			background-image: none;
+		}
+		.g-container {
+			.showcase-content {
+				.custom {
+					background-image: none !important;
+					.showcaseinner {
+						width: 50%;
+						margin: unset;
+						@media only screen and (max-width: 767px) {
+							width: 100% !important;
+						}
+						h1 {
+							font-size: 3rem;
+							line-height: 1.3;
+							color: $red;
+							font-weight: 700;
+							margin: 0 0 35px 0;
+							width: 100% !important;
+							&:after {
+								content: none;
+							}
+							@media only screen and (max-width: 1279px) {
+								font-size: 2.8rem;
+							}
+							@media only screen and (max-width: 959px) {
+								font-size: 2.4rem;
+							}
+							@media only screen and (max-width: 767px) {
+								font-size: 2rem;
+								margin: 0 0 20px 0;
+							}
+						}
+						p.intro {
+							font-size: 1.1rem;
+							line-height: 1.7;
+							width: 100%;
+							margin: 0;
+							&:first-of-type {
+								font-size: 1.15rem;
+								line-height: 1.5;
+								margin-bottom: 10px;
+							}
+							@media only screen and (max-width: 767px) {
+								font-size: 1rem;
+								&:first-of-type {
+									font-size: 1.05rem;
+								}
+							}
+						}
+						ul.accredit {
+							display: flex;
+							justify-content: flex-start;
+							align-items: center;
+							position: relative;
+							bottom: unset;
+							margin: 35px 0 0 0;
+							width: 100% !important;
+							li {
+								opacity: 1;
+								margin: 0 50px 0 0;
+								@media only screen and (max-width: 520px) {
+									margin: 0 25px 0 0 !important;
+								}
+								img {
+									max-height: 70px;
+									vertical-align: middle;
+									@media only screen and (max-width: 520px) {
+										max-height: none !important;
+									}
+								}
+								img.small {
+									max-height: 55px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//Showcase Bottom
+	#g-showcase-bottom {
+		margin: -200px 0 0 0;
+		position: relative;
+		.g-container {
+			.showcase-bottom-content {
+				margin: 0.625rem;
+				.lead-form {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					background: #fff;
+					padding: 30px;
+					border-radius: 5px;
+					-webkit-box-shadow: 0px 0px 30px 0px $lightgrey;
+					-moz-box-shadow: 0px 0px 30px 0px $lightgrey;
+					box-shadow: 0px 0px 30px 0px $lightgrey;
+					h3,p {
+						flex: 0 28%;
+						width: 28%;
+						font-size: 1.4rem;
+						line-height: 1.5;
+						color: $red;
+						font-weight: 700;
+						margin: 0;
+						&:after {
+							content: none;
+						}
+					}
+					.chronoforms6_credits {display: none;}
+					//Chronoform
+					.chronoforms {
+						flex: 0 70%;
+						width: 70%;
+						margin-left: 4%;
+						form#load-form {
+							max-width: 100% !important;
+							margin: 0;
+							padding: 20px 20px 10px 20px;
+							.field {
+								padding: 0;
+								margin: 0 0 15px 0;
+								label {
+									display: none;
+								}
+								.custom-error {
+									line-height: 1;
+    								padding: 10px 0 0 0;
+								}
+								input, textarea, .ui.selection.dropdown {
+									box-shadow: none;
+									background: transparent;
+									border: 1px solid $lightgrey;
+									border-radius: 4px;
+									padding: 12px 20px;
+									min-height: 0;
+									font-family: $font1;
+									font-weight: 400;
+									font-size: 1rem;
+									font-weight: 500;
+									line-height: 1.5;
+									color: $darkgrey;
+									margin: 0;
+								}
+								.ui.selection.dropdown {
+									.text {
+										color: $darkgrey;
+										text-transform: uppercase;
+										letter-spacing: 1px;
+										font-weight: 500;
+										font-size: 0.9rem;
+										padding: 0;
+										font-family: $font1;
+									}
+									i {
+										top: 15px;
+										&:before {
+											content: '\f078';
+											font-family: fontawesome;
+											color: $darkgrey;
+										}
+									}
+								}
+							}
+							.ui.grid>.row {
+								padding: 0px !important;
+								.col1 {
+									padding: 0 8px 0 0;
+								}
+								.col2 {
+									padding: 0 8px 0 8px;
+								}
+								.col3 {
+									padding: 0 8px 0 8px;
+								}
+								.col4 {
+									padding: 0 0 0 8px;
+								}
+							}
+							//Edge
+							:-webkit-input-placeholder {
+								color: $darkgrey;
+								text-transform: uppercase;
+								font-weight: 500;
+								font-size: 0.9rem;
+								font-family: $font1;
+							}
+							//Internet Explorer 10-11
+							:-ms-input-placeholder {
+								color: $darkgrey;
+								text-transform: uppercase;
+								font-weight: 500;
+								font-size: 0.9rem;
+								font-family: $font1;
+							}
+							//General
+							::placeholder {
+								color: $darkgrey;
+								text-transform: uppercase;
+								font-weight: 500;
+								font-size: 0.9rem;
+								font-family: $font1;
+							}
+							//No autofill colour
+							:-webkit-autofill {
+								background: transparent !important;
+								box-shadow: 0 0 0 100px white inset !important;
+								border: 1px solid $lightgrey !important;
+							}
+							button {
+								background: $aqua !important;
+								padding: 20px;
+								font-family: $font1;
+								font-size: 1.1rem !important;
+								line-height: 1.3 !important;
+								font-weight: 600 !important;
+								position: absolute;
+								right: 5px;
+								margin: 20px 0 0 0;
+                                white-space: normal;
+								&:hover {
+									background: #0F7B6C !important
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//Feature Boxes 
+	#g-feature {
+		padding: 80px 0 0 0;
+		.g-container {
+			.feature-content {
+				.g-content {
+					padding: 0;
+					//Individual feature link boxes
+					.moduletable.feature-box {
+						padding: 5px;
+						margin: 0;
+						p:nth-of-type(1) {
+							margin: 0 0 20px 0;
+							text-align: center;
+							img {
+								//width: 100%;
+							}
+						}
+						h3, p strong {
+							margin: 0;
+							font-size: 1.25rem;
+							font-weight: 600;
+							color: $blue;
+							text-decoration: underline;
+							transition: 0.3s;
+							position: relative;
+							right: -32px;
+							&:before {
+								color: $blue;
+								content: '\f0a9';
+								font-family: fontawesome;
+								position: absolute;
+								left: -32px;
+								transition: 0.3s;
+							}
+							&:after {
+								content: none;
+							}
+						}
+                        p:nth-of-type(2) {
+							margin-bottom: 0;
+						}
+						p:nth-of-type(3) {
+							margin: 10px 0;
+							color: #000;
+						}
+						&:hover {
+							h3 {
+								color: $darkergrey;
+								transition: 0.3s;
+								&:before {
+									color: $darkergrey;
+									transition: 0.3s;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//Mainbottom Clients
+	#g-mainbottom {
+		padding: 140px 0;
+		background-image: url(/images/home/background-elipse.jpg);
+		background-repeat: no-repeat;
+		background-size: 40%;
+		background-position: -8% 55%;
+		.g-container {
+			.g-grid {
+				display: flex;
+    			align-items: center;
+			}
+			.mainbottom-content {
+				//Quote section
+				.moduletable.quote {
+					width: 80%;
+					p.quote, blockquote {
+						position: relative;
+						font-size: 1.6rem;
+						line-height: 1.6;
+						font-weight: 600;
+						font-style: italic;
+                        border:0;
+                        padding-left: 0;
+                        margin-left: 0;
+						&:before {
+							content: url(/images/home/icon-open-quote-red.png);
+							position: absolute;
+							top: -90px;
+							left: 0;
+						}
+						@media only screen and (max-width: 1279px) {
+							font-size: 1.4rem;
+						}
+						@media only screen and (max-width: 959px) {
+							font-size: 1.2rem;
+						}
+					}
+					div {
+						margin-top: 40px;
+						img {
+							margin-right: 40px;
+						}
+						a {
+							color: $darkergrey;
+							text-decoration: underline;
+							transition: 0.3s;
+							position: relative;
+							right: -32px;
+							font-size: 1.2rem;
+    						font-weight: 500;
+							&:before {
+								color: $red;
+								content: '\f0a9';
+								font-family: fontawesome;
+								position: absolute;
+								left: -32px;
+								top: 0;
+								transition: 0.3s;
+							}
+							&:hover {
+								color: $red;
+								transition: 0.3s;
+								&:before {
+									color: $red;
+									transition: 0.3s;
+								}	
+							}
+						}
+					}
+				}
+				//Intro and logos section
+				.moduletable.intro-logos {
+					h2 {
+						font-size: 2.6rem;
+						line-height: 1.2;
+						color: $darkgrey;
+						font-weight: 600;
+						margin: 0 0 30px 0;
+						&:after {
+							content: none;
+						}
+						@media only screen and (max-width: 1279px) {
+							font-size: 2.4rem;
+						}
+						@media only screen and (max-width: 959px) {
+							font-size: 2.2rem;
+						}
+						@media only screen and (max-width: 767px) {
+							font-size: 1.6rem;
+							margin: 0 0 20px 0;
+						}
+					}
+					ul.clients {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						flex-wrap: wrap;
+						margin: 30px 0 0 0;
+						width: 100%;
+						list-style: none;
+						li {
+							padding: 18px;
+							img {
+								filter: grayscale(1);
+								opacity: 0.7;
+							}
+							&:nth-of-type(1) {
+								padding-left: 0px;
+							}
+							&:nth-of-type(5) {
+								padding-left: 0px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//Subfeature Boxes
+	#g-subfeature {
+		padding: 0 0 40px 0;
+		background-image: url(/images/home/background-elipse.jpg);
+		background-repeat: no-repeat;
+		background-size: 41%;
+		background-position: 120% 51%;
+		.g-container {
+			.subfeature-content {
+				.g-content {
+					padding: 0;
+					//Individual feature link boxes
+					.moduletable.feature-box {
+						padding: 5px;
+						margin: 0;
+						p:nth-of-type(1) {
+							margin: 0 0 20px 0;
+							img {
+								width: 100%;
+							}
+						}
+						h3, p strong {
+							margin: 0;
+							font-size: 1.4rem;
+							font-weight: 600;
+							color: $darkergrey;
+							text-decoration: underline;
+							transition: 0.3s;
+							position: relative;
+							right: -32px;
+							&:before {
+								color: $red;
+								content: '\f0a9';
+								font-family: fontawesome;
+								position: absolute;
+								left: -32px;
+								transition: 0.3s;
+							}
+							&:after {
+								content: none;
+							}
+							@media only screen and (max-width: 959px) {
+								font-size: 1.2rem;
+							}
+						}
+						&:hover {
+							h3 {
+								color: $red;
+								transition: 0.3s;
+								&:before {
+									transition: 0.3s;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//Extension Case Studies
+	#g-extension {
+		padding: 0 0 100px 0;
+		.g-container {
+			.g-grid {
+				display: flex;
+				align-items: center;
+			}
+			.extension-content {
+				//Introduction section
+				.moduletable.intro {
+					h2 {
+						font-size: 2.6rem;
+						line-height: 1.2;
+						color: $darkgrey;
+						font-weight: 600;
+						margin: 0 0 30px 0;
+						&:after {
+							content: none;
+						}
+						@media only screen and (max-width: 1279px) {
+							font-size: 2.4rem;
+						}
+						@media only screen and (max-width: 959px) {
+							font-size: 2.2rem;
+						}
+						@media only screen and (max-width: 767px) {
+							font-size: 1.6rem;
+							margin: 0 0 20px 0;
+						}	
+					}
+					ul.categories {
+						list-style: none;
+						margin: 30px 0 0 0;
+						list-style-position: outside;
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						li {
+							font-size: 1.1rem;
+							padding-bottom: 10px;
+							flex: 0 48%;
+							position: relative;
+							a {
+								i {
+									padding: 9px;
+									border-radius: 200px;
+									font-size: 14px;
+									background: radial-gradient(circle farthest-side, $red, $red 90%, transparent 100%);
+									color: #fff;
+									margin-right: 10px;
+									width: 30px;
+    								height: 30px;
+								}
+								span {
+									color: $darkergrey;
+									text-decoration: underline;
+									transition: 0.3s;
+								}
+								&:hover {
+									span {
+										color: $red;
+										transition: 0.3s;
+									}
+								}
+							}
+						}
+					}
+				}
+				//ZOO Feed section
+				.moduletable.casestudy-feed {
+					ul.zoo-item-list {
+						li {
+							box-shadow: none;
+							padding: 0;
+							margin: 15px 0;
+							div {
+								//Image
+								.media {
+									margin-right: 30px;
+								}
+								//Title and link
+								p.title {
+									padding: 20px 0;
+									width: 44%;
+									float: left;
+									min-height: 0px;
+									a:nth-of-type(1) {
+										display: block;
+										font-size: 1.2rem;
+										line-height: 1.4;
+										font-weight: 500;
+										color: $darkergrey;
+										transition: 0.3s;
+										padding-bottom: 20px;
+										&:hover {
+											color: $red;
+											transition: 0.3s;
+										}
+									}
+									a:nth-of-type(2) {
+										display: block;
+										color: $darkergrey;
+										text-decoration: underline;
+										transition: 0.3s;
+										position: relative;
+										right: -28px;
+										font-size: 1.3rem;
+										font-weight: 600;
+										&:before {
+											color: $red;
+											content: '\f0a9';
+											font-family: fontawesome;
+											position: absolute;
+											left: -28px;
+											top: 0;
+											transition: 0.3s;
+										}
+										&:hover {
+											color: $red;
+											transition: 0.3s;
+											&:before {
+												color: $red;
+												transition: 0.3s;
+											}	
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//Bottom Cta
+	#g-fullwidth {
+		background: $darkergrey;
+		padding: 100px;
+		.g-container {
+			.g-grid {
+				padding: 0 100px;
+				.g-content {
+					margin: 0;
+					padding: 0;
+					.custom.cta {
+						display: flex;
+						align-items: center;
+						div {
+							h3 {
+								font-size: 2.6rem;
+								line-height: 1.3;
+								color: #fff;
+								font-weight: 600;
+								margin: 0 0 30px 0;
+								&:after {
+									content: none;
+								}
+								@media only screen and (max-width: 1279px) {
+									font-size: 2.2rem;
+								}
+								@media only screen and (max-width: 959px) {
+									font-size: 2rem;
+								}
+								@media only screen and (max-width: 767px) {
+									font-size: 1.6rem;
+									margin: 0 0 20px 0;
+								}
+							}
+							p {
+								font-size: 1.1rem;
+								line-height: 1.7;
+								color: #fff;	
+								margin-bottom: 0;
+							}
+							a.button {
+								&:before {
+									content: none;
+								}
+								span {
+									color: #fff;
+									font-size: 1.2rem;
+									font-weight: 500;
+									padding: 18px 30px;
+									border: 1px solid #fff;
+									transition: 0.3s;
+									@media only screen and (max-width: 959px) {
+										font-size: 1.1rem;
+									}
+								}
+								&:hover {
+									span {
+										background: #fff;
+										color: $darkergrey;
+										transition: 0.3s;
+									}
+								}
+							}
+							&:nth-of-type(1) {
+								flex: 0 70%;
+								width: 70%;
+								justify-content: flex-start;
+							}
+							&:nth-of-type(2) {
+								display: flex;
+								flex: 0 30%;
+								width: 30%;
+								justify-content: flex-end;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//Footer
+	#g-footer {
+		margin-top: 0;
+	}
+}
+
+
+
+//MEDIA QUERIES BASED ON GANTRY BREAKPOINTS
+
+@media only screen 
+and (max-width: 1600px)
+and (min-width: 1400px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase 
+		#g-showcase {
+			background-position: 135% 40%;
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 1399px)
+and (min-width: 1280px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase 
+		#g-showcase {
+			background-position: 135% 40%;
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 1279px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase 
+		#g-showcase {
+			background-size: 700px;
+			background-position: 135% 40%;
+			.showcase-content {
+				.custom {
+					.showcaseinner {
+						padding: 0;
+					}
+				}
+			}
+		}
+		//Showcase Bottom
+		#g-showcase-bottom {
+			margin: -130px 0 0 0;
+		}
+		//Feature Boxes 
+		#g-feature {
+			padding: 60px 0 0 0;
+		}
+		//Mainbottom Clients
+		#g-mainbottom {
+			padding: 40px 0 80px 0;
+			.mainbottom-content {
+				//Quote section
+				.moduletable.quote {
+					width: 90% !important;
+				}
+				//Intro and logos section
+				.moduletable.intro-logos {
+					ul.clients {
+						justify-content: flex-start !important;
+						li {
+							padding: 18px;
+							padding-right: 30px !important;
+							&:nth-of-type(1) {
+								padding-left: 18px !important;
+							}
+							&:nth-of-type(5) {
+								padding-left: 18px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		//Subfeature Boxes
+		#g-subfeature {
+			padding: 0 0 60px 0;
+		}
+		//Extension Case Studies
+		#g-extension {
+			padding: 0 0 100px 0;
+			.g-container {
+				.extension-content {
+					//Introduction section
+					.moduletable.intro {
+						ul.categories {
+							li {
+								flex: 0 100%;
+							}
+						}
+					}
+					//ZOO Feed section
+					.moduletable.casestudy-feed {
+						ul.zoo-item-list {
+							li {
+								div {
+									//Image
+									.media {
+										width: 47% !important;
+										margin-right: 6%;
+										img {
+											width: 175%;
+											max-width: 500%;
+										}
+									}
+									//Title and link
+									p.title {
+										min-height: 0;
+										width: 44% !important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 1199px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Bottom Cta
+		#g-fullwidth {
+			padding: 100px 0;
+			.g-container {
+				width: 54rem;
+				.g-grid {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 1150px)
+and (min-width: 960px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase 
+		#g-showcase {
+			background-size: 600px;
+			background-position: 130% -50%;
+			.showcase-content {
+				.custom {
+					.showcaseinner {
+						background: none;
+						padding: 0;
+					}
+				}
+			}
+		}
+		//Showcase Bottom
+		#g-showcase-bottom {
+//			margin: -160px 0 0 0; 
+			.showcase-bottom-content {
+				.lead-form {
+					padding: 30px !important;
+					h3,p {
+						flex: 0 24% !important;
+						width: 24% !important;
+						font-size: 1.45rem !important;
+    					line-height: 2rem !important;
+					}
+					//Chronoform
+					.chronoforms {
+						flex: 0 78% !important;
+						width: 78% !important;
+						margin-left: 2%;
+						form#load-form {
+							button {
+							}
+						}
+					}
+				}
+			}
+		}
+		//Feature Boxes 
+		#g-feature {
+			padding: 80px 0 0 0;
+			.feature-content {
+			}
+		}
+		//Mainbottom Clients
+		#g-mainbottom {
+			padding: 80px 0 120px 0;
+			background-size: 60%;
+			background-position: -40% 55%;
+			.mainbottom-content {
+				//Quote section
+				.moduletable.quote {
+					width: 90%;
+				}
+			}
+		}
+		//Subfeature Boxes
+		#g-subfeature {
+			background-size: 60%;
+    		background-position: 150% 70%;
+		}
+		//Extension Case Studies
+		#g-extension {
+			padding: 0 0 100px 0;
+			.g-container {
+				.extension-content {
+					//ZOO Feed section
+					.moduletable.casestudy-feed {
+						ul.zoo-item-list {
+							li {
+								div {
+									//Image
+									.media {
+									}
+									//Title and link
+									p.title {
+										padding: 20px 0;
+										width: 100%;
+										min-height: 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 959px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase 
+		#g-showcase {
+			background-size: 550px;
+			background-position: 170% -10%;
+			.showcase-content {
+				.custom {
+					.showcaseinner {
+						width:60%;
+						background: none;
+						padding: 0;
+					}
+				}
+			}
+		}
+		//Showcase Bottom
+		#g-showcase-bottom {
+			margin: -130px 0 0 0;
+			.showcase-bottom-content {
+				padding: 0.938rem;
+				.lead-form {
+					flex-wrap: wrap;
+					h3,p {
+						flex: 0 100% !important;
+						width: 100% !important;
+						font-size: 1.45rem !important;
+						line-height: 2rem !important;
+						text-align: center;
+						padding: 0 0 15px 0;
+					}
+					//Chronoform
+					.chronoforms {
+						flex: 0 100% !important;
+						width: 100% !important;
+						margin-left: 0% !important;
+						form#load-form {
+							button {
+								margin: 15px 0 0 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		//Feature Boxes 
+		#g-feature {
+			padding: 80px 0 0 0;
+			.g-grid {
+				padding: 0.938rem;
+				.g-block.feature-content {
+					flex: 0 50%;
+					width: 50%;
+				}
+			}
+		}
+		//Mainbottom Clients
+		#g-mainbottom {
+			padding: 60px 0 40px 0;
+			background-size: 60%;
+			background-position: -40% 55%;
+			.g-grid {
+				flex-direction: column-reverse;
+				.mainbottom-content {
+					//Quote section
+					.moduletable.quote {
+						width: 100%;
+						p.quote, blockquote {
+							&:before {
+								top: -70px;
+								left: -10px;
+								transform: scale(0.6);
+							}
+						}
+					}
+				}
+			}
+		}
+		//Subfeature Boxes
+		#g-subfeature {
+			background-size: 60%;
+			background-position: 150% 70%;
+			padding: 0 0 50px 0;
+			.g-container {
+				padding: 0.938rem;
+				.g-block.subfeature-content {
+					flex: 0 50%;
+					width: 50%;
+				}
+			}
+		}
+		//Extension Case Studies
+		#g-extension {
+			padding: 0 0 60px 0;
+			.g-container {
+				.extension-content {
+					//Introduction section
+					.moduletable.intro {
+						ul.categories {
+							li {
+								flex: 0 48%;
+							}
+						}
+					}
+					//ZOO Feed section
+					.moduletable.casestudy-feed {
+						ul.zoo-item-list {
+							display: flex;
+							li {
+								margin: 10px;
+								div {
+									//Image
+									.media {
+										margin: 0;
+										width: 100% !important;
+										min-height: 160px;
+										img {
+											min-height: 160px;
+											width: 100%;
+											max-width: 100%;
+										}
+									}
+									//Title and link
+									p.title {
+										padding: 20px 0;
+										width: 100% !important;
+										min-height: 0;
+									}
+								}
+								&:nth-of-type(1) {
+									margin-left: 0;
+								}
+								&:nth-of-type(3) {
+									margin-right: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		//Bottom Cta
+		#g-fullwidth {
+			padding: 100px 0;
+			.g-container {
+				width: 45rem;
+				.g-grid {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 888px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase 
+		#g-showcase {
+			background-size: 550px;
+			background-position: 180% -10%;
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 887px) 
+and (min-width: 801px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase 
+		#g-showcase {
+			background-size: 510px;
+			background-position: 175% -10%;
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 800px) 
+and (min-width: 768px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase 
+		#g-showcase {
+			background-size: 500px;
+			background-position: 170% -10%;
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 767px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase Bottom
+		#g-showcase-bottom {
+			margin: -120px 0 0 0;
+			.showcase-bottom-content {
+				.lead-form {
+					padding: 40px 30px !important;
+					//Chronoform
+					.chronoforms {
+						form#load-form {
+							padding: 10px 0 0 0 !important;
+							.ui.grid>.row {
+								.column {
+									width: 50% !important;
+									padding: 0px !important;
+								}
+								.col1, .col3 {
+									padding-right: 8px !important;
+								}
+								.col2, .col4 {
+									padding-left: 8px !important;
+								}
+							}
+							button {
+								margin: 10px 0 0 0 !important;
+								width: 100%;
+								right: 0 !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		//Feature Boxes 
+		#g-feature {
+			padding: 20px 0 0 0;
+			.g-block.feature-content {
+				//Individual feature link boxes
+				.moduletable.feature-box {
+					h3, p strong {
+						font-size: 1.2rem !important;
+						line-height: 1.2;
+					}
+				}
+			}
+		}
+		//Mainbottom Clients
+		#g-mainbottom {
+			padding: 0px 0 0px 0;
+			background-image: none;
+			.g-grid {
+				flex-direction: column-reverse;
+				.g-block.mainbottom-content {
+					flex: 0 100%;
+					width: 100%;
+					//Intro and logos section
+					.moduletable.intro-logos {
+						ul.clients {
+							justify-content: center !important;
+							li {
+								padding: 10px 15px !important;
+								flex: unset !important;
+								width: unset !important;
+								img {
+									text-align: center;
+									max-width: 90px;
+								}
+							}
+						}
+					}
+					//Quote section
+					.moduletable.quote {
+						p.quote, blockquote {
+							font-size: 1.2rem;
+						}
+					}
+				}
+			}
+		}
+		//Subfeature Boxes
+		#g-subfeature {
+			background-image: none;
+			padding: 0 0 20px 0;
+		}
+		//Extension Case Studies
+		#g-extension {
+			padding: 0 0 60px 0;
+			.g-container {
+				.extension-content {
+					//Introduction section
+					.moduletable.intro {
+						ul.categories {
+							li {
+								flex: 0 100%;
+							}
+						}
+					}
+					//ZOO Feed section
+					.moduletable.casestudy-feed {
+						ul.zoo-item-list {
+							display: flex;
+							flex-wrap: wrap;
+							li {
+								margin: 15px 0px;
+								div {
+									//Image
+									.media {
+										min-height: 0px;
+										img {
+											min-height: 0px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		//Bottom Cta
+		#g-fullwidth {
+			padding: 80px 0;
+			.g-container {
+				width: 88%;
+				margin: auto;
+				.g-grid {
+					padding: 0;
+					.custom.cta {
+						flex-wrap: wrap;
+						div {
+							flex: 0 100% !important;
+							width: 100%;
+							&:nth-of-type(2) {
+								justify-content: flex-start !important;
+    							margin-top: 40px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen 
+and (max-width: 520px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase Bottom
+		#g-showcase-bottom {
+			margin: -120px 0 0 0;
+			.showcase-bottom-content {
+				.lead-form {
+					padding: 40px 30px !important;
+					//Chronoform
+					.chronoforms {
+						form#load-form {
+							padding: 10px 0 0 0 !important;
+							.ui.grid>.row {
+								.column {
+									width: 50% !important;
+									padding: 0px !important;
+								}
+								.col1, .col3 {
+									padding-right: 8px !important;
+								}
+								.col2, .col4 {
+									padding-left: 8px !important;
+								}
+							}
+							button {
+								margin: 10px 0 0 0 !important;
+								width: 100%;
+								right: 0 !important;
+								font-size: 1.1rem !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		//Feature Boxes 
+		#g-feature {
+			.g-block.feature-content {
+				flex: 0 100% !important;
+				width: 100% !important;
+				//Individual feature link boxes
+				.moduletable.feature-box {
+					h3, p strong {
+						font-size: 1.2rem !important;
+					}
+				}
+			}
+		}
+		//Mainbottom Clients
+		#g-mainbottom {
+			padding: 0px 0 0px 0;
+			background-image: none;
+			.g-grid {
+				flex-direction: column-reverse;
+				.g-block.mainbottom-content {
+					flex: 0 100%;
+					width: 100%;
+					//Intro and logos section
+					.moduletable.intro-logos {
+						ul.clients {
+							li {
+								flex: 0 28%;
+								width: 28%;
+							}
+						}
+					}
+				}
+			}
+		}
+		//Subfeature Boxes
+		#g-subfeature {
+			background-image: none;
+			padding: 0 0 20px 0;
+			.g-block.subfeature-content {
+				flex: 0 100% !important;
+				width: 100% !important;
+			}
+		}
+		//Extension Case Studies
+		#g-extension {
+			padding: 0 0 20px 0;
+			.g-container {
+				.extension-content {
+					//Introduction section
+					.moduletable.intro {
+						ul.categories {
+							li {
+								flex: 0 100%;
+							}
+						}
+					}
+					//ZOO Feed section
+					.moduletable.casestudy-feed {
+						ul.zoo-item-list {
+							display: flex;
+							flex-wrap: wrap;
+							li {
+								margin: 15px 0px;
+								div {
+									//Image
+									.media {
+										min-height: 0px;
+										img {
+											min-height: 0px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media only screen 
+and (max-width: 480px) {
+	//NEW UK HOME PAGE LAYOUT
+	body.g-home.home-2020 {
+		//Showcase Bottom
+		#g-showcase-bottom {
+			margin: -30px 0 0 0;
+			.showcase-bottom-content {
+				.lead-form {
+					//Chronoform
+					.chronoforms {
+						form#load-form {
+							.ui.grid>.row {
+								.column {
+									width: 100% !important;
+									padding: 0px !important;
+								}
+								.col1, .col3 {
+									padding-right: 0px !important;
+								}
+								.col2, .col4 {
+									padding-left: 0px !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+//ZOO CATEGORY BANNERS HEIGHTS FIX - BA - 07/12/2020
+body.news-template.com_zoo {
+	//If the page is the frontpage or a category, do this...
+	&.view-frontpage, &.task-category {
+		&#landing {
+			#g-showcase {
+				margin-top: 93px !important;
+				@media screen and (max-width: 1150px) {
+					margin-top: 0 !important;
+				}
+				.moduletable {
+					.custom {
+						height: auto !important;
+						.background-color {
+							//Module content div
+							.inner {
+								position: relative;
+								padding: 120px 0 50px 100px !important;
+								bottom: 0;
+								h2 {
+									margin-bottom: 0px;
+								}
+								@media screen and (max-width: 1300px) {
+									padding: 120px 0 50px 50px !important;
+								}
+								@media screen and (max-width: 1150px) {
+									padding: 60px 0 50px 50px !important;
+								}
+								@media screen and (max-width: 959px) {
+									padding: 45px 0 40px 25px !important;
+								}
+							}
+							//IE11 Clip Path Alternative Fix
+							@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+								width: 40%;
+								&:after {
+									content: "";
+									position: absolute;
+									top: 0;
+									left: 0;
+									width: 320%;
+									height: 212%;
+									background: $red;
+									z-index: 1;
+									transform: translateX(-26.7%) translateY(0%) rotate(50deg) !important;
+									transition: 0.5s;
+								}
+								.inner {
+									z-index: 2;
+								}
+							}
+						}
+						@media screen and (max-width: 767px) {
+							background-image: none !important;
+							background-color: $red;
+							.background-color {
+								clip-path: none !important;
+								.inner {
+									padding: 35px 25px 40px 25px !important;
+								}
+							}
+						}
+					}
+				}
+			}
+			#g-main {
+				padding-top: 0px !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>plg_system_bfchangelink</name>
+	<author>Blue Frontier</author>
+	<creationDate>July 2019</creationDate>
+	<copyright>(C) 2005 - 2018 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>3.0.0</version>
+	<description>BF URL Redirect</description>
+	<files>
+		<filename plugin="bfchangelink">bfchangelink.php</filename>
+	</files>
+	<config>
+	<fields name="params">
+		<fieldset name="basic">
+		
+			<field name="findterm1" type="text"
+				description="Part of the URL to match"
+				label="Find Term 1"
+			/>
+			<field name="redirectURL1" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 1"
+			/>
+			<field name="redirecttype1" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm2" type="text"
+				description="Part of the URL to match"
+				label="Find Term 2"
+			/>
+			<field name="redirectURL2" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 2"
+			/>
+			<field name="redirecttype2" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm3" type="text"
+				description="Part of the URL to match"
+				label="Find Term 3"
+			/>
+			<field name="redirectURL3" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 3"
+			/>
+			<field name="redirecttype3" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm4" type="text"
+				description="Part of the URL to match"
+				label="Find Term 4"
+			/>
+			<field name="redirectURL4" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 4"
+			/>
+			<field name="redirecttype4" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm5" type="text"
+				description="Part of the URL to match"
+				label="Find Term 5"
+			/>
+			<field name="redirectURL5" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 5"
+			/>
+			<field name="redirecttype5" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm6" type="text"
+				description="Part of the URL to match"
+				label="Find Term 6"
+			/>
+			<field name="redirectURL6" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 6"
+			/>
+			<field name="redirecttype6" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm7" type="text"
+				description="Part of the URL to match"
+				label="Find Term 7"
+			/>
+			<field name="redirectURL7" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 7"
+			/>
+			<field name="redirecttype7" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm8" type="text"
+				description="Part of the URL to match"
+				label="Find Term 8"
+			/>
+			<field name="redirectURL8" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 8"
+			/>
+			<field name="redirecttype8" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm9" type="text"
+				description="Part of the URL to match"
+				label="Find Term 9"
+			/>
+			<field name="redirectURL9" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 9"
+			/>
+			<field name="redirecttype9" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			<field type="spacer" name="" hr="true" />
+			
+			
+			
+			
+			
+			<field name="findterm10" type="text"
+				description="Part of the URL to match"
+				label="Find Term 10"
+			/>
+			<field name="redirectURL10" type="text"
+				description="URL to redirect to"
+				label="Redirect URL 10"
+			/>
+			<field name="redirecttype10" type="radio" class="btn-group" default="301" label="Redirect Type" description="Redirect Type">
+				<option value="301">301</option>
+				<option value="404">404</option>
+			</field>
+			
+			
+			
+			
+			
+		</fieldset>
+	</fields>
+</config>
+</extension>

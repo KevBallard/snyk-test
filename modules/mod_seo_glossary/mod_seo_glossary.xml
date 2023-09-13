@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade" client="site">
+    <name>MOD_SEO_GLOSSARY_NAME</name>
+    <creationDate>2020-12-21</creationDate>
+    <copyright>2020 Blue Frontier IT Ltd</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Kevin Ballard</author>
+    <authorEmail>kevin@bluefrontier.co.uk</authorEmail>
+    <authorUrl>https://bluefrontier.co.uk</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>MOD_SEO_GLOSSARY_DESCRIPTION</description>
+    
+    <files>
+        <filename module="mod_seo_glossary">mod_seo_glossary.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="language">
+        
+			<language tag="en-GB">en-GB/en-GB.mod_seo_glossary.ini</language>
+			<language tag="en-GB">en-GB/en-GB.mod_seo_glossary.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset 
+                name="content_type" 
+                label="MOD_SEO_GLOSSARY_CONTENT_TYPE_TAB_LBL"
+                description="MOD_SEO_GLOSSARY_CONTENT_TYPE_TAB_DESC">
+                <field
+                    name="content_type" type="list"
+                    label="MOD_SEO_GLOSSARY_CONTENT_TYPE_LBL"
+                    description="MOD_SEO_GLOSSARY_CONTENT_TYPE_DESC">
+                    <option value="blank">MOD_SEO_GLOSSARY_CUSTOM_CONTENT</option>
+                    <option value="list">MOD_SEO_GLOSSARY_LIST</option>
+                    <option value="item">MOD_SEO_GLOSSARY_ITEM</option>
+                </field>
+            </fieldset>
+            <fieldset 
+                name="blank_content" 
+                label="MOD_SEO_GLOSSARY_CUSTOM_CONTENT_TAB_LBL"
+                description="MOD_SEO_GLOSSARY_CUSTOM_CONTENT_TAB_DESC">
+                <field 
+                    name="html_content" type="editor" filter="safehtml"
+                    label="MOD_SEO_GLOSSARY_HTML_LBL"
+                    description="MOD_SEO_GLOSSARY_HTML_DESC" />
+            </fieldset>
+            <fieldset 
+                name="list_content" 
+                label="MOD_SEO_GLOSSARY_LIST_CONTENT_TAB_LBL"
+                description="MOD_SEO_GLOSSARY_LIST_CONTENT_TAB_DESC">
+                <field
+                    name="table" type="list"
+                    label="MOD_SEO_GLOSSARY_TABLE_LBL"
+                    description="MOD_SEO_GLOSSARY_TABLE_DESC">
+                    
+	<option value="#__seo_glossary_terms">#__seo_glossary_terms</option>
+                </field>
+                <field 
+                    name="field" type="groupedlist" default=""
+                    label="MOD_SEO_GLOSSARY_FIELD_LBL"
+                    description="MOD_SEO_GLOSSARY_FIELD_DESC">
+                    
+	<group label="#__seo_glossary_terms">
+		<option value="#__seo_glossary_terms:id">id</option>
+		<option value="#__seo_glossary_terms:created_by">created_by</option>
+		<option value="#__seo_glossary_terms:modified_by">modified_by</option>
+		<option value="#__seo_glossary_terms:term">term</option>
+		<option value="#__seo_glossary_terms:intro">intro</option>
+		<option value="#__seo_glossary_terms:definition">definition</option>
+		<option value="#__seo_glossary_terms:languages">languages</option>
+		<option value="#__seo_glossary_terms:alias">alias</option>
+		<option value="#__seo_glossary_terms:metatitle">metatitle</option>
+		<option value="#__seo_glossary_terms:metakeywords">metakeywords</option>
+		<option value="#__seo_glossary_terms:metadescription">metadescription</option>
+	</group>
+                </field>
+                <field 
+                    name="offset" type="text" default="0" filter="uint" class="input-small"
+                    label="MOD_SEO_GLOSSARY_OFFSET_LBL"
+                    description="MOD_SEO_GLOSSARY_OFFSET_DESC" />
+                <field 
+                    name="limit" type="text" default="10" filter="uint" class="input-small"
+                    label="MOD_SEO_GLOSSARY_LIMIT_LBL"
+                    description="MOD_SEO_GLOSSARY_LIMIT_DESC" />
+            </fieldset>
+            <fieldset 
+                name="item_content" 
+                label="MOD_SEO_GLOSSARY_ITEM_CONTENT_TAB"
+                description="MOD_SEO_GLOSSARY_ITEM_CONTENT_TAB_DESC">
+                <field
+                    name="item_table" type="list"
+                    label="MOD_SEO_GLOSSARY_TABLE_LBL"
+                    description="MOD_SEO_GLOSSARY_TABLE_DESC">
+                    
+	<option value="#__seo_glossary_terms">#__seo_glossary_terms</option>
+                </field>
+                <field 
+                    name="item_id" type="text" filter="uint" class="input-small"
+                    label="MOD_SEO_GLOSSARY_ITEM_ID_LBL"
+                    description="MOD_SEO_GLOSSARY_ITEM_ID_DESC"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

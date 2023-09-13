@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.0" client="site" method="upgrade">
+	<name>Eckoh Jobs Feed</name>
+	<author>Blue Frontier IT Ltd</author>
+	<creationDate>July 2021</creationDate>
+	<copyright>Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>sales@bluefrontier.co.uk</authorEmail>
+	<authorUrl>www.bluefrontier.co.uk</authorUrl>
+	<version>1.0.0</version>
+	<description>Pulls live vacancies from NaturalHR</description>
+
+	
+
+	<files>
+		<filename module="mod_eckoh_jobsfeed">mod_eckoh_jobsfeed.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="options" label="COM_MODULES_BASIC_FIELDSET_LABEL">
+				
+			</fieldset>
+			<fieldset name="advanced">
+			
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form><fieldset><field name="bottomtitle" filter="safehtml" type="text" label="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_BOTTOMTITLE" description="COM_ECKOH_SUBFORM_DESC_LEVEL2PLUS-BOTTOMBOXES_BOTTOMTITLE" hint="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_BOTTOMTITLE"/><field name="bottomboxurl" type="url" relative="true" label="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXURL" description="COM_ECKOH_SUBFORM_DESC_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXURL" hint="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXURL"/><field name="bottomboximage" directory="products/bottomimages" type="media" label="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXIMAGE" description="COM_ECKOH_SUBFORM_DESC_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXIMAGE" hint="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXIMAGE"/><field name="bottomboxestext" width="" cols="" rows="" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXESTEXT" description="COM_ECKOH_SUBFORM_DESC_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXESTEXT" hint="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_BOTTOMBOXESTEXT"/><field name="class" filter="safehtml" type="text" label="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_CLASS" description="COM_ECKOH_SUBFORM_DESC_LEVEL2PLUS-BOTTOMBOXES_CLASS" hint="COM_ECKOH_SUBFORM_LBL_LEVEL2PLUS-BOTTOMBOXES_CLASS"/><field 
+		name="featureboxclass" 
+		filter="safehtml" 
+		type="text" 
+		required="false" 
+		label="Custom Class" 
+		description="Enter a class to wrap this box in, useful for triggering events or styling individual boxes" 
+		hint=""/></fieldset></form>

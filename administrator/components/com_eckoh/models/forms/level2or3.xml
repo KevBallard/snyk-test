@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_CREATED_BY" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_CREATED_BY" hidden="true" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_MODIFIED_BY" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_MODIFIED_BY" hidden="true" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_MODIFIED_BY"/>
+    <field name="productname" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_PRODUCTNAME" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_PRODUCTNAME" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_PRODUCTNAME"/>
+    <field name="visibleproductname" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_VISIBLEPRODUCTNAME" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_VISIBLEPRODUCTNAME" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_VISIBLEPRODUCTNAME"/>
+    <field name="subtitle" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_SUBTITLE" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_SUBTITLE" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_SUBTITLE"/>
+    <field name="language" type="language" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_LANGUAGE" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_LANGUAGE" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_LANGUAGE"/>
+    <field name="imageorvideo" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_IMAGEORVIDEO" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_IMAGEORVIDEO" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_IMAGEORVIDEO"/>
+    <field name="introparagraph" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_INTROPARAGRAPH" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_INTROPARAGRAPH" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_INTROPARAGRAPH"/>
+    <field name="featurearea" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_FEATUREAREA" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_FEATUREAREA" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_FEATUREAREA"/>
+    <field name="featureimage" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_FEATUREIMAGE" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_FEATUREIMAGE" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_FEATUREIMAGE"/>
+    <field name="minicalltoactionboxtext" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_MINICALLTOACTIONBOXTEXT" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_MINICALLTOACTIONBOXTEXT" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_MINICALLTOACTIONBOXTEXT"/>
+    <field name="minicalltoactionurl" type="text" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_MINICALLTOACTIONURL" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_MINICALLTOACTIONURL" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_MINICALLTOACTIONURL"/>
+    <field name="minicalltoactionbuttontext" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_MINICALLTOACTIONBUTTONTEXT" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_MINICALLTOACTIONBUTTONTEXT" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_MINICALLTOACTIONBUTTONTEXT"/>
+    <field name="casestudytext" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_CASESTUDYTEXT" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_CASESTUDYTEXT" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_CASESTUDYTEXT"/>
+    <field name="casestudyimage" directory="images/products/case-studies" type="media" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_CASESTUDYIMAGE" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_CASESTUDYIMAGE" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_CASESTUDYIMAGE"/>
+    <field name="featurearea2" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_FEATUREAREA2" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_FEATUREAREA2" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_FEATUREAREA2"/>
+    <field name="featureimage2" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_FEATUREIMAGE2" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_FEATUREIMAGE2" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_FEATUREIMAGE2"/>
+    <field name="calltoactiontext" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_CALLTOACTIONTEXT" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_CALLTOACTIONTEXT" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_CALLTOACTIONTEXT"/>
+    <field name="calltoactionurl" type="text" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_CALLTOACTIONURL" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_CALLTOACTIONURL" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_CALLTOACTIONURL"/>
+    <field name="calltoactionbuttontext" filter="safehtml" type="text" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_CALLTOACTIONBUTTONTEXT" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_CALLTOACTIONBUTTONTEXT" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_CALLTOACTIONBUTTONTEXT"/>
+    <field name="bottomboxes" multiple="true" formsource="administrator/components/com_eckoh/models/forms/subform_level2-bottomboxes.xml" layout="joomla.form.field.subform.repeatable" type="subform" label="COM_ECKOH_FORM_LBL_LEVEL2OR3_BOTTOMBOXES" description="COM_ECKOH_FORM_DESC_LEVEL2OR3_BOTTOMBOXES" hint="COM_ECKOH_FORM_LBL_LEVEL2OR3_BOTTOMBOXES"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

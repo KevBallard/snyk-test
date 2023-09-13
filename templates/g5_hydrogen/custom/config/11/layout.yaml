@@ -1,0 +1,200 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: about
+  timestamp: 1551970975
+layout:
+  top: {  }
+  header: {  }
+  mobile-links: {  }
+  /showcase/:
+    -
+      - 'position-position-6168 50'
+      - 'position-position-4820 50'
+  /feature/:
+    -
+      - position-position-1956
+  /main/:
+    -
+      - position-position-1789
+    -
+      - 'position-position-7011 60'
+      - 'system-messages-9639 40'
+    -
+      - 'system-content-9098 50'
+      - 'position-position-5308 50'
+  /mainbottom/:
+    -
+      - 'position-position-7298 50'
+      - 'position-position-2569 50'
+  /fullwidth/:
+    -
+      - position-position-3625
+    -
+      - 'position-position-4287 33.3'
+      - 'position-position-9740 33.3'
+      - 'position-position-6264 33.3'
+  /extension/:
+    -
+      - 'position-position-1571 50'
+      - 'position-position-9874 50'
+  footer: {  }
+  copyright: {  }
+  offcanvas: {  }
+structure:
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  header:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  mobile-links:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  showcase:
+    type: section
+    attributes:
+      boxed: '2'
+      class: about-showcase
+  feature:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+  main:
+    attributes:
+      boxed: ''
+  mainbottom:
+    type: section
+    attributes:
+      boxed: ''
+  fullwidth:
+    type: section
+    attributes:
+      boxed: '2'
+      class: ''
+  extension:
+    type: section
+    attributes:
+      boxed: ''
+      class: grey-bg
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+content:
+  position-position-6168:
+    title: Showcase
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-1418
+  position-position-4820:
+    title: 'Module Position'
+    attributes:
+      key: showcase-right
+  position-position-1956:
+    title: 'Feature A'
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-4197
+  position-position-1789:
+    title: Breadcrumbs
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-breadcrumbs
+  position-position-7011:
+    title: Eckoh
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: position-position-9185
+  system-messages-9639:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: system-messages-4590
+  system-content-9098:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+      particle: system-content-5421
+  position-position-5308:
+    title: 'Main Right'
+    attributes:
+      key: main-right
+  position-position-7298:
+    title: 'Main Bottom Left'
+    attributes:
+      key: mainbottom-left
+  position-position-2569:
+    title: 'Main Bottom Right'
+    attributes:
+      key: mainbottom-right
+  position-position-3625:
+    title: 'Module Position'
+    attributes:
+      key: fullwidth-top
+  position-position-4287:
+    title: 'Module Position'
+    attributes:
+      key: fullwidth-left
+  position-position-9740:
+    title: 'Module Position'
+    attributes:
+      key: fullwidth-middle
+  position-position-6264:
+    title: 'Module Position'
+    attributes:
+      key: fullwidth-right
+  position-position-1571:
+    title: 'Module Position'
+    attributes:
+      key: extension-left
+  position-position-9874:
+    title: 'Module Position'
+    attributes:
+      key: extension-right

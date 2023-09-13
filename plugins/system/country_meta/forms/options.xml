@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="altlang" label="Alt Language Menu Item">
+			<field name="sibling_mymenuitem" type="menuitem" default="" label="Select a menu item" description="Select a menu item" published="1">	
+				<option	value="">None</option>
+			</field>		
+		</fieldset>
+	</fields>
+</form>

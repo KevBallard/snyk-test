@@ -1,0 +1,434 @@
+/***************************
+****************************
+
+NAME: _header.scss
+SITE: Made up company
+DESCRIPTION: All styles for the header
+-------------------------------------
+
+AUTHOR: Charlotte Osborne
+DATE CREATED: 20/06/17
+LAST MODIFIED DATE:
+LAST MODIFIED BY:
+
+****************************
+***************************/
+
+section#g-top-link {	
+    background: $red;
+    position: fixed;
+    height: 30px;
+    width: 100%;
+    z-index: 1000;
+		p {
+			margin:0;
+			font-size:inherit;
+		}
+    a {
+			color: #fff; line-height: 30px;
+			text-transform: uppercase;
+			font-size:0.9rem;
+			&:before {
+				content:'\f060';
+				font-family: FontAwesome;
+				margin-right:15px;
+			}
+	}
+}
+
+#g-top {
+	background: $red;
+	color: #fff;
+	a {
+		color:white;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	#g-top {	
+		z-index: 7;
+		position: fixed;
+	    width: 270px;
+	    height: 270px;
+	    border-radius: 100%;
+	    top: -120px;
+	    right: -50px;
+	    padding: 7rem 3rem 0 0;
+	    text-align: right;
+	    -webkit-box-shadow: 0px 0px 25px 6px rgba(0,0,0,0.35);
+		-moz-box-shadow: 0px 0px 25px 6px rgba(0,0,0,0.35);
+		box-shadow: 0px 0px 25px 6px rgba(0,0,0,0.35);
+		.g-container {width: auto;}
+	}
+
+}
+
+@media screen and (max-width: 1599px) {
+
+	#g-top {		
+		width: 100%;
+		z-index: 6;
+		padding: 0.5rem 2rem;
+		.g-content {
+			margin: 0;
+			padding: 0;
+			.platform-content:nth-child(2),.platform-content:nth-child(3), {
+				display: inline-block;
+				width: 50%; 
+			}
+		}
+//RACHEL JULY NEW SEARCH 
+		.g-content {
+			margin: 0;
+			padding: 0;
+			display:flex;
+			justify-content: flex-end;
+			.platform-content:nth-child(1) { 
+				display: inline-block;
+				position: absolute;
+				left:30px;
+			} 
+			.eckoh-parent {
+				min-width:52px;
+				width:auto!important;
+				
+				.eckoh-search {
+					position: relative;
+					right:0px;
+					.search-button {
+						background-color:transparent;
+						padding:0;
+						padding-left:15px; 
+					}
+					.searcheckoh-search {
+						background-color:transparent;
+					  padding: 0px 50px 0px 20px;
+					}
+					.customeckoh-search {
+						background-color:transparent;
+					  padding: 0px 40px 0px 20px;
+						input[type="submit"].searchbutton {
+							top:4px;
+							right:0px;
+							padding-left:0;
+							width:27px;
+						}
+					}
+				}
+			}
+		}
+		.customtop-tel {
+			margin-top: 0;
+		    text-align: right;		
+		}
+	}
+    
+//    body.white-papers { 
+//        #g-top {
+//            .g-content {
+//                margin: 0;
+//                padding: 0;
+//                .platform-content:nth-child(1),.platform-content:nth-child(2), {
+//                    display: inline-block;
+//                    width: 50%; 
+//                }
+//                .platform-content:nth-child(1) { 
+//                    left:0;
+//                    position: relative;
+//                }
+//            }
+//        }
+//    }
+}
+
+.mod-languages {
+	margin-top: 5px;
+	a {
+		color: #fff;
+		font-size: 22px;
+		font-weight: 600;
+		line-height: 24px;
+		&:before {
+			vertical-align: middle;
+		}
+	}
+	li {
+		opacity: 0.5;
+		margin: 0 0 0 10px;
+		&:nth-child(1) {
+			a {
+				background-image:url('../../images/icons/us-flag.png');
+				background-repeat: no-repeat;
+				background-size:20px auto;
+				background-position: left;
+				padding-left:25px;
+			}
+		}
+		&:nth-child(2) {
+			a {
+				background-image:url('../../images/icons/uk-flag.png');
+				background-repeat: no-repeat;
+				background-size:20px auto;
+				background-position: left;
+				padding-left:25px;
+			}
+		}
+	}
+	li.lang-active {opacity: 1;}
+	ul {
+		display: flex;
+		flex-direction: row-reverse;
+		    margin: 0;
+    padding: 0;
+    list-style: none;
+		&.us {
+			flex-direction: row;
+			justify-content: flex-end;
+		}
+	}
+}
+
+.customtop-tel {
+	margin-top: 1rem;
+	p {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin: 0;
+	}
+}
+
+body.g-home #g-header {background: rgba(255,255,255,0.8);}
+
+#g-header {
+	width: 100%;
+	padding: 1rem 2rem 0 2rem;
+	@media screen and (min-width: 1600px) {
+		padding: 1rem 230px 0 2rem; /* Pixel value is width of #g-top + 10px*/
+	}
+	background: rgba(255,255,255,1);
+	z-index: 6;	
+
+	>.g-container > .g-grid {align-items: flex-end;}
+
+	#logo,
+	#navigation {
+		.g-content {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+
+	#logo {
+		margin-bottom: 1rem;
+		img {max-width: 150px;}
+	}
+
+	#navigation {
+	   	display: flex;
+	    align-items: flex-end;
+	    justify-content: flex-end;
+	}
+}
+
+body#careers-investors {
+	#g-header {
+		top: 30px;
+	}
+}
+
+//CASE STUDIES
+
+#landing.itemid151 {
+	
+	.blog-default {
+	
+	}
+	
+}
+
+
+
+
+// RESPONSIVE STYLES FOR ABOVE GO HERE
+/* import breakpoints */
+@import "dependencies";
+
+
+
+
+// typically min 60rem
+@media screen and (min-width: 1121px) {
+	#g-header {
+		position: fixed;
+		top: 52px;
+		-webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.1);
+	}
+
+	#g-top {position: fixed;}
+}
+
+// @media screen and (max-width:1366px) and (min-width:1366px) {
+//     #g-header {
+// 		position: relative;
+// 		top: 0px;
+// 	}
+// 	#g-top {position: relative;}
+// }
+@media screen and (max-width:1194px) and (min-width:1194px) {
+    #g-header {
+		position: relative;
+		top: 0px;
+	}
+	#g-top {position: relative;}
+}
+@media screen and (max-width:1150px) and (min-width:1122px) {
+    #g-header {
+		position: relative;
+		top: 0px;
+	}
+	#g-top {position: relative;}
+}
+
+@media only all and (max-width: $breakpoints-mobile-menu-breakpoint) {
+	body.g-home #g-header {background: #fff;}
+	#g-header {
+	    padding: 1rem 0rem;
+	    background: #fff;
+		#logo {
+			padding-left:1.5rem;
+		}
+		#navigation {display: none;}
+	}
+
+	
+}
+
+@media screen and (min-width: 1600px) {
+	#g-header {
+		top: 0;
+	}
+}
+
+
+
+//padding on g-main 
+
+@media screen and (min-width:1600px) {
+	body.gantry {
+		main#g-main {
+			padding-top:93px;
+		}
+	}
+	body#careers-investors, body.g-home, body#landing {
+		main#g-main {
+			padding-top:0px;
+		}
+	}
+}
+
+@media screen and (max-width:1599px) {
+	body.gantry {
+		main#g-main {
+			padding-top:145px;
+		}
+	}
+	body#careers-investors, body.g-home, body#landing {
+		main#g-main {
+			padding-top:0px;
+		}
+	}
+	.mod-languages ul {
+		justify-content: flex-end;
+		&.us {
+			justify-content: flex-start;
+		}
+	}
+}
+
+@media screen and (max-width:1120px) {
+	body.gantry {
+		main#g-main {
+			padding-top:0px;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#g-top {
+		padding:0.5rem;
+	}
+	#g-header #logo {
+		margin-bottom:3px;
+	}
+	#g-header #logo img {
+		max-width:125px;
+	}
+	
+	#g-top .g-content .eckoh-parent .eckoh-search .searcheckoh-search {
+		position: absolute;
+    top: 44px;
+    background-color: $red;
+    z-index: 10600;
+    border-radius: 0px;
+    right: 0px;
+    padding: 10px;
+	}
+	#g-top .g-content .eckoh-parent .eckoh-search .customeckoh-search {
+		position: absolute;
+    top: 44px;
+    background-color: $red;
+    z-index: 10600;
+    border-radius: 0px;
+    right: 0px;
+    padding: 10px;
+		input[type="submit"] {
+			top:11px;
+			right:10px;
+		}
+	}
+	#g-top .g-content .eckoh-parent .eckoh-search {
+		.search-button {
+			margin-right:11px;
+		}
+	}
+    
+    //MOBILE STICKY HEADER
+    .mobile-header-wrap {
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index:11;
+    }
+    .g-offcanvas-right .g-offcanvas-toggle {
+        left:auto;
+    }
+	
+}
+
+@media screen and (max-width: 500px) {
+	section#g-top-link {
+		padding-left:10px;
+	}
+}
+
+@media screen and (max-width: 354px) {
+	#g-top {
+		padding:0.5rem;
+	}
+	#g-header {
+		padding:1rem 0rem;
+	}
+}
+
+/* JW Header Fix July 19*/
+@media (max-width: 1599px) {
+                #g-top .g-content {
+                                display: flex;
+                                justify-content: space-between;
+                }
+}
+

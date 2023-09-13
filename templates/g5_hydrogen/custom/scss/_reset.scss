@@ -1,0 +1,38 @@
+/***************************
+****************************
+
+NAME: _reset.scss
+SITE: Made up company
+DESCRIPTION: Resetting all theme preset styles where not possible in template
+-------------------------------------
+
+AUTHOR: Charlotte Osborne
+DATE CREATED: 20/06/17
+LAST MODIFIED DATE:
+LAST MODIFIED BY:
+
+****************************
+***************************/
+
+// CSS GOES HERE
+
+/* This is reset stylesheet will probably grow over time - and we can share it with each other and reuse it on all new builds*/
+
+/* BELOW IS JUST AN EXAMPLE */
+
+input[type="submit"],
+.button {
+	text-shadow: none;
+	background-image: none;
+	background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+

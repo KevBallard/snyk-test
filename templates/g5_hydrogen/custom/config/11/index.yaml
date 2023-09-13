@@ -1,0 +1,105 @@
+name: 11
+timestamp: 1601289690
+version: 7
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: about
+  timestamp: 1551970975
+positions:
+  showcase: Showcase
+  showcase-right: 'Module Position'
+  feature-a: 'Feature A'
+  breadcrumbs: Breadcrumbs
+  eckoh-module: Eckoh
+  main-right: 'Main Right'
+  mainbottom-left: 'Main Bottom Left'
+  mainbottom-right: 'Main Bottom Right'
+  fullwidth-top: 'Module Position'
+  fullwidth-left: 'Module Position'
+  fullwidth-middle: 'Module Position'
+  fullwidth-right: 'Module Position'
+  extension-left: 'Module Position'
+  extension-right: 'Module Position'
+  announcement: 'Module Position'
+  logo: 'Module Position'
+  top: Top
+  navigation: Navigation
+  mobile-links: 'Mobile Links'
+  footer-a: 'Footer A'
+  footer-b: 'Footer B'
+  footer-c: 'Footer C'
+  footer-d: 'Footer D'
+  copyright-a: 'Copyright A'
+  copyright-b: 'Copyright B'
+  mobile-menu-container: 'Module Position'
+sections:
+  top: Top
+  mobile-links: Mobile-links
+  showcase: Showcase
+  feature: Feature
+  mainbottom: Mainbottom
+  fullwidth: Fullwidth
+  extension: Extension
+  copyright: Copyright
+  header: Header
+  main: Main
+  footer: Footer
+  offcanvas: Offcanvas
+particles:
+  position:
+    position-position-6168: Showcase
+    position-position-4820: 'Module Position'
+    position-position-1956: 'Feature A'
+    position-position-1789: Breadcrumbs
+    position-position-7011: Eckoh
+    position-position-5308: 'Main Right'
+    position-position-7298: 'Main Bottom Left'
+    position-position-2569: 'Main Bottom Right'
+    position-position-3625: 'Module Position'
+    position-position-4287: 'Module Position'
+    position-position-9740: 'Module Position'
+    position-position-6264: 'Module Position'
+    position-position-1571: 'Module Position'
+    position-position-9874: 'Module Position'
+    position-position-3399: 'Module Position'
+    position-position-3975: 'Module Position'
+    position-position-5294: Top
+    position-position-9358: Navigation
+    position-position-5086: 'Mobile Links'
+    position-position-2713: 'Footer A'
+    position-position-4673: 'Footer B'
+    position-position-3323: 'Footer C'
+    position-position-8476: 'Footer D'
+    position-position-7497: 'Copyright A'
+    position-position-7001: 'Copyright B'
+    position-position-4511: 'Module Position'
+  messages:
+    system-messages-9639: 'System Messages'
+  content:
+    system-content-9098: 'Page Content'
+inherit:
+  default:
+    top: top
+    header: header
+    mobile-links: mobile-links
+    position-position-6168: position-position-1418
+    position-position-1956: position-position-4197
+    position-position-1789: position-breadcrumbs
+    position-position-7011: position-position-9185
+    system-messages-9639: system-messages-4590
+    system-content-9098: system-content-5421
+    footer: footer
+    copyright: copyright
+    offcanvas: offcanvas
+    position-position-3399: position-position-5167
+    position-position-3975: position-position-8842
+    position-position-5294: position-position-5208
+    position-position-9358: position-position-1963
+    position-position-5086: position-position-4289
+    position-position-2713: position-footer
+    position-position-4673: position-position-7699
+    position-position-3323: position-position-6812
+    position-position-8476: position-position-8076
+    position-position-7497: position-position-5533
+    position-position-7001: position-position-5669
+    position-position-4511: position-position-5845

@@ -1,0 +1,81 @@
+name: 12
+timestamp: 1601289690
+version: 7
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: careers
+  timestamp: 1547140939
+positions:
+  back: 'Module Position'
+  announcement: 'Module Position'
+  logo: 'Module Position'
+  navigation: Navigation
+  breadcrumbs: Breadcrumbs
+  eckoh-module: Eckoh
+  mainbottom-a: 'Mainbottom A'
+  showcase: Showcase
+  feature-a: 'Feature A'
+  footer-a: 'Footer A'
+  footer-b: 'Footer B'
+  footer-c: 'Footer C'
+  footer-d: 'Footer D'
+  copyright-a: 'Copyright A'
+  copyright-b: 'Copyright B'
+sections:
+  top-link: Top-link
+  top: Top
+  showcase: Showcase
+  feature: Feature
+  mainbottom: Mainbottom
+  copyright: Copyright
+  header: Header
+  main: Main
+  footer: Footer
+  offcanvas: Offcanvas
+particles:
+  position:
+    position-position-2025: 'Module Position'
+    position-position-2440: 'Module Position'
+    position-position-4451: 'Module Position'
+    position-position-5930: Navigation
+    position-position-5716: Breadcrumbs
+    position-position-3683: Eckoh
+    position-position-9688: 'Mainbottom A'
+    position-position-4304: Showcase
+    position-position-8087: 'Feature A'
+    position-position-9645: 'Footer A'
+    position-position-9927: 'Footer B'
+    position-position-1097: 'Footer C'
+    position-position-5485: 'Footer D'
+    position-position-6660: 'Copyright A'
+    position-position-2376: 'Copyright B'
+  messages:
+    system-messages-5226: 'System Messages'
+  content:
+    system-content-1120: 'Page Content'
+  menu:
+    menu-2220: Menu
+    menu-3931: Menu
+    menu-4455: Menu
+  mobile-menu:
+    mobile-menu-5585: Mobile-menu
+inherit:
+  default:
+    top: top
+    position-position-5930: position-position-1963
+    showcase: showcase
+    feature: feature
+    position-position-3683: position-position-9185
+    system-messages-5226: system-messages-4590
+    system-content-1120: system-content-5421
+    position-position-9688: position-position-8564
+    footer: footer
+    copyright: copyright
+    position-position-4304: position-position-1418
+    position-position-8087: position-position-4197
+    position-position-9645: position-footer
+    position-position-9927: position-position-7699
+    position-position-1097: position-position-6812
+    position-position-5485: position-position-8076
+    position-position-6660: position-position-5533
+    position-position-2376: position-position-5669

@@ -1,0 +1,283 @@
+/***************************
+****************************
+
+NAME: _forms.scss
+SITE: Made up company
+DESCRIPTION: All form styles
+-------------------------------------
+
+AUTHOR: Charlotte Osborne
+DATE CREATED: 20/06/17
+LAST MODIFIED DATE:
+LAST MODIFIED BY:
+
+****************************
+***************************/
+
+// CSS GOES HERE
+
+form.form {
+	p {
+		margin-top:0!important;
+		font-size:1rem;
+	}
+	a {
+		color:$red;
+	}
+}
+.checkboxfield {
+	margin-bottom:0!important;
+}
+
+form.ao-form,form.ui.form {
+	max-width:650px!important;
+	margin-left:auto;
+	margin-right:auto;
+	position: relative;
+	z-index:5;
+	label {
+		&.ao-form-label {
+			display: none;
+		}
+		&.ao-combo-label {
+			display:flex;
+			input {
+				margin-right:10px;
+			}
+			span {
+				line-height: 18px;
+    		margin-top: 1px;
+			}
+			input {
+				min-height:0!important;
+				width: 30px;
+    		height: 20px;
+			}
+		}
+	}
+	input, input:not([type="radio"]):not([type="checkbox"]):not([type="file"]), select, textarea, .ui.selection.dropdown {
+		background-color:#fafafa;
+		border-radius:8px;
+		padding:19px 10px;
+		border:1px solid #e7e7e7;
+		box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.05);
+		min-height:59px;
+		margin-bottom:5px;
+		line-height:1rem;
+		&::placeholder {
+			color:$darkgrey;
+		}
+	}
+	input[type="file"] {
+		border:0;
+		padding-left:0;
+		padding-bottom:0;
+	}
+	textarea {
+		min-height:150px;
+		padding:5px 10px;
+	}
+	
+	.ao-textarea-block {
+		label.ao-form-label {
+			display:block;
+		}
+	}
+	.ao-row {
+		.ao-column.ao-column-5,.ao-column.ao-column-7 {
+			width: 48%;
+    	margin: 0 1%;
+		}
+		> .ao-column.tablet-ao-column-1 {
+			width:98%;
+			margin:0 1%;
+		}
+		&:nth-child(2) {
+			.ao-column-inner {
+				display:flex;
+				flex-wrap: wrap;
+				.ao-block-wrapper:nth-child(1),.ao-block-wrapper:nth-child(4) {
+					flex:0 100%;
+				}
+				.ao-block-wrapper:nth-child(2),.ao-block-wrapper:nth-child(3) {
+					flex:0 50%;
+				}
+				.ao-block-wrapper:nth-child(3),.ao-block-wrapper:nth-child(4) {
+					div {
+						text-align: right!important;
+					}
+				}
+			}
+		}
+	}
+	button.ao-form-submit,button.ui.button {
+		font-weight:700!important;
+		font-size:16pt!important;
+		min-width:150px;
+		background-color:$lightred!important;
+		margin-top:5px;
+		transition: 0.5s;
+		&:hover {
+			color:white!important;
+			background-color:$red!important;
+		}
+	}
+	button.ao-form-submit,button.ui.button.green {
+		background-color:$aqua!important;
+		&:hover {
+			color:white!important;
+			background-color:#0f7b6c!important;
+		}
+	}
+	button.ui.button {
+		margin-left:auto;
+		display:block;
+	}
+	.field.required {
+		label {
+			display: none;
+		}
+	}
+	> .field.required {
+		margin-top:15px;
+	}
+	.ui.grid+.grid {
+		margin-top:0;
+	}
+}
+
+.current-roles-table {
+	margin-bottom:50px;
+	p {
+		width:50%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+body.view- {
+	.current-roles-table {
+		display: none;
+	}
+}
+
+form.ui.form {
+	margin-top:30px;
+}
+
+fieldset {
+
+}
+
+input, textarea {
+
+}
+
+input[type="text"],
+input[type="email"] {
+
+}
+
+input[type="submit"] {
+
+}
+
+
+// RESPONSIVE STYLES FOR ABOVE GO HERE
+/* import breakpoints */
+@import "dependencies";
+
+
+/* Values below are the default breakpoints
+but these values are user definable in style settings in the template
+so that is why the code below uses mixins to get the actual values from the template */
+
+/* LARGE DESKTOP
+/* 75rem / 1200px and above*/
+@include breakpoint(large-desktop-range) {
+
+}
+
+/* DESKTOP & LARGE TABLET
+/* 60rem to 74.938rem / 960px to 1199px */
+@include breakpoint(desktop-range) {
+
+}
+
+/* TABLET */
+/* 48rem to 59.938rem / 768px to 959px */
+@include breakpoint(tablet-range) {
+
+}
+
+
+// typically max 47.938 rem
+@include breakpoint(mobile-only) {
+	.chronoforms {
+		form.ui.form {
+			margin-top:10px;
+			> .field.required {
+				margin-top:0;
+			}
+		}
+		.ui.grid {
+			display: block;
+			margin-top:0!important;
+			margin-left:0!important;
+			margin-bottom:0!important;
+			margin-right:0!important;
+			.column {
+				width:100%!important;
+				padding-top:0!important;
+				padding-bottom:0!important;
+				padding-left:0!important;
+				padding-right:0!important;
+				margin-bottom:15px;
+			}
+		}
+	}
+	
+}
+
+/* LARGE MOBILE */
+/* 30rem to 47.938rem / 480px to 767px */
+@include breakpoint(large-mobile-range) {
+
+}
+
+/* SMALL MOBILE */
+/* 30rem / 480px and below */
+@include breakpoint(small-mobile-range) {
+
+}
+
+
+///RO NEW CONTACT FORM CSS UPDATES 28/02
+
+//form.ao-form .field.required label, form.ui.form .field.required label
+
+form.ao-form .field.required .checkbox label, form.ui.form .field.required .checkbox label {
+    display: block;
+}
+
+.ui.selection.dropdown>.delete.icon, .ui.selection.dropdown>.dropdown.icon, .ui.selection.dropdown>.search.icon {
+    top:1.785714em;
+}
+
+@include breakpoint(mobile-only) {
+ 
+    .messageus {
+        .chronoforms form {
+            .ui.grid .row {
+                padding-top:0;
+                padding-bottom:0;
+                .column {
+                    padding-top:5px!important;
+                    padding-bottom:5px!important; 
+                    .checkbox {
+                        margin-bottom:15px;
+                    }
+                }
+            }
+        }
+    }
+}

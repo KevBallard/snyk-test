@@ -1,0 +1,226 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/home.png'
+  name: home
+  timestamp: 1600085988
+layout:
+  top: {  }
+  header: {  }
+  mobile-links: {  }
+  /showcase/:
+    -
+      - 'position-position-9308 55'
+      - 'position-position-1655 45'
+  /showcase-bottom/:
+    -
+      - position-position-7923
+  /feature/:
+    -
+      - 'position-position-2390 25'
+      - 'position-position-9495 25'
+      - 'position-position-4694 25'
+      - 'position-position-5050 25'
+  /main/:
+    -
+      - system-messages-4872
+  /mainbottom/:
+    -
+      - 'position-position-2510 45'
+      - 'position-position-1197 55'
+  /subfeature/:
+    -
+      - 'position-position-9129 50'
+      - 'position-position-4438 50'
+    -
+      - 'position-position-4678 50'
+      - 'position-position-7456 50'
+  /extension/:
+    -
+      - 'position-position-4750 55'
+      - 'position-position-8023 45'
+  /fullwidth/:
+    -
+      - position-position-2077
+  footer: {  }
+  copyright: {  }
+  offcanvas: {  }
+structure:
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  header:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  mobile-links:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  showcase:
+    type: section
+    attributes:
+      boxed: '0'
+      class: ''
+      variations: ''
+  showcase-bottom:
+    type: section
+    attributes:
+      boxed: '0'
+      class: ''
+      variations: ''
+  feature:
+    type: section
+    attributes:
+      boxed: '0'
+      class: ''
+      variations: ''
+  main:
+    attributes:
+      boxed: ''
+  mainbottom:
+    type: section
+    attributes:
+      boxed: '0'
+      class: ''
+      variations: ''
+  subfeature:
+    type: section
+    attributes:
+      boxed: '0'
+      class: ''
+      variations: ''
+  extension:
+    type: section
+    attributes:
+      boxed: '0'
+      class: ''
+      variations: ''
+  fullwidth:
+    type: section
+    attributes:
+      boxed: '0'
+      class: ''
+      variations: ''
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+content:
+  position-position-9308:
+    title: Showcase
+    attributes:
+      key: showcase-a
+    block:
+      class: showcase-content
+  position-position-1655:
+    title: 'Module Position'
+    attributes:
+      key: showcase-b
+  position-position-7923:
+    title: 'Showcase Bottom'
+    attributes:
+      key: showcase-bottom
+    block:
+      class: showcase-bottom-content
+  position-position-2390:
+    title: 'Feature A'
+    attributes:
+      key: feature-a
+    block:
+      class: feature-content
+  position-position-9495:
+    title: 'Feature B'
+    attributes:
+      key: feature-b
+    block:
+      class: feature-content
+  position-position-4694:
+    title: 'Feature C'
+    attributes:
+      key: feature-c
+    block:
+      class: feature-content
+  position-position-5050:
+    title: 'Feature D'
+    attributes:
+      key: feature-d
+    block:
+      class: feature-content
+  position-position-2510:
+    title: 'Mainbottom Title'
+    attributes:
+      key: mainbottom-a
+    block:
+      class: mainbottom-content
+  position-position-1197:
+    title: Mainbottom
+    attributes:
+      key: mainbottom-b
+    block:
+      class: mainbottom-content
+  position-position-9129:
+    title: 'Subfeature A'
+    attributes:
+      key: subfeature-a
+    block:
+      class: subfeature-content
+  position-position-4438:
+    title: 'Subfeature B'
+    attributes:
+      key: subfeature-b
+    block:
+      class: subfeature-content
+  position-position-4678:
+    title: 'Subfeature C'
+    attributes:
+      key: subfeature-c
+    block:
+      class: subfeature-content
+  position-position-7456:
+    title: 'Subfeature D'
+    attributes:
+      key: subfeature-d
+    block:
+      class: subfeature-content
+  position-position-4750:
+    title: 'Extension A'
+    attributes:
+      key: extension-a
+    block:
+      class: extension-content
+  position-position-8023:
+    title: 'Extension B'
+    attributes:
+      key: extension-b
+    block:
+      class: extension-content
+  position-position-2077:
+    title: 'Module Position'
+    attributes:
+      key: above-footer
+    block:
+      class: abovefooter-content

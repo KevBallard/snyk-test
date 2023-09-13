@@ -1,0 +1,60 @@
+name: default
+timestamp: 1601289690
+version: 7
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1551355939
+positions:
+  announcement: 'Module Position'
+  logo: 'Module Position'
+  top: Top
+  navigation: Navigation
+  mobile-links: 'Mobile Links'
+  showcase: Showcase
+  feature-a: 'Feature A'
+  breadcrumbs: Breadcrumbs
+  eckoh-module: Eckoh
+  mainbottom-a: 'Mainbottom A'
+  footer-a: 'Footer A'
+  footer-b: 'Footer B'
+  footer-c: 'Footer C'
+  footer-d: 'Footer D'
+  copyright-a: 'Copyright A'
+  copyright-b: 'Copyright B'
+  mobile-menu-container: 'Module Position'
+sections:
+  top: Top
+  mobile-links: Mobile-links
+  showcase: Showcase
+  feature: Feature
+  mainbottom: Mainbottom
+  copyright: Copyright
+  header: Header
+  main: Main
+  footer: Footer
+  offcanvas: Offcanvas
+particles:
+  position:
+    position-position-5167: 'Module Position'
+    position-position-8842: 'Module Position'
+    position-position-5208: Top
+    position-position-1963: Navigation
+    position-position-4289: 'Mobile Links'
+    position-position-1418: Showcase
+    position-position-4197: 'Feature A'
+    position-breadcrumbs: Breadcrumbs
+    position-position-9185: Eckoh
+    position-position-8564: 'Mainbottom A'
+    position-footer: 'Footer A'
+    position-position-7699: 'Footer B'
+    position-position-6812: 'Footer C'
+    position-position-8076: 'Footer D'
+    position-position-5533: 'Copyright A'
+    position-position-5669: 'Copyright B'
+    position-position-5845: 'Module Position'
+  messages:
+    system-messages-4590: 'System Messages'
+  content:
+    system-content-5421: 'Page Content'
+inherit: {  }

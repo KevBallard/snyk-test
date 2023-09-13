@@ -1,0 +1,143 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: about
+  timestamp: 1546962508
+layout:
+  top: {  }
+  header: {  }
+  showcase: {  }
+  feature: {  }
+  /main/:
+    -
+      - position-position-9395
+    -
+      - 'position-position-2873 60'
+      - 'system-messages-8546 40'
+    -
+      - 'system-content-9647 75'
+      - 'position-position-3527 25'
+  mainbottom: {  }
+  fullwidth: {  }
+  extension: {  }
+  footer: {  }
+  copyright: {  }
+  offcanvas: {  }
+structure:
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  header:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  showcase:
+    type: section
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+        - children
+  feature:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  main:
+    attributes:
+      boxed: ''
+      class: ''
+  mainbottom:
+    type: section
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+        - children
+  fullwidth:
+    type: section
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+        - children
+  extension:
+    type: section
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+        - children
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+content:
+  position-position-9395:
+    title: Breadcrumbs
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+      particle: position-position-1789
+  position-position-2873:
+    title: Eckoh
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+      particle: position-position-7011
+  system-messages-8546:
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+      particle: system-messages-9639
+  system-content-9647:
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+      particle: system-content-9098
+  position-position-3527:
+    title: 'Main Right'
+    inherit:
+      outline: '11'
+      include:
+        - attributes
+        - block
+      particle: position-position-5308

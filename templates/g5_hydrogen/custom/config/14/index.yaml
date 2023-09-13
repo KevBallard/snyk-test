@@ -1,0 +1,103 @@
+name: 14
+timestamp: 1601289690
+version: 7
+preset:
+  image: 'gantry-admin://images/layouts/home.png'
+  name: home
+  timestamp: 1600085988
+positions:
+  showcase-a: Showcase
+  showcase-b: 'Module Position'
+  showcase-bottom: 'Showcase Bottom'
+  feature-a: 'Feature A'
+  feature-b: 'Feature B'
+  feature-c: 'Feature C'
+  feature-d: 'Feature D'
+  mainbottom-a: 'Mainbottom Title'
+  mainbottom-b: Mainbottom
+  subfeature-a: 'Subfeature A'
+  subfeature-b: 'Subfeature B'
+  subfeature-c: 'Subfeature C'
+  subfeature-d: 'Subfeature D'
+  extension-a: 'Extension A'
+  extension-b: 'Extension B'
+  above-footer: 'Module Position'
+  announcement: 'Module Position'
+  logo: 'Module Position'
+  top: Top
+  navigation: Navigation
+  mobile-links: 'Mobile Links'
+  footer-a: 'Footer A'
+  footer-b: 'Footer B'
+  footer-c: 'Footer C'
+  footer-d: 'Footer D'
+  copyright-a: 'Copyright A'
+  copyright-b: 'Copyright B'
+  mobile-menu-container: 'Module Position'
+sections:
+  top: Top
+  mobile-links: Mobile-links
+  showcase: Showcase
+  showcase-bottom: Showcase-bottom
+  feature: Feature
+  mainbottom: Mainbottom
+  subfeature: Subfeature
+  extension: Extension
+  fullwidth: Fullwidth
+  copyright: Copyright
+  header: Header
+  main: Main
+  footer: Footer
+  offcanvas: Offcanvas
+particles:
+  position:
+    position-position-9308: Showcase
+    position-position-1655: 'Module Position'
+    position-position-7923: 'Showcase Bottom'
+    position-position-2390: 'Feature A'
+    position-position-9495: 'Feature B'
+    position-position-4694: 'Feature C'
+    position-position-5050: 'Feature D'
+    position-position-2510: 'Mainbottom Title'
+    position-position-1197: Mainbottom
+    position-position-9129: 'Subfeature A'
+    position-position-4438: 'Subfeature B'
+    position-position-4678: 'Subfeature C'
+    position-position-7456: 'Subfeature D'
+    position-position-4750: 'Extension A'
+    position-position-8023: 'Extension B'
+    position-position-2077: 'Module Position'
+    position-position-4435: 'Module Position'
+    position-position-2400: 'Module Position'
+    position-position-2544: Top
+    position-position-2457: Navigation
+    position-position-1405: 'Mobile Links'
+    position-position-7283: 'Footer A'
+    position-position-6720: 'Footer B'
+    position-position-7834: 'Footer C'
+    position-position-5985: 'Footer D'
+    position-position-7965: 'Copyright A'
+    position-position-4047: 'Copyright B'
+    position-position-1044: 'Module Position'
+  messages:
+    system-messages-4872: 'System Messages'
+inherit:
+  default:
+    top: top
+    header: header
+    mobile-links: mobile-links
+    footer: footer
+    copyright: copyright
+    offcanvas: offcanvas
+    position-position-4435: position-position-5167
+    position-position-2400: position-position-8842
+    position-position-2544: position-position-5208
+    position-position-2457: position-position-1963
+    position-position-1405: position-position-4289
+    position-position-7283: position-footer
+    position-position-6720: position-position-7699
+    position-position-7834: position-position-6812
+    position-position-5985: position-position-8076
+    position-position-7965: position-position-5533
+    position-position-4047: position-position-5669
+    position-position-1044: position-position-5845
